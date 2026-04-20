@@ -1,0 +1,167 @@
+[
+  {
+    "year": 2024,
+    "emoji": "🎙️",
+    "title": "HIMSS Executive Summit Colombia",
+    "desc": "Innovación y Analítica en ADRES — Transformación digital del sistema de salud. Bogotá.",
+    "type": "charla",
+    "image": "/foto-himss.png",
+    "url": "https://www.youtube.com/watch?v=CFR88Nz2fvs",
+    "highlight": true,
+    "color": "#1DB954"
+  },
+  {
+    "year": 2024,
+    "emoji": "🤖",
+    "title": "Asesor de Innovación — ADRES",
+    "desc": "Liderando analítica avanzada e IA para los recursos de salud de 52 millones de colombianos.",
+    "type": "hito",
+    "image": "",
+    "url": "",
+    "highlight": false,
+    "color": "#0A6EBF"
+  },
+  {
+    "year": 2023,
+    "emoji": "🏆",
+    "title": "EY Emprendedor Social del Año",
+    "desc": "Reconocimiento de Ernst & Young por el impacto social de EducALL en Colombia.",
+    "type": "premio",
+    "image": "",
+    "url": "",
+    "highlight": true,
+    "color": "#F0B429"
+  },
+  {
+    "year": 2023,
+    "emoji": "🎧",
+    "title": "EducALL \"Celebremos Colombia\"",
+    "desc": "Evento celebrando el impacto de Llamadas para Educar en comunidades colombianas.",
+    "type": "video",
+    "image": "",
+    "url": "https://www.youtube.com/watch?v=DvQ3e2IsyB8",
+    "highlight": false,
+    "color": "#0A6EBF"
+  },
+  {
+    "year": 2023,
+    "emoji": "💻",
+    "title": "NTT DATA eAwards — Semifinalista",
+    "desc": "Reconocimiento global a la innovación tecnológica con impacto social.",
+    "type": "premio",
+    "image": "",
+    "url": "",
+    "highlight": false,
+    "color": "#F0B429"
+  },
+  {
+    "year": 2023,
+    "emoji": "✍️",
+    "title": "\"Hagamos del mundo un lugar menos cómodo y lucrativo\"",
+    "desc": "Ensayo en RecOn Colombia. Emprendimiento social y la incomodidad como motor de cambio.",
+    "type": "ensayo",
+    "image": "",
+    "url": "https://www.reconcolombia.org/emprendimiento/educallllamadasparaeducar/",
+    "highlight": false,
+    "color": "#ec4899"
+  },
+  {
+    "year": 2021,
+    "emoji": "🏆",
+    "title": "Falling Walls Lab Colombia — Ganador",
+    "desc": "\"Breaking the Wall of Education Without Internet\". Primer lugar nacional, representante en Berlín.",
+    "type": "premio",
+    "image": "",
+    "url": "https://www.youtube.com/watch?v=fUZnzeUnz5E",
+    "highlight": true,
+    "color": "#F0B429"
+  },
+  {
+    "year": 2021,
+    "emoji": "🌍",
+    "title": "Entrepreneurship World Cup Colombia — Ganador",
+    "desc": "Primer lugar nacional en la competencia global de emprendimiento.",
+    "type": "premio",
+    "image": "",
+    "url": "",
+    "highlight": true,
+    "color": "#F0B429"
+  },
+  {
+    "year": 2021,
+    "emoji": "🏫",
+    "title": "MIT Solve TPrize — Finalista",
+    "desc": "Seleccionado entre miles de postulaciones globales por innovación en educación sin internet.",
+    "type": "premio",
+    "image": "",
+    "url": "https://solve.mit.edu/challenges/2021-tprize/solutions/52755",
+    "highlight": true,
+    "color": "#F0B429"
+  },
+  {
+    "year": 2021,
+    "emoji": "🏆",
+    "title": "Copa de Emprendimiento Colombia — Ganador",
+    "desc": "EducALL reconocido como modelo de impacto escalable a nivel nacional.",
+    "type": "premio",
+    "image": "",
+    "url": "",
+    "highlight": false,
+    "color": "#F0B429"
+  },
+  {
+    "year": 2020,
+    "emoji": "📞",
+    "title": "Nace EducALL: Llamadas para Educar",
+    "desc": "En plena pandemia: si no hay internet, hay llamadas. Teléfonos básicos convertidos en aulas de clase.",
+    "type": "fundacion",
+    "image": "",
+    "url": "https://educall.co",
+    "highlight": true,
+    "color": "#1DB954"
+  },
+  {
+    "year": 2020,
+    "emoji": "🎙️",
+    "title": "Campus Party Colombia",
+    "desc": "Speaker sobre tecnología educativa e innovación social en Latinoamérica.",
+    "type": "charla",
+    "image": "",
+    "url": "",
+    "highlight": false,
+    "color": "#1DB954"
+  },
+  {
+    "year": 2026,
+    "emoji": "🎲",
+    "title": "NACER — Juego serio sobre desigualdad",
+    "desc": "\"En el primer turno ya se decidió si perdiste.\" Pre-lanzamiento 2026.",
+    "type": "proyecto",
+    "image": "",
+    "url": "",
+    "highlight": false,
+    "color": "#1DB954"
+  },
+  {
+    "year": 2026,
+    "emoji": "📖",
+    "title": "Un Jaguar en Tierra de Elefantes",
+    "desc": "El business case de innovar en el sector público colombiano. En escritura.",
+    "type": "libro",
+    "image": "",
+    "url": "",
+    "highlight": false,
+    "color": "#ec4899"
+  },
+  {
+    "year": 2026,
+    "emoji": "📊",
+    "title": "Sala de Inteligencia ADRES",
+    "desc": "Dashboards en vivo para monitorear los recursos del sistema de salud colombiano.",
+    "type": "proyecto",
+    "image": "",
+    "url": "",
+    "highlight": false,
+    "color": "#0A6EBF"
+  }
+]

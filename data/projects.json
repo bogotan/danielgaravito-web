@@ -1,0 +1,663 @@
+{
+  "_meta": {
+    "source": "ELEFANTE / MEMORIA.md (Agentes Garavito)",
+    "lastSync": "2026-04-20",
+    "syncedBy": "sync-projects.js",
+    "protocol": "01_FuerzaG_Sistema/documentacion/PROTOCOLO_SYNC_WEB_2026-04-20.md",
+    "rule": "No editar a mano. Modificar MEMORIA.md y correr npm run sync-projects."
+  },
+  "projects": [
+    {
+      "slug": "nacer",
+      "emoji": "🎮",
+      "title": "NACER",
+      "subtitle": "Juego serio sobre desigualdad",
+      "description": "Juego serio que simula cómo la desigualdad se define desde antes de nacer. Una herramienta educativa para generar empatía y conciencia social. En el primer turno ya se decidió si perdiste.",
+      "tags": [
+        "Juego",
+        "Educación",
+        "Desigualdad",
+        "Impacto social"
+      ],
+      "color": "from-accent-green to-accent-blue",
+      "status": "Listo para lanzamiento",
+      "statusCategory": "pre-launch",
+      "url": "",
+      "progress": 85,
+      "owners": [
+        "🐙 PULPO",
+        "🦫 CASTOR",
+        "🐦 COLIBRÍ"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Deploy a Vercel en dominio propio",
+          "status": "pending",
+          "owner": "🦫 CASTOR"
+        },
+        {
+          "step": 2,
+          "title": "Crear cuentas email + redes del juego (Gmail, IG, TikTok)",
+          "status": "pending",
+          "owner": "Daniel"
+        },
+        {
+          "step": 3,
+          "title": "Configurar Vaki para crowdfunding",
+          "status": "pending",
+          "owner": "🐦 COLIBRÍ"
+        },
+        {
+          "step": 4,
+          "title": "Publicar landing con trailer + demo jugable",
+          "status": "pending",
+          "owner": "🐙 PULPO + 🔥 FÉNIX"
+        },
+        {
+          "step": 5,
+          "title": "Lanzar campaña orgánica TikTok + LinkedIn (4 semanas)",
+          "status": "pending",
+          "owner": "🐦 COLIBRÍ + 🦜 LORO"
+        },
+        {
+          "step": 6,
+          "title": "Medir con MANTIS: sesiones, completion rate, shares",
+          "status": "pending",
+          "owner": "🦗 MANTIS"
+        }
+      ],
+      "blockers": [
+        "Deploy pendiente hace 5 semanas consecutivas (P0 critico)"
+      ],
+      "deadline": "2026-05-15"
+    },
+    {
+      "slug": "sia",
+      "emoji": "🔍",
+      "title": "SIA",
+      "subtitle": "Sistema Inteligente de Auditoría",
+      "description": "Plataforma de auditoría potenciada con IA para el sector salud colombiano. Detecta anomalías y optimiza recursos. Aplicación directa del inventario Databricks ADRES.",
+      "tags": [
+        "IA",
+        "Salud",
+        "Auditoría",
+        "Sector público"
+      ],
+      "color": "from-accent-blue to-accent-gold",
+      "status": "Diseño",
+      "statusCategory": "active",
+      "url": "",
+      "progress": 35,
+      "owners": [
+        "🐙 PULPO",
+        "🦦 NUTRIA",
+        "🦗 MANTIS",
+        "🦬 BÚFALO"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Agendar reunión de arquitectura (pendiente hace 4 semanas)",
+          "status": "pending",
+          "owner": "Daniel"
+        },
+        {
+          "step": 2,
+          "title": "Definir alcance MVP: 1 caso de auditoría específico",
+          "status": "pending",
+          "owner": "🦊 ZORRO"
+        },
+        {
+          "step": 3,
+          "title": "Mapeo de fuentes RIPS + BDUA disponibles",
+          "status": "pending",
+          "owner": "🦦 NUTRIA"
+        },
+        {
+          "step": 4,
+          "title": "Diseño de detección de anomalías (modelo inicial)",
+          "status": "pending",
+          "owner": "🦗 MANTIS"
+        },
+        {
+          "step": 5,
+          "title": "Revisión legal y de habeas data",
+          "status": "pending",
+          "owner": "🦬 BÚFALO"
+        },
+        {
+          "step": 6,
+          "title": "Prototipo funcional de 1 flujo end-to-end",
+          "status": "pending",
+          "owner": "🐙 PULPO"
+        },
+        {
+          "step": 7,
+          "title": "Piloto con 1 EPS colaboradora",
+          "status": "pending",
+          "owner": "Daniel + 🦁 JEFE"
+        }
+      ],
+      "blockers": [
+        "Sin reunión de arquitectura agendada",
+        "Evaluar congelar si no se mueve en sprint 17"
+      ],
+      "deadline": "2026-09-30"
+    },
+    {
+      "slug": "sala-inteligencia-adres",
+      "emoji": "📊",
+      "title": "Sala de Inteligencia ADRES",
+      "subtitle": "Analítica en vivo del sistema de salud",
+      "description": "Dashboards en tiempo real para monitorear los recursos del sistema de salud de 52 millones de colombianos. Datos para decisiones que salvan vidas.",
+      "tags": [
+        "Datos",
+        "Dashboard",
+        "Salud pública",
+        "ADRES"
+      ],
+      "color": "from-accent-blue to-blue-400",
+      "status": "Operativo",
+      "statusCategory": "active",
+      "url": "",
+      "progress": 60,
+      "owners": [
+        "🦗 MANTIS",
+        "🦦 NUTRIA",
+        "🪶 HALCÓN",
+        "🦁 JEFE"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Completar inventario Databricks (20 catálogos, 1.100+ tablas)",
+          "status": "done",
+          "owner": "🦦 NUTRIA"
+        },
+        {
+          "step": 2,
+          "title": "Definir 5 KPIs prioritarios para el Director General",
+          "status": "in_progress",
+          "owner": "🪶 HALCÓN"
+        },
+        {
+          "step": 3,
+          "title": "Construir dashboard ejecutivo v2 con esos 5 KPIs",
+          "status": "pending",
+          "owner": "🦗 MANTIS"
+        },
+        {
+          "step": 4,
+          "title": "Revisión por capas ADRES (8 capas, CAMALEÓN)",
+          "status": "pending",
+          "owner": "🦎 CAMALEÓN"
+        },
+        {
+          "step": 5,
+          "title": "Presentar a Junta Directiva ADRES",
+          "status": "pending",
+          "owner": "Daniel + 🦁 JEFE"
+        },
+        {
+          "step": 6,
+          "title": "Rollout a equipos operativos ADRES",
+          "status": "pending",
+          "owner": "🐺 LOBO"
+        }
+      ],
+      "blockers": [],
+      "deadline": "2026-07-31"
+    },
+    {
+      "slug": "libro-jaguar",
+      "emoji": "📖",
+      "title": "Un Jaguar en Tierra de Elefantes",
+      "subtitle": "Libro sobre innovar desde el sector público",
+      "description": "El business case de innovar desde el sector público colombiano. Una reflexión sobre cómo competir siendo jaguar en un mundo de elefantes. Masa crítica lista; 37 ideas procesadas.",
+      "tags": [
+        "Libro",
+        "Innovación",
+        "Sector público",
+        "Ensayo"
+      ],
+      "color": "from-accent-gold to-orange-400",
+      "status": "Pre-escritura (masa critica)",
+      "statusCategory": "writing",
+      "url": "",
+      "progress": 40,
+      "owners": [
+        "🐜 HORMIGA",
+        "🦉 BÚHO",
+        "🐿️ ARDILLA"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Procesar 37 ideas WhatsApp Nuevo Renacer",
+          "status": "done",
+          "owner": "🐿️ ARDILLA + 🐘 ELEFANTE"
+        },
+        {
+          "step": 2,
+          "title": "Consolidar masa crítica (14 ideas epistemológicas)",
+          "status": "done",
+          "owner": "🦉 BÚHO"
+        },
+        {
+          "step": 3,
+          "title": "Escribir Capítulo 1 con las 14 ideas",
+          "status": "pending",
+          "owner": "🐜 HORMIGA"
+        },
+        {
+          "step": 4,
+          "title": "Definir arco narrativo completo (12 capítulos)",
+          "status": "pending",
+          "owner": "Daniel + 🐜 HORMIGA"
+        },
+        {
+          "step": 5,
+          "title": "Escribir capítulos 2-6 (primera mitad)",
+          "status": "pending",
+          "owner": "🐜 HORMIGA"
+        },
+        {
+          "step": 6,
+          "title": "Validación editorial con 3 lectores beta",
+          "status": "pending",
+          "owner": "🐱 LINCE + 🎤 DANNY G"
+        },
+        {
+          "step": 7,
+          "title": "Completar capítulos 7-12 + epílogo",
+          "status": "pending",
+          "owner": "🐜 HORMIGA"
+        },
+        {
+          "step": 8,
+          "title": "Diseño de portada + maquetación",
+          "status": "pending",
+          "owner": "🔥 FÉNIX"
+        },
+        {
+          "step": 9,
+          "title": "Publicación (editorial o self-publishing)",
+          "status": "pending",
+          "owner": "Daniel"
+        }
+      ],
+      "blockers": [
+        "Capítulo 1 pendiente pese a tener masa crítica lista"
+      ],
+      "deadline": "2026-12-31"
+    },
+    {
+      "slug": "babytongues",
+      "emoji": "👶",
+      "title": "BabyTongues",
+      "subtitle": "App trilingüe para Liam (0-12 meses)",
+      "description": "Programa de desarrollo infantil trilingüe (español, inglés, mandarín) con 8 canciones, karaoke sincronizado y PWA offline. Creada por Daniel para su hijo Liam. Single-file React.",
+      "tags": [
+        "App",
+        "Infantil",
+        "Trilingüe",
+        "PWA"
+      ],
+      "color": "from-accent-green to-emerald-400",
+      "status": "v4.1 — Security + Ideogramas 1:1",
+      "statusCategory": "active",
+      "url": "",
+      "progress": 75,
+      "owners": [
+        "🐙 PULPO",
+        "🐱 LINCE",
+        "🐕‍🦺 CANCERBERO"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Regenerar timestamps karaoke con Whisper small",
+          "status": "pending",
+          "owner": "🐙 PULPO"
+        },
+        {
+          "step": 2,
+          "title": "Integrar DedicatoriaLiam con fotos reales",
+          "status": "pending",
+          "owner": "Daniel + 🐙 PULPO"
+        },
+        {
+          "step": 3,
+          "title": "Ejecutar setup-github.ps1 (repo privado + branch protection)",
+          "status": "pending",
+          "owner": "Daniel"
+        },
+        {
+          "step": 4,
+          "title": "Registro DNDA Colombia (software + letra + arte)",
+          "status": "pending",
+          "owner": "🦬 BÚFALO"
+        },
+        {
+          "step": 5,
+          "title": "Búsqueda de antecedentes + solicitud de marca SIC",
+          "status": "pending",
+          "owner": "🦬 BÚFALO"
+        },
+        {
+          "step": 6,
+          "title": "Migrar a build pipeline (Vite) y quitar unsafe-eval del CSP",
+          "status": "pending",
+          "owner": "🐙 PULPO"
+        },
+        {
+          "step": 7,
+          "title": "v5.0: opción React Native para Android",
+          "status": "pending",
+          "owner": "🐙 PULPO"
+        }
+      ],
+      "blockers": [],
+      "deadline": "2026-06-30"
+    },
+    {
+      "slug": "fuerzag",
+      "emoji": "🤖",
+      "title": "FuerzaG",
+      "subtitle": "Sistema de 43 agentes de IA (infraestructura)",
+      "description": "Ecosistema de 43 agentes de IA especializados para automatización, análisis de datos y generación de contenido. Infraestructura base de todos los demás proyectos. Congelado en 43 agentes hasta deploy NACER.",
+      "tags": [
+        "IA",
+        "Automatización",
+        "Agentes",
+        "Infraestructura"
+      ],
+      "color": "from-accent-green to-accent-gold",
+      "status": "Operativo v5.2 — congelado en 43",
+      "statusCategory": "active",
+      "url": "",
+      "progress": 90,
+      "owners": [
+        "🦎 GEORGINA",
+        "🐘 ELEFANTE"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Freeze at 43 mientras NACER no despliegue",
+          "status": "done",
+          "owner": "🦎 GEORGINA"
+        },
+        {
+          "step": 2,
+          "title": "Implementar Protocolo Primero Lo Primero",
+          "status": "done",
+          "owner": "🦎 GEORGINA"
+        },
+        {
+          "step": 3,
+          "title": "Modo Cancerbero activo",
+          "status": "done",
+          "owner": "🐕‍🦺 CANCERBERO"
+        },
+        {
+          "step": 4,
+          "title": "Pipeline Analítico ADRES (8 pasos) operativo",
+          "status": "done",
+          "owner": "🪶 HALCÓN + 🦎 CAMALEÓN"
+        },
+        {
+          "step": 5,
+          "title": "Sprints Coercitivos en ABEJA",
+          "status": "in_progress",
+          "owner": "🐝 ABEJA"
+        },
+        {
+          "step": 6,
+          "title": "Repositorio Git publicado + versionado formal",
+          "status": "pending",
+          "owner": "🦫 CASTOR"
+        },
+        {
+          "step": 7,
+          "title": "Documentar cada skill con ejemplos reales",
+          "status": "pending",
+          "owner": "🐜 HORMIGA"
+        },
+        {
+          "step": 8,
+          "title": "Abrir evaluación de 6 agentes propuestos (post-NACER)",
+          "status": "pending",
+          "owner": "🦎 GEORGINA"
+        }
+      ],
+      "blockers": [],
+      "deadline": "continuo"
+    },
+    {
+      "slug": "educall",
+      "emoji": "📞",
+      "title": "EducALL",
+      "subtitle": "Llamadas para Educar",
+      "description": "Plataforma de educación por llamadas telefónicas. Si no hay internet, hay llamadas. +1.000 vidas impactadas. Finalista MIT Solve, Ganador Falling Walls, EY Emprendedor Social del Año.",
+      "tags": [
+        "EdTech",
+        "Impacto social",
+        "Innovación",
+        "Educación"
+      ],
+      "color": "from-accent-green to-accent-gold",
+      "status": "Operativo",
+      "statusCategory": "active",
+      "url": "https://educall.co",
+      "progress": 70,
+      "owners": [
+        "Daniel (fundador)",
+        "Equipo EducALL"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Completar pool de tutores activos",
+          "status": "in_progress",
+          "owner": "Equipo EducALL"
+        },
+        {
+          "step": 2,
+          "title": "Sistematizar reporte mensual de impacto",
+          "status": "pending",
+          "owner": "🦗 MANTIS"
+        },
+        {
+          "step": 3,
+          "title": "Explorar expansión a Perú y Ecuador",
+          "status": "pending",
+          "owner": "Daniel"
+        },
+        {
+          "step": 4,
+          "title": "Modelo de sostenibilidad post-donación (B2G con secretarías)",
+          "status": "pending",
+          "owner": "Daniel + 🐀 TOPO"
+        },
+        {
+          "step": 5,
+          "title": "Publicar white paper de resultados 2020-2026",
+          "status": "pending",
+          "owner": "🐜 HORMIGA"
+        }
+      ],
+      "blockers": [],
+      "deadline": "continuo"
+    },
+    {
+      "slug": "tesis",
+      "emoji": "🎓",
+      "title": "Tesis",
+      "subtitle": "SLM + HL7 aplicados a datos clínicos",
+      "description": "Investigación sobre Small Language Models entrenados sobre estándar HL7 FHIR para extracción estructurada de datos clínicos. En definición de alcance.",
+      "tags": [
+        "Investigación",
+        "IA",
+        "HL7",
+        "Salud"
+      ],
+      "color": "from-accent-blue to-purple-400",
+      "status": "Ideación",
+      "statusCategory": "ideation",
+      "url": "",
+      "progress": 15,
+      "owners": [
+        "Daniel",
+        "🦉 BÚHO",
+        "🐋 ORCA"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Definir pregunta de investigación específica (1 frase)",
+          "status": "pending",
+          "owner": "Daniel"
+        },
+        {
+          "step": 2,
+          "title": "Revisión de literatura: SLM en salud + HL7 FHIR",
+          "status": "pending",
+          "owner": "🦉 BÚHO"
+        },
+        {
+          "step": 3,
+          "title": "Identificar dataset de entrenamiento (MIMIC / RIPS)",
+          "status": "pending",
+          "owner": "🦦 NUTRIA"
+        },
+        {
+          "step": 4,
+          "title": "Elegir universidad/programa y director de tesis",
+          "status": "pending",
+          "owner": "Daniel"
+        },
+        {
+          "step": 5,
+          "title": "Propuesta formal (20 páginas)",
+          "status": "pending",
+          "owner": "🐜 HORMIGA + Daniel"
+        },
+        {
+          "step": 6,
+          "title": "Ejecutar experimentos + escribir tesis",
+          "status": "pending",
+          "owner": "Daniel"
+        }
+      ],
+      "blockers": [
+        "Sin pregunta de investigación definida"
+      ],
+      "deadline": "2028-12-31"
+    },
+    {
+      "slug": "furiosa",
+      "emoji": "🏎️",
+      "title": "Furiosa",
+      "subtitle": "Simulador profesional de carreras",
+      "description": "Setup de SimRacing profesional para entrenamiento y contenido. Operativa, falta completar el pool de periféricos y experiencias.",
+      "tags": [
+        "SimRacing",
+        "Hardware",
+        "Contenido"
+      ],
+      "color": "from-red-500 to-accent-gold",
+      "status": "Operativo",
+      "statusCategory": "active",
+      "url": "",
+      "progress": 65,
+      "owners": [
+        "Daniel",
+        "🦝 MAPACHE"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Completar pool de periféricos (volante direct drive, pedales)",
+          "status": "in_progress",
+          "owner": "🦝 MAPACHE"
+        },
+        {
+          "step": 2,
+          "title": "Definir 3 series de contenido (F1, Rally, Endurance)",
+          "status": "pending",
+          "owner": "🐦 COLIBRÍ"
+        },
+        {
+          "step": 3,
+          "title": "Grabación de piloto + 2 capítulos",
+          "status": "pending",
+          "owner": "Daniel"
+        },
+        {
+          "step": 4,
+          "title": "Publicar canal YouTube + TikTok de SimRacing",
+          "status": "pending",
+          "owner": "🦜 LORO"
+        },
+        {
+          "step": 5,
+          "title": "Explorar monetización (sponsors de hardware)",
+          "status": "pending",
+          "owner": "Daniel"
+        }
+      ],
+      "blockers": [],
+      "deadline": "2026-08-31"
+    },
+    {
+      "slug": "metro22",
+      "emoji": "🏗️",
+      "title": "Metro 22",
+      "subtitle": "Inversión inmobiliaria",
+      "description": "2 apartamentos apartados en proyecto Metro 22. Inversión patrimonial para Liam y diversificación de flujos.",
+      "tags": [
+        "Inversión",
+        "Inmobiliario",
+        "Patrimonio"
+      ],
+      "color": "from-gray-500 to-accent-blue",
+      "status": "Construcción",
+      "statusCategory": "active",
+      "url": "",
+      "progress": 50,
+      "owners": [
+        "Daniel"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Pagos mensuales al día",
+          "status": "in_progress",
+          "owner": "Daniel"
+        },
+        {
+          "step": 2,
+          "title": "Seguimiento trimestral de obra",
+          "status": "in_progress",
+          "owner": "Daniel"
+        },
+        {
+          "step": 3,
+          "title": "Decidir uso final: arriendo / venta / vivienda",
+          "status": "pending",
+          "owner": "Daniel + 🦅 ÁGUILA"
+        },
+        {
+          "step": 4,
+          "title": "Entrega esperada",
+          "status": "pending",
+          "owner": "Constructora"
+        }
+      ],
+      "blockers": [],
+      "deadline": "2027-12-31"
+    }
+  ]
+}
