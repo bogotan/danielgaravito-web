@@ -13,11 +13,14 @@ const speakerTopics = [
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/danielgaravito/', icon: '💼' },
-  { name: 'YouTube', href: 'https://www.youtube.com/@danielgaravito', icon: '🎥' },
-  { name: 'TikTok', href: 'https://www.tiktok.com/@danielgaravito', icon: '🎵' },
-  { name: 'Instagram', href: 'https://www.instagram.com/danielgaravito/', icon: '📸' },
-  { name: 'Email', href: 'mailto:bogotan@gmail.com', icon: '📧' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/daniel-alfonso-garavito-jim%C3%A9nez/', icon: '💼', status: 'active' },
+  { name: 'WhatsApp', href: 'https://wa.me/573166149797?text=Hola%20Daniel%2C%20vengo%20de%20danielgaravito.co', icon: '💬', status: 'active' },
+  { name: 'X', href: 'https://x.com/danielgaravitoco', icon: '🐦', status: 'pending' },
+  { name: 'Bluesky', href: 'https://bsky.app/profile/danielgaravito.co', icon: '🦋', status: 'pending' },
+  { name: 'Instagram', href: 'https://instagram.com/danielgaravito.co', icon: '📸', status: 'pending' },
+  { name: 'YouTube', href: 'https://youtube.com/@danielgaravito', icon: '🎥', status: 'active' },
+  { name: 'TikTok', href: 'https://tiktok.com/@danielgaravito', icon: '🎵', status: 'active' },
+  { name: 'Email', href: 'mailto:dagaravitoj@gmail.com', icon: '📧', status: 'active' },
 ];
 
 export default function Contact() {
@@ -62,9 +65,34 @@ export default function Contact() {
       <h2 className="section-title">
         <span className="gradient-text">Contacto</span>
       </h2>
-      <p className="text-text-muted text-lg mb-10 max-w-2xl">
-        Hablemos sobre datos, innovación, salud pública o cómo podemos colaborar.
+      <p className="text-text-muted text-lg mb-6 max-w-2xl">
+        Hablemos sobre datos, innovación, salud pública o cómo colaborar.
+        Si tienes un evento, un medio o un proyecto donde mi perspectiva puede aportar,
+        escríbeme — respondo en menos de 48 horas.
       </p>
+      <div className="flex flex-wrap gap-3 mb-10">
+        <a
+          href="#contact-form"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent-green text-white text-sm font-medium hover:bg-opacity-90 transition-all"
+        >
+          Invítame a hablar
+          <span>→</span>
+        </a>
+        <a
+          href="mailto:dagaravitoj@gmail.com?subject=Prensa%20%7C%20Daniel%20Garavito"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-secondary border border-gray-700 text-text text-sm font-medium hover:border-accent-blue transition-all"
+        >
+          Soy prensa
+          <span>→</span>
+        </a>
+        <a
+          href="#contact-form"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-secondary border border-gray-700 text-text text-sm font-medium hover:border-accent-gold transition-all"
+        >
+          Colaboración / consultoría
+          <span>→</span>
+        </a>
+      </div>
 
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Left: Info */}
@@ -96,35 +124,56 @@ export default function Contact() {
                   key={link.name}
                   href={link.href}
                   target={link.href.startsWith('mailto') ? undefined : '_blank'}
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer me"
                   className="flex items-center gap-2 px-4 py-2 bg-bg-secondary border border-gray-800 rounded-lg hover:border-accent-green transition-colors text-sm text-text-muted hover:text-text"
+                  title={link.status === 'pending' ? 'Perfil en creación' : undefined}
                 >
                   <span>{link.icon}</span>
                   <span>{link.name}</span>
+                  {link.status === 'pending' && (
+                    <span className="text-[9px] font-semibold text-accent-gold/80 uppercase tracking-wider">pronto</span>
+                  )}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Book waitlist */}
-          <div>
-            <h3 className="text-lg font-bold text-text mb-2">
-              Lista de espera del libro
-            </h3>
-            <p className="text-text-muted text-sm mb-4">
-              Sé el primero en leer &quot;Un Jaguar en Tierra de Elefantes&quot;.
-            </p>
+          {/* Newsletter */}
+          <div className="relative rounded-xl overflow-hidden border border-accent-green/30 bg-gradient-to-br from-accent-green/5 via-bg-secondary to-accent-blue/5 p-5">
+            <div className="flex items-start gap-3 mb-3">
+              <div className="text-2xl">📬</div>
+              <div>
+                <h3 className="text-lg font-bold text-text">
+                  Newsletter · Salud, Datos y algo más
+                </h3>
+                <p className="text-text-muted text-sm mt-1">
+                  Una vez al mes: reflexiones sobre el sistema de salud colombiano,
+                  datos que uso, y lo que aprendí en el camino. Sin spam, fácil de salir.
+                </p>
+              </div>
+            </div>
             <LeadForm
-              source="book-waitlist"
-              title="Reserva tu copia"
-              subtitle="Te avisamos en cuanto esté disponible."
+              source="newsletter"
+              title=""
+              subtitle=""
             />
+            <p className="text-[11px] text-text-muted/70 mt-2">
+              También incluye avisos del libro <em>&quot;Un Jaguar en Tierra de Elefantes&quot;</em> cuando esté listo.
+            </p>
           </div>
         </div>
 
         {/* Right: Contact form */}
-        <div className="bg-bg-secondary border border-gray-800 rounded-xl p-6 md:p-8">
-          <h3 className="text-lg font-bold text-text mb-6">Envíame un mensaje</h3>
+        <div id="contact-form" className="bg-bg-secondary border border-gray-800 rounded-xl p-6 md:p-8">
+          <div className="mb-6">
+            <h3 className="text-lg font-bold text-text mb-2">¿Sobre qué hablamos?</h3>
+            <p className="text-text-muted text-sm">
+              <span className="inline-block mr-3">🎤 <span className="text-text">Charla / conferencia</span></span>
+              <span className="inline-block mr-3">🤝 <span className="text-text">Consultoría</span></span>
+              <span className="inline-block mr-3">📰 <span className="text-text">Prensa</span></span>
+              <span className="inline-block">🧪 <span className="text-text">Investigación / tesis</span></span>
+            </p>
+          </div>
 
           {status === 'success' ? (
             <div className="text-center py-12">

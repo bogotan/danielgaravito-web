@@ -1,0 +1,39 @@
+<svg viewBox="0 0 800 1100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B0B0F"/>
+      <stop offset="60%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0d4f3c"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1100" fill="url(#bg)"/>
+  <!-- Sutil patrón -->
+  <g opacity="0.06" fill="#FCD34D">
+    <circle cx="100" cy="200" r="3"/><circle cx="200" cy="100" r="3"/><circle cx="300" cy="250" r="3"/>
+    <circle cx="500" cy="180" r="3"/><circle cx="650" cy="120" r="3"/><circle cx="700" cy="280" r="3"/>
+    <circle cx="120" cy="900" r="3"/><circle cx="280" cy="950" r="3"/><circle cx="500" cy="920" r="3"/>
+  </g>
+  <!-- Manchas de jaguar -->
+  <g opacity="0.10" fill="#F59E0B">
+    <ellipse cx="180" cy="450" rx="22" ry="14"/>
+    <ellipse cx="240" cy="510" rx="18" ry="12"/>
+    <ellipse cx="600" cy="430" rx="20" ry="13"/>
+    <ellipse cx="650" cy="500" rx="16" ry="11"/>
+  </g>
+  <!-- Jaguar emoji símbolo -->
+  <text x="400" y="540" text-anchor="middle" font-size="180" opacity="0.85">🐆</text>
+  <!-- Título principal -->
+  <text x="400" y="730" text-anchor="middle" fill="url(#title)" font-family="Georgia, serif" font-size="62" font-weight="bold">Un Jaguar</text>
+  <text x="400" y="800" text-anchor="middle" fill="url(#title)" font-family="Georgia, serif" font-size="62" font-weight="bold">en Tierra</text>
+  <text x="400" y="870" text-anchor="middle" fill="url(#title)" font-family="Georgia, serif" font-size="62" font-weight="bold">de Elefantes</text>
+  <!-- Línea separadora -->
+  <line x1="280" y1="920" x2="520" y2="920" stroke="#F59E0B" stroke-width="2" opacity="0.6"/>
+  <!-- Subtítulo -->
+  <text x="400" y="970" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="22" opacity="0.8">El camino del pagador inteligente</text>
+  <!-- Autor -->
+  <text x="400" y="1050" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="26" font-weight="bold" letter-spacing="3">DANIEL GARAVITO</text>
+</svg>

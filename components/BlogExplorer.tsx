@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import { getThemeFromCategory } from '@/lib/themes';
 
 interface BlogPostData {
   slug: string;
@@ -9,6 +10,7 @@ interface BlogPostData {
   date: string;
   excerpt: string;
   tags: string[];
+  category: string;
   updated: boolean;
   originalDate: string;
   readingTime: number;
@@ -290,23 +292,38 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
               href={`/blog/${post.slug}`}
               className="group bg-bg-secondary border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-gray-600 hover:shadow-lg hover:shadow-accent-blue/5 hover:translate-y-[-2px]"
             >
-              {/* Card cover */}
-              <div
-                className="h-36 w-full relative"
-                style={{ background: getCoverGradient(post.slug) }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary to-transparent opacity-60" />
-                <div className="absolute bottom-3 left-4 right-4">
-                  <div className="flex items-center gap-2">
-                    {post.updated && (
-                      <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-medium">
-                        Actualizado
-                      </span>
-                    )}
-                    <span className="text-[10px] text-white/70">{post.readingTime} min</span>
+              {/* Card cover — doble capa: identidad del universo temático + cover personalizado */}
+              {(() => {
+                const theme = getThemeFromCategory(post.category);
+                return (
+                  <div
+                    className="h-40 w-full relative overflow-hidden"
+                    style={{ background: theme.universeGradient }}
+                  >
+                    {/* Patrón temático grande de fondo (identidad del universo) */}
+                    <div className="absolute -right-2 top-1/2 -translate-y-1/2 text-[150px] opacity-30 select-none pointer-events-none leading-none">
+                      {theme.pattern}
+                    </div>
+                    {/* Badge del universo */}
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-[11px] font-semibold text-white">
+                      <span>{theme.icon}</span>
+                      <span>{theme.label}</span>
+                    </div>
+                    {/* Gradient overlay para legibilidad */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary/90 via-bg-secondary/30 to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <div className="flex items-center gap-2">
+                        {post.updated && (
+                          <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-medium">
+                            Actualizado
+                          </span>
+                        )}
+                        <span className="text-[10px] text-white/90">{post.readingTime} min</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                );
+              })()}
 
               <div className="p-5">
                 <div className="text-xs text-text-muted mb-2">

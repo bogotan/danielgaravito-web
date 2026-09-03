@@ -3,6 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import { getThemeFromCategory } from '@/lib/themes';
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
@@ -79,22 +80,34 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   const updated = data.updated === 'true';
   const excerpt = data.excerpt as string;
   const cover = getCoverGradient(params.slug);
+  const theme = getThemeFromCategory(data.category as string);
   const readingTime = getReadingTime(body);
 
   return (
     <div className="min-h-screen">
-      {/* Cover image / gradient hero */}
+      {/* Cover doble capa: universo temático + cover personalizado */}
       <div
-        className="relative w-full h-64 md:h-80 flex items-end"
-        style={{
-          background: `linear-gradient(135deg, ${cover.from} 0%, ${cover.via} 50%, ${cover.to} 100%)`,
-        }}
+        className="relative w-full h-72 md:h-96 flex items-end overflow-hidden"
+        style={{ background: theme.universeGradient }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent" />
+        {/* Patrón temático enorme de fondo */}
+        <div className="absolute -right-6 top-1/2 -translate-y-1/2 text-[320px] md:text-[520px] opacity-30 select-none pointer-events-none leading-none">
+          {theme.pattern}
+        </div>
+
+        {/* Badge de universo */}
+        <div className="absolute top-6 left-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/30 text-sm font-semibold text-white">
+          <span className="text-lg">{theme.icon}</span>
+          <span>{theme.label}</span>
+        </div>
+
+        {/* Gradient de legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/30 to-transparent" />
+
         <div className="relative max-w-3xl mx-auto w-full px-4 sm:px-6 pb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm mb-4"
+            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm mb-4"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

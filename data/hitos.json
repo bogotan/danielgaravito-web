@@ -5,7 +5,7 @@
     "title": "HIMSS Executive Summit Colombia",
     "desc": "Innovación y Analítica en ADRES — Transformación digital del sistema de salud. Bogotá.",
     "type": "charla",
-    "image": "/foto-himss.png",
+    "image": "",
     "url": "https://www.youtube.com/watch?v=CFR88Nz2fvs",
     "highlight": true,
     "color": "#1DB954"
@@ -14,7 +14,7 @@
     "year": 2024,
     "emoji": "🤖",
     "title": "Asesor de Innovación — ADRES",
-    "desc": "Liderando analítica avanzada e IA para los recursos de salud de 52 millones de colombianos.",
+    "desc": "Acompaño al equipo de Innovación y Analítica de ADRES en analítica avanzada e IA para los recursos de salud de 52 millones de colombianos.",
     "type": "hito",
     "image": "",
     "url": "",
@@ -31,17 +31,6 @@
     "url": "",
     "highlight": true,
     "color": "#F0B429"
-  },
-  {
-    "year": 2023,
-    "emoji": "🎧",
-    "title": "EducALL \"Celebremos Colombia\"",
-    "desc": "Evento celebrando el impacto de Llamadas para Educar en comunidades colombianas.",
-    "type": "video",
-    "image": "",
-    "url": "https://www.youtube.com/watch?v=DvQ3e2IsyB8",
-    "highlight": false,
-    "color": "#0A6EBF"
   },
   {
     "year": 2023,
@@ -157,11 +146,22 @@
     "year": 2026,
     "emoji": "📊",
     "title": "Sala de Inteligencia ADRES",
-    "desc": "Dashboards en vivo para monitorear los recursos del sistema de salud colombiano.",
+    "desc": "Iniciativa institucional ADRES con dashboards en vivo para monitorear los recursos del sistema de salud. Hago parte del equipo que la desarrolla.",
     "type": "proyecto",
     "image": "",
     "url": "",
     "highlight": false,
     "color": "#0A6EBF"
+  },
+  {
+    "year": 2025,
+    "emoji": "👶",
+    "title": "Nace Liam G.",
+    "desc": "Nace el 21 de junio de 2025. El hito más importante. Todo lo demás se reordena en torno a él.",
+    "type": "hito",
+    "image": "",
+    "url": "",
+    "highlight": true,
+    "color": "#22d3ee"
   }
 ]

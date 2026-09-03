@@ -36,6 +36,8 @@ const navLinks = [
   { href: '/#trayectoria', label: 'Trayectoria' },
   { href: '/#media', label: 'En Acci\u00f3n' },
   { href: '/blog', label: 'Blog' },
+  { href: '/libros', label: 'Libros' },
+  { href: '/etica', label: '\u00c9tica' },
   { href: '/#contacto', label: 'Contacto' },
 ];
 

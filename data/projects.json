@@ -22,7 +22,7 @@
       "color": "from-accent-green to-accent-blue",
       "status": "Listo para lanzamiento",
       "statusCategory": "pre-launch",
-      "url": "",
+      "url": "https://simnacer.com",
       "progress": 85,
       "owners": [
         "🐙 PULPO",
@@ -70,14 +70,15 @@
       "blockers": [
         "Deploy pendiente hace 5 semanas consecutivas (P0 critico)"
       ],
-      "deadline": "2026-05-15"
+      "deadline": "2026-05-15",
+      "public": true
     },
     {
       "slug": "sia",
       "emoji": "🔍",
       "title": "SIA",
-      "subtitle": "Sistema Inteligente de Auditoría",
-      "description": "Plataforma de auditoría potenciada con IA para el sector salud colombiano. Detecta anomalías y optimiza recursos. Aplicación directa del inventario Databricks ADRES.",
+      "subtitle": "Iniciativa institucional ADRES",
+      "description": "Iniciativa de ADRES de auditoría potenciada con IA para el sector salud colombiano. Hago parte del equipo de Innovación y Analítica que acompaña su diseño y arquitectura.",
       "tags": [
         "IA",
         "Salud",
@@ -143,14 +144,15 @@
         "Sin reunión de arquitectura agendada",
         "Evaluar congelar si no se mueve en sprint 17"
       ],
-      "deadline": "2026-09-30"
+      "deadline": "2026-09-30",
+      "public": true
     },
     {
       "slug": "sala-inteligencia-adres",
       "emoji": "📊",
       "title": "Sala de Inteligencia ADRES",
-      "subtitle": "Analítica en vivo del sistema de salud",
-      "description": "Dashboards en tiempo real para monitorear los recursos del sistema de salud de 52 millones de colombianos. Datos para decisiones que salvan vidas.",
+      "subtitle": "Iniciativa institucional ADRES",
+      "description": "Iniciativa institucional de ADRES con dashboards en vivo para monitorear los recursos del sistema de salud de 52 millones de colombianos. Hago parte del equipo que la desarrolla y mantiene.",
       "tags": [
         "Datos",
         "Dashboard",
@@ -160,7 +162,7 @@
       "color": "from-accent-blue to-blue-400",
       "status": "Operativo",
       "statusCategory": "active",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=7LBM8KckIWU",
       "progress": 60,
       "owners": [
         "🦗 MANTIS",
@@ -207,24 +209,24 @@
         }
       ],
       "blockers": [],
-      "deadline": "2026-07-31"
+      "deadline": "2026-07-31",
+      "public": true
     },
     {
       "slug": "libro-jaguar",
-      "emoji": "📖",
-      "title": "Un Jaguar en Tierra de Elefantes",
-      "subtitle": "Libro sobre innovar desde el sector público",
-      "description": "El business case de innovar desde el sector público colombiano. Una reflexión sobre cómo competir siendo jaguar en un mundo de elefantes. Masa crítica lista; 37 ideas procesadas.",
+      "emoji": "📚",
+      "title": "Libros",
+      "subtitle": "Dos libros en escritura",
+      "description": "Un Jaguar en Tierra de Elefantes y De la Opacidad a la Transparencia. Suscríbete para recibir avances y aviso de lanzamiento.",
       "tags": [
-        "Libro",
-        "Innovación",
-        "Sector público",
-        "Ensayo"
+        "Libros",
+        "Salud pública",
+        "Innovación"
       ],
-      "color": "from-accent-gold to-orange-400",
+      "color": "from-accent-gold to-accent-green",
       "status": "Pre-escritura (masa critica)",
       "statusCategory": "writing",
-      "url": "",
+      "url": "/libros",
       "progress": 40,
       "owners": [
         "🐜 HORMIGA",
@@ -290,7 +292,8 @@
       "blockers": [
         "Capítulo 1 pendiente pese a tener masa crítica lista"
       ],
-      "deadline": "2026-12-31"
+      "deadline": "2026-12-31",
+      "public": true
     },
     {
       "slug": "babytongues",
@@ -307,7 +310,7 @@
       "color": "from-accent-green to-emerald-400",
       "status": "v4.1 — Security + Ideogramas 1:1",
       "statusCategory": "active",
-      "url": "",
+      "url": "https://babytongues.com",
       "progress": 75,
       "owners": [
         "🐙 PULPO",
@@ -359,7 +362,8 @@
         }
       ],
       "blockers": [],
-      "deadline": "2026-06-30"
+      "deadline": "2026-06-30",
+      "public": true
     },
     {
       "slug": "fuerzag",
@@ -433,7 +437,8 @@
         }
       ],
       "blockers": [],
-      "deadline": "continuo"
+      "deadline": "continuo",
+      "public": true
     },
     {
       "slug": "educall",
@@ -489,7 +494,8 @@
         }
       ],
       "blockers": [],
-      "deadline": "continuo"
+      "deadline": "continuo",
+      "public": true
     },
     {
       "slug": "tesis",
@@ -554,7 +560,8 @@
       "blockers": [
         "Sin pregunta de investigación definida"
       ],
-      "deadline": "2028-12-31"
+      "deadline": "2028-12-31",
+      "public": false
     },
     {
       "slug": "furiosa",
@@ -609,7 +616,8 @@
         }
       ],
       "blockers": [],
-      "deadline": "2026-08-31"
+      "deadline": "2026-08-31",
+      "public": false
     },
     {
       "slug": "metro22",
@@ -657,7 +665,8 @@
         }
       ],
       "blockers": [],
-      "deadline": "2027-12-31"
+      "deadline": "2027-12-31",
+      "public": false
     }
   ]
 }

@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "description": "Frases oficiales de Daniel Garavito — rotan en el Hero del sitio.",
+    "howTo": "Para agregar una frase: abre este archivo, copia un bloque { text, category }, edita y guarda. Categorías existentes: Sentido, Innovación, Suerte, Sector público, Vida. Si creas una nueva categoría, úsala con mayúscula inicial.",
+    "lastUpdated": "2026-04-23"
+  },
+  "quotes": [
+    {
+      "text": "Vinimos al mundo a servir a los demás; esa es la razón por la que estamos aquí.",
+      "category": "Sentido"
+    },
+    {
+      "text": "Una vida que no tiene servicio no vale la pena ser vivida.",
+      "category": "Sentido"
+    },
+    {
+      "text": "Tú no tienes un trabajo en la vida, tú tienes una misión.",
+      "category": "Sentido"
+    },
+    {
+      "text": "Al final, lo importante no es cuánta plata ganes o cuánto código desarrolles, sino a cuántas personas sirves.",
+      "category": "Sentido"
+    },
+    {
+      "text": "Servir a la humanidad es la mejor obra de una vida.",
+      "category": "Sentido"
+    },
+    {
+      "text": "La innovación buena es poder conectar cosas que están muy lejos.",
+      "category": "Innovación"
+    },
+    {
+      "text": "Puede que tu idea sea espantosamente mala, pero tu nivel de desempeño es tan alto que inevitablemente te va a ir bien.",
+      "category": "Innovación"
+    },
+    {
+      "text": "Salta, ya aparecerá el piso. De lo único que te vas a arrepentir es de no haber dado el salto.",
+      "category": "Innovación"
+    },
+    {
+      "text": "No necesitas tecnología increíble, solo saber utilizar la tecnología que ya tienes.",
+      "category": "Innovación"
+    },
+    {
+      "text": "Si no estás enamorado obsesivamente de tu idea y amas el problema profundamente, no hay manera.",
+      "category": "Innovación"
+    },
+    {
+      "text": "La verdadera innovación no consiste en tener lo último, sino en tener la capacidad de aplicarlo hasta lo último.",
+      "category": "Innovación"
+    },
+    {
+      "text": "La suerte es una función de parámetros desconocidos; tú sí puedes maximizar tu suerte.",
+      "category": "Suerte"
+    },
+    {
+      "text": "La inspiración tiene que encontrarte trabajando... pero debe encontrarte trabajado (pulido).",
+      "category": "Suerte"
+    },
+    {
+      "text": "Si la vida te da algo (un talento), lo tienes que usar y lo tienes que maximizar.",
+      "category": "Suerte"
+    },
+    {
+      "text": "El secreto del éxito es ser increíblemente profesional: llegar a tiempo, hacer lo que dices que vas a hacer y aportar valor.",
+      "category": "Suerte"
+    },
+    {
+      "text": "El elefante (Estado) tiene una sabiduría... pero el jaguar (startup) tiene la agilidad. Necesitamos que trabajen juntos.",
+      "category": "Sector público"
+    },
+    {
+      "text": "En lo público, un unicornio no es el que vale mil millones de dólares, sino el que maximiza derechos y recupera años de esperanza de vida.",
+      "category": "Sector público"
+    },
+    {
+      "text": "Un diagnóstico oportuno es la diferencia entre un capítulo difícil de tu historia o el capítulo final.",
+      "category": "Sector público"
+    },
+    {
+      "text": "Transformar la ADRES para transformar el sistema de salud, para transformar y sanar a Colombia.",
+      "category": "Sector público"
+    },
+    {
+      "text": "Financiar al alza un sistema de salud sin corregir el desperdicio y la ineficiencia es, esencialmente, intentar llenar un balde lleno de huecos.",
+      "category": "Sector público"
+    },
+    {
+      "text": "El facilismo en política pública no es neutral: captura el debate en un pulso anual por recursos y posterga las conversaciones grandes que el país necesita tener.",
+      "category": "Sector público"
+    },
+    {
+      "text": "La soberanía tecnológica no es solo procesar datos localmente; es la libertad de decidir qué construimos, sin que cada herramienta sea un veto potencial sobre nuestras decisiones futuras.",
+      "category": "Sector público"
+    },
+    {
+      "text": "Trata tu mente como un museo: expón cosas lindas, de valor, que merezcan ser guardadas.",
+      "category": "Vida"
+    },
+    {
+      "text": "No te quejes, actúa. Si algo te molesta, ahí puede estar tu oportunidad de emprender.",
+      "category": "Vida"
+    },
+    {
+      "text": "Llegar al futuro sin sentir vergüenza; saber que hice todo lo que estaba en mis manos por hacer de este lugar algo mejor.",
+      "category": "Vida"
+    },
+    {
+      "text": "El primer año que no tengas contactos no es tu culpa, pero el segundo año sí, porque es tu deber salir y buscarlos.",
+      "category": "Vida"
+    }
+  ]
+}

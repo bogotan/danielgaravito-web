@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "description": "Catálogo de libros de Daniel Garavito. Fuente única editable. Ningún componente debe duplicar este contenido.",
+    "howTo": "Para agregar un libro, copia un objeto del array 'libros' y edita los campos. Para marcarlo como disponible para descarga, llena 'downloadUrl' (PDF, ePub o link de venta). Mientras esté en 'null', el sitio muestra automáticamente el botón de waitlist.",
+    "lastUpdated": "2026-05-03",
+    "validatedBy": [
+      "BUFALO Red Flag #11",
+      "CANCERBERO C0"
+    ]
+  },
+  "libros": [
+    {
+      "slug": "jaguar-en-tierra-de-elefantes",
+      "title": "Un Jaguar en Tierra de Elefantes",
+      "subtitle": "El camino para ser un pagador inteligente con capacidad, transparencia, eficiencia, equidad y sostenibilidad",
+      "tagline": "Business case académico para escuelas de gobierno y MBA público",
+      "synopsis": "Crónica narrativa sobre cómo una organización pública del sistema de salud colombiano puede convertirse en un pagador inteligente: una entidad que paga con criterio técnico, transparencia y rendición de cuentas. El libro propone un marco conceptual y muestra el camino con metáforas, decisiones arquitectónicas y dilemas reales del sector. Disclaimer: las posiciones del libro son personales y no representan posición institucional alguna.",
+      "audience": "Escuelas de gobierno, programas de MBA público, líderes del sector salud y estudiantes de política pública",
+      "status": "En escritura — semana 3 de 16",
+      "expectedRelease": "Q3 2026",
+      "deadlineLabel": "27 de julio de 2026",
+      "chaptersTotal": 22,
+      "chaptersDone": 1,
+      "cover": "/libros/jaguar-cover.svg",
+      "color": "from-accent-gold to-accent-green",
+      "pillarThemes": [
+        "Pagador inteligente",
+        "Capacidad institucional",
+        "Transparencia",
+        "Eficiencia",
+        "Equidad",
+        "Sostenibilidad"
+      ],
+      "downloadUrl": null,
+      "previewUrl": null,
+      "newsletterSource": "book-jaguar",
+      "isbn": null,
+      "publisher": null
+    },
+    {
+      "slug": "de-la-opacidad-a-la-transparencia",
+      "title": "De la Opacidad a la Transparencia",
+      "subtitle": "El Camino del Pagador Inteligente",
+      "tagline": "Manifiesto técnico sobre cómo evolucionar el rol del pagador desde la opacidad reactiva hacia la rendición de cuentas con datos",
+      "synopsis": "Propuesta personal y académica sobre cómo el rol del pagador en sistemas de salud puede evolucionar de un esquema reactivo a uno predictivo, basado en valor y con responsabilidad ética. El libro recoge once capítulos que articulan una ecuación maestra para conectar liquidez, calidad del dato e interoperabilidad con resultados poblacionales en salud. Las ideas aquí presentadas son del autor y no comprometen a entidad alguna.",
+      "audience": "Tomadores de decisión sectorial, prensa especializada, academia, comunidad de innovación pública en salud",
+      "status": "Sprint activo — 3 capítulos publicables, 7 en borrador",
+      "expectedRelease": "Q4 2026",
+      "deadlineLabel": "Diciembre 2026",
+      "chaptersTotal": 13,
+      "chaptersDone": 3,
+      "cover": "/libros/paradigma-cover.svg",
+      "color": "from-accent-blue to-accent-green",
+      "pillarThemes": [
+        "Pagador inteligente",
+        "Interoperabilidad",
+        "Calidad del dato",
+        "Resultados en salud",
+        "Ética del dato"
+      ],
+      "thesis": "Una propuesta para que el rol del pagador en sistemas de salud evolucione hacia un esquema predictivo, basado en valor poblacional y operado con responsabilidad ética. La transformación parte de mejor calibración del termómetro antes que de más recursos.",
+      "masterEquation": "Liquidez = Interoperabilidad + Calidad del Dato + Resultados en Salud",
+      "anchorQuote": "Sin eficiencia, no hay suficiencia.",
+      "downloadUrl": null,
+      "previewUrl": null,
+      "newsletterSource": "book-paradigma",
+      "isbn": null,
+      "publisher": null
+    }
+  ]
+}
