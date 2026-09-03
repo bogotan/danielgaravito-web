@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const stats = [
   { value: '1K+', label: 'Vidas impactadas por EducALL' },
-  { value: '52M', label: 'Colombianos al alcance de ADRES' },
+  { value: '52M', label: 'Colombianos en el sistema que analizo' },
   { value: '10+', label: 'Años en datos y salud' },
 ];
 
@@ -61,13 +61,19 @@ export default function About() {
             </p>
 
             <p>
-              Como <span className="text-accent-blue font-medium">asesor en ADRES</span>,
-              acompaño al equipo en analítica avanzada e inteligencia artificial al
-              servicio del sistema de salud de más de 52 millones de colombianos. Hago
-              parte del equipo de la{' '}
-              <span className="text-text font-semibold">Sala de Inteligencia</span>,
-              una iniciativa institucional de ADRES, donde el equipo desarrolla
-              herramientas de auditoría con IA.
+              Durante cuatro años dirigí{' '}
+              <span className="text-accent-blue font-medium">
+                Innovación y Analítica en ADRES
+              </span>
+              , un área que se creó desde cero y llegó a setenta personas,
+              aplicando analítica avanzada e inteligencia artificial a la
+              gestión de los recursos del sistema de salud de 52 millones de
+              colombianos. Salí en agosto de 2026. Hoy hago ese mismo trabajo
+              desde afuera, con datos abiertos y método reproducible —{' '}
+              <a href="/etica" className="text-accent-blue hover:underline">
+                bajo estas reglas
+              </a>
+              .
             </p>
 
             <p>

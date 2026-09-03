@@ -6,9 +6,9 @@ import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Daniel Garavito | Innovaci\u00f3n, Datos y Salud P\u00fablica',
+  title: 'Daniel Garavito | Anal\u00edtica y Salud P\u00fablica',
   description:
-    'Economista, cient\u00edfico de datos y emprendedor social colombiano. Asesor en ADRES, fundador de EducALL, creador de NACER y apasionado por la intersecci\u00f3n entre datos, salud p\u00fablica e innovaci\u00f3n.',
+    'Investigaci\u00f3n aplicada, formaci\u00f3n y consultor\u00eda anal\u00edtica en salud. Dirigi\u00f3 Innovaci\u00f3n y Anal\u00edtica en ADRES hasta 2026; hoy trabaja de forma independiente con datos abiertos y m\u00e9todo reproducible. Fundador de EducALL y creador de NACER.',
   keywords: [
     'Daniel Garavito',
     'economista',
@@ -19,12 +19,13 @@ export const metadata: Metadata = {
     'EducALL',
     'NACER',
     'ADRES',
-    'emprendedor social',
+    'consultor\u00eda',
+    'datos abiertos',
   ],
   openGraph: {
-    title: 'Daniel Garavito | Innovaci\u00f3n, Datos y Salud P\u00fablica',
+    title: 'Daniel Garavito | Anal\u00edtica y Salud P\u00fablica',
     description:
-      'Economista, cient\u00edfico de datos y emprendedor social colombiano.',
+      'Investigaci\u00f3n aplicada, formaci\u00f3n y consultor\u00eda anal\u00edtica en salud. Datos abiertos, m\u00e9todo reproducible.',
     type: 'website',
     locale: 'es_CO',
   },
@@ -35,9 +36,9 @@ const navLinks = [
   { href: '/#proyectos', label: 'Proyectos' },
   { href: '/#trayectoria', label: 'Trayectoria' },
   { href: '/#media', label: 'En Acci\u00f3n' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/blog', label: 'Escritos' },
   { href: '/libros', label: 'Libros' },
-  { href: '/etica', label: '\u00c9tica' },
+  { href: '/etica', label: 'Independencia' },
   { href: '/#contacto', label: 'Contacto' },
 ];
 
