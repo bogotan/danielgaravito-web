@@ -5,6 +5,7 @@ excerpt: "Analisis de sostenibilidad, relacion deuda/PIB, servicio de la deuda, 
 tags: ["economia", "deuda publica", "Colombia", "finanzas publicas", "R", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/a1"
 category: "economia"
+track: "analisis"
 ---
 
 # Deuda Publica de Colombia: Analisis Parte II

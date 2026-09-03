@@ -5,6 +5,7 @@ excerpt: "Analisis epidemiologico de tuberculosis: incidencia, mortalidad, facto
 tags: ["epidemiologia", "tuberculosis", "salud publica", "R", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/Tuberculosis"
 category: "salud"
+track: "analisis"
 ---
 
 # Tuberculosis: Analisis Epidemiologico

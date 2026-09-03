@@ -5,6 +5,7 @@ excerpt: "Distribuciones especiales: binomial, Poisson, normal, exponencial. Pro
 tags: ["probabilidad", "distribuciones", "binomial", "normal", "Poisson", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/DistProb"
 category: "estadistica"
+track: "aula"
 ---
 
 # Distribuciones de Probabilidad

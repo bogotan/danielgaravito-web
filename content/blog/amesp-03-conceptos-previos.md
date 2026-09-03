@@ -5,6 +5,7 @@ excerpt: "Conceptos fundamentales de algebra lineal y estadistica necesarios par
 tags: ["estadistica", "algebra lineal", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP3ConceptosPrevios"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 3: Conceptos Previos de Algebra y Estadistica

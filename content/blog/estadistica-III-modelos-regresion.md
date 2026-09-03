@@ -4,6 +4,7 @@ date: "2019-03-15"
 excerpt: "Curso de modelos de regresion lineal: desde la introduccion teorica hasta inferencia, con talleres practicos en R."
 tags: ["estadistica", "R", "regresion", "modelos lineales", "educacion", "RPubs"]
 category: "clase"
+track: "aula"
 ---
 
 # Serie Estadistica III: Modelos de Regresion con R

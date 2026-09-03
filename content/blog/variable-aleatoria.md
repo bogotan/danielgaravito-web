@@ -5,6 +5,7 @@ excerpt: "Definicion, funcion de masa y densidad, esperanza matematica, varianza
 tags: ["probabilidad", "variable aleatoria", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/VariableAleatoria"
 category: "estadistica"
+track: "aula"
 ---
 
 # Variable Aleatoria

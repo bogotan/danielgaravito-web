@@ -5,6 +5,7 @@ excerpt: "Fundamentos de la estadistica: conceptos basicos, metodos de recolecci
 tags: ["estadistica", "fundamentos", "variables", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/concep_metodos_vars"
 category: "estadistica"
+track: "aula"
 ---
 
 # Conceptos, Metodos y Variables Estadisticas

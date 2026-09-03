@@ -5,6 +5,7 @@ excerpt: "Variogramas, kriging ordinario, kriging universal. Prediccion espacial
 tags: ["estadistica", "geoestadistica", "kriging", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP10Geoestadistica"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 10: Geoestadistica y Kriging

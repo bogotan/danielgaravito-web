@@ -5,6 +5,7 @@ excerpt: "Medidas de relacion lineal entre variables cuantitativas: covarianza, 
 tags: ["estadistica", "correlacion", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/covarianza_correlacion"
 category: "estadistica"
+track: "aula"
 ---
 
 # Covarianza y Correlacion

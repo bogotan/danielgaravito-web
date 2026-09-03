@@ -4,6 +4,7 @@ date: "2016-09-15"
 excerpt: "Analisis en dos partes de la deuda publica colombiana con datos oficiales y visualizaciones en R."
 tags: ["economia", "R", "deuda publica", "Colombia", "finanzas publicas", "RPubs"]
 category: "investigacion"
+track: "analisis"
 ---
 
 # Deuda Publica de Colombia: Analisis en R

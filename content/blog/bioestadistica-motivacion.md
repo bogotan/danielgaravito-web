@@ -5,6 +5,7 @@ excerpt: "Introduccion y motivacion a la bioestadistica aplicada. Casos reales d
 tags: ["bioestadistica", "salud publica", "educacion", "R", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/Bioestadistica_motivacion_curso"
 category: "salud"
+track: "aula"
 ---
 
 # Bioestadistica: Por Que un Profesional de Salud Necesita Estadistica

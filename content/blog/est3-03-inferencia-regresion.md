@@ -5,6 +5,7 @@ excerpt: "Inferencia en el modelo de regresion: pruebas de hipotesis, intervalos
 tags: ["estadistica", "inferencia", "regresion", "ANOVA", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/EstIII_3_Modelos_Regresion_lineales_inferencia"
 category: "estadistica"
+track: "aula"
 ---
 
 # Estadistica III: Inferencia en Regresion Lineal

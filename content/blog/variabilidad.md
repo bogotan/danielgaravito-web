@@ -5,6 +5,7 @@ excerpt: "Rango, varianza, desviacion estandar, coeficiente de variacion."
 tags: ["estadistica", "descriptiva", "varianza", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/variabilidad"
 category: "estadistica"
+track: "aula"
 ---
 
 # Medidas de Variabilidad

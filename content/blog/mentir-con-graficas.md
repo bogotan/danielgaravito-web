@@ -5,6 +5,7 @@ excerpt: "Como las graficas pueden distorsionar la realidad: ejes truncados, esc
 tags: ["visualizacion", "estadistica", "etica", "graficas", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/MentirGraficas"
 category: "estadistica"
+track: "analisis"
 ---
 
 # Mentir con Graficas: Como los Datos Enganan

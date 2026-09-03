@@ -5,6 +5,7 @@ excerpt: "Extension del analisis de correspondencias a multiples variables categ
 tags: ["estadistica", "ACM", "categoricas", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP6ACM"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 6: Analisis de Correspondencias Multiples (ACM)

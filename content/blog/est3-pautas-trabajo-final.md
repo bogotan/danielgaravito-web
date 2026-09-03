@@ -5,6 +5,7 @@ excerpt: "Guia completa para el trabajo final del curso de Estadistica III."
 tags: ["estadistica", "regresion", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/EstIII_3_Pautas_Trabajo_Final"
 category: "estadistica"
+track: "aula"
 ---
 
 # Estadistica III: Pautas del Trabajo Final

@@ -5,6 +5,7 @@ excerpt: "Analisis de correspondencias simples para tablas de contingencia."
 tags: ["estadistica", "correspondencias", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP5ACS"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 5: Analisis de Correspondencias Simples

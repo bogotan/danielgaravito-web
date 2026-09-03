@@ -5,6 +5,7 @@ excerpt: "Media, mediana, moda y cuantiles. Cuando usar cada medida y sus propie
 tags: ["estadistica", "descriptiva", "media", "mediana", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/Medidas_tendencia_central"
 category: "estadistica"
+track: "aula"
 ---
 
 # Medidas de Tendencia Central

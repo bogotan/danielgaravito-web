@@ -5,6 +5,7 @@ excerpt: "Analisis de brechas en esperanza de vida entre departamentos colombian
 tags: ["salud publica", "esperanza de vida", "Colombia", "R", "desigualdad", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/EsperanzaVida"
 category: "salud"
+track: "analisis"
 ---
 
 # Esperanza de Vida: Analisis de Brechas en Colombia

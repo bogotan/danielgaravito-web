@@ -4,6 +4,7 @@ date: "2023-06-15"
 excerpt: "Investigacion aplicada en salud publica con R: esperanza de vida, economia de la salud, tuberculosis, UPC diferencial, habilitacion, estadistica bayesiana y epidemiologia."
 tags: ["salud publica", "bioestadistica", "R", "epidemiologia", "economia de la salud", "educacion", "RPubs"]
 category: "investigacion"
+track: "aula"
 ---
 
 # Bioestadistica y Salud Publica: Investigacion Aplicada con R

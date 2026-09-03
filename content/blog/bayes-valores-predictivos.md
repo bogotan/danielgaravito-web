@@ -5,6 +5,7 @@ excerpt: "Aplicacion del teorema de Bayes a valores predictivos: sensibilidad, e
 tags: ["bioestadistica", "Bayes", "salud publica", "educacion", "R", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/BayesValoresPredictivos"
 category: "salud"
+track: "aula"
 ---
 
 # Estadistica Bayesiana: Valores Predictivos en Salud

@@ -9,6 +9,7 @@ interface BlogPostData {
   excerpt: string;
   tags: string[];
   category: string;
+  track: string;
   updated: boolean;
   originalDate: string;
   readingTime: number;
@@ -62,6 +63,7 @@ function getBlogPosts(): BlogPostData[] {
         readingTime,
         wordCount,
         category: (data.category as string) || '',
+        track: (data.track as string) || 'aula',
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

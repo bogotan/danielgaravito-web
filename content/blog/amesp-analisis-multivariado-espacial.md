@@ -4,6 +4,7 @@ date: "2019-06-15"
 excerpt: "Curso completo de 12 modulos sobre analisis multivariado y espacial aplicado con R. Desde PCA hasta geoestadistica y modelos de datos por areas."
 tags: ["estadistica", "R", "analisis espacial", "geoestadistica", "PCA", "educacion", "RPubs"]
 category: "clase"
+track: "aula"
 ---
 
 # Serie AMESP: Analisis Multivariado y Espacial en R

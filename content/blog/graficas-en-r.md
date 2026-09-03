@@ -5,6 +5,7 @@ excerpt: "Visualizacion de datos con R: histogramas, boxplots, scatter plots, in
 tags: ["R", "visualizacion", "ggplot2", "graficas", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/GraficasR"
 category: "estadistica"
+track: "aula"
 ---
 
 # Graficas en R: Visualizacion de Datos

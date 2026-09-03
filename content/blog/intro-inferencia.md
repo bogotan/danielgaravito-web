@@ -5,6 +5,7 @@ excerpt: "Del dato a la conclusion: poblacion, muestra, parametro, estimador, di
 tags: ["inferencia", "estadistica", "muestreo", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/IntroInferencia"
 category: "estadistica"
+track: "aula"
 ---
 
 # Introduccion a la Inferencia Estadistica

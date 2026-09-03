@@ -5,6 +5,7 @@ excerpt: "Primeros pasos en R: instalacion, operaciones basicas, estructuras de 
 tags: ["R", "programacion", "pensamiento computacional", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/PensamientoComputacional_Rintro"
 category: "estadistica"
+track: "aula"
 ---
 
 # Pensamiento Computacional: Introduccion a R

@@ -5,6 +5,7 @@ excerpt: "Medidas fundamentales en epidemiologia: prevalencia, incidencia, tasas
 tags: ["epidemiologia", "salud publica", "educacion", "R", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/Razones_Proporciones_Tasas"
 category: "salud"
+track: "aula"
 ---
 
 # Razones, Proporciones y Tasas en Epidemiologia

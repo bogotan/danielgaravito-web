@@ -5,6 +5,7 @@ excerpt: "Teoria: hipotesis nula, alternativa, estadistico de prueba, p-valor, e
 tags: ["inferencia", "pruebas hipotesis", "p-valor", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/PruebasHipo"
 category: "estadistica"
+track: "aula"
 ---
 
 # Pruebas de Hipotesis

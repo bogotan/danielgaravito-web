@@ -5,6 +5,7 @@ excerpt: "Los dos teoremas mas importantes de la estadistica, demostrados con si
 tags: ["estadistica", "TLC", "ley grandes numeros", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/TLC"
 category: "estadistica"
+track: "aula"
 ---
 
 # Teorema del Limite Central y Ley de Grandes Numeros

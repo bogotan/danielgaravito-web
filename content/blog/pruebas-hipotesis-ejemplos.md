@@ -5,6 +5,7 @@ excerpt: "Ejemplos practicos de pruebas Z, t de Student y chi-cuadrado con datos
 tags: ["inferencia", "pruebas hipotesis", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/PruebasHipoEj"
 category: "estadistica"
+track: "aula"
 ---
 
 # Pruebas de Hipotesis: Ejemplos Practicos

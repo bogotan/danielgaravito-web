@@ -11,6 +11,7 @@ interface BlogPostData {
   excerpt: string;
   tags: string[];
   category: string;
+  track: string;
   updated: boolean;
   originalDate: string;
   readingTime: number;
@@ -57,34 +58,69 @@ function getTagColor(tag: string): { bg: string; border: string; text: string } 
 }
 
 type ViewMode = 'grid' | 'timeline' | 'stream';
+type Track = 'todos' | 'analisis' | 'aula';
+
+const TRACKS: { key: Track; label: string; blurb: string }[] = [
+  {
+    key: 'analisis',
+    label: 'An\u00e1lisis',
+    blurb: 'Lo que pienso sobre el sistema de salud colombiano: UPC, aseguramiento, gasto p\u00fablico. Con datos abiertos y c\u00f3digo reproducible.',
+  },
+  {
+    key: 'aula',
+    label: 'Aula',
+    blurb: 'Material de mis cursos de estad\u00edstica, bioestad\u00edstica y an\u00e1lisis espacial en R. Pensado para estudiantes, ordenado por serie.',
+  },
+  {
+    key: 'todos',
+    label: 'Todo',
+    blurb: 'Las dos cosas juntas, m\u00e1s reciente primero.',
+  },
+];
 
 export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
   const [search, setSearch] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [yearFilter, setYearFilter] = useState<string | null>(null);
+  const [track, setTrack] = useState<Track>('analisis');
+
+  const trackCounts = useMemo(() => {
+    const c: Record<string, number> = { todos: posts.length, analisis: 0, aula: 0 };
+    posts.forEach((p) => {
+      if (p.track === 'analisis') c.analisis += 1;
+      else c.aula += 1;
+    });
+    return c;
+  }, [posts]);
+
+  // Posts limited to the active track — everything else derives from this
+  const trackPosts = useMemo(
+    () => (track === 'todos' ? posts : posts.filter((p) => (p.track || 'aula') === track)),
+    [posts, track]
+  );
 
   // Get all unique tags with counts
   const tagCounts = useMemo(() => {
     const counts: Record<string, number> = {};
-    posts.forEach((p) => p.tags.forEach((t) => {
+    trackPosts.forEach((p) => p.tags.forEach((t) => {
       counts[t] = (counts[t] || 0) + 1;
     }));
     return Object.entries(counts).sort((a, b) => b[1] - a[1]);
-  }, [posts]);
+  }, [trackPosts]);
 
   // Get years for timeline
   const years = useMemo(() => {
     const y = new Set<string>();
-    posts.forEach((p) => {
+    trackPosts.forEach((p) => {
       if (p.date) y.add(new Date(p.date).getFullYear().toString());
     });
     return Array.from(y).sort((a, b) => parseInt(b) - parseInt(a));
-  }, [posts]);
+  }, [trackPosts]);
 
   // Filter posts
   const filtered = useMemo(() => {
-    return posts.filter((post) => {
+    return trackPosts.filter((post) => {
       // Search filter
       if (search) {
         const q = search.toLowerCase();
@@ -106,7 +142,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
       }
       return true;
     });
-  }, [posts, search, selectedTags, yearFilter]);
+  }, [trackPosts, search, selectedTags, yearFilter]);
 
   // Group by year for timeline view
   const groupedByYear = useMemo(() => {
@@ -150,20 +186,54 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
   return (
     <div className="section-container">
       {/* Header */}
-      <div className="mb-10">
+      <div className="mb-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-3">
           <span className="bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(to right, #1565C0, #13AFF0, #F07B2E)'}}>
-            Blog
+            Escritos
           </span>
         </h1>
         <p className="text-text-muted text-lg max-w-2xl">
-          Reflexiones sobre datos, salud p&uacute;blica, innovaci&oacute;n, econom&iacute;a y emprendimiento social.
+          Aqu&iacute; conviven dos cosas distintas: an&aacute;lisis del sistema de salud y
+          material de clase. Elija por cu&aacute;l vino.
         </p>
-        <div className="flex items-center gap-2 mt-2 text-text-muted text-sm">
-          <span>{posts.length} art&iacute;culos</span>
-          <span>&middot;</span>
-          <span>{tagCounts.length} tem&aacute;ticas</span>
+      </div>
+
+      {/* Track switch — la separación principal */}
+      <div className="mb-8">
+        <div
+          className="inline-flex flex-wrap gap-1 p-1 rounded-xl bg-bg-secondary border border-gray-700"
+          role="tablist"
+          aria-label="Tipo de escrito"
+        >
+          {TRACKS.map((t) => {
+            const active = track === t.key;
+            return (
+              <button
+                key={t.key}
+                role="tab"
+                aria-selected={active}
+                onClick={() => {
+                  setTrack(t.key);
+                  setSelectedTags([]);
+                  setYearFilter(null);
+                }}
+                className={`flex items-baseline gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  active
+                    ? 'bg-accent-blue text-white'
+                    : 'text-text-muted hover:text-text'
+                }`}
+              >
+                <span>{t.label}</span>
+                <span className={`text-xs font-normal ${active ? 'text-white/70' : 'text-text-muted/70'}`}>
+                  {trackCounts[t.key]}
+                </span>
+              </button>
+            );
+          })}
         </div>
+        <p className="text-text-muted text-sm mt-3 max-w-2xl">
+          {TRACKS.find((t) => t.key === track)?.blurb}
+        </p>
       </div>
 
       {/* Search + View Toggle */}

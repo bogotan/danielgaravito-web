@@ -5,6 +5,7 @@ excerpt: "Introduccion a los principales metodos exploratorios para datos de alt
 tags: ["estadistica", "analisis exploratorio", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP2IntroMetodosExploratorios"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 2: Metodos Exploratorios Multivariados

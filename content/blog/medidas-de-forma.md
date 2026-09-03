@@ -5,6 +5,7 @@ excerpt: "Asimetria y curtosis: como describir la forma de una distribucion."
 tags: ["estadistica", "descriptiva", "asimetria", "curtosis", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/forma"
 category: "estadistica"
+track: "aula"
 ---
 
 # Medidas de Forma: Asimetria y Curtosis

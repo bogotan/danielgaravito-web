@@ -5,6 +5,7 @@ excerpt: "Taller integrador de inferencia estadistica con datos reales."
 tags: ["inferencia", "taller", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/TallerInferencia"
 category: "estadistica"
+track: "aula"
 ---
 
 # Taller Practico de Inferencia Estadistica

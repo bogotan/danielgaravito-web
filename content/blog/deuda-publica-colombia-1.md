@@ -5,6 +5,7 @@ excerpt: "Contexto historico, estructura de la deuda interna y externa, composic
 tags: ["economia", "deuda publica", "Colombia", "finanzas publicas", "R", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/209182"
 category: "economia"
+track: "analisis"
 ---
 
 # Deuda Publica de Colombia: Analisis Parte I

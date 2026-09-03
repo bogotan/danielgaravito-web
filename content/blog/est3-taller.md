@@ -5,6 +5,7 @@ excerpt: "Taller practico con datos reales para aplicar modelos de regresion lin
 tags: ["estadistica", "regresion", "taller", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/EstIII_Taller"
 category: "estadistica"
+track: "aula"
 ---
 
 # Estadistica III: Taller Practico de Regresion

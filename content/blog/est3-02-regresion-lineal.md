@@ -5,6 +5,7 @@ excerpt: "Regresion lineal simple y multiple: estimacion por minimos cuadrados, 
 tags: ["estadistica", "regresion lineal", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/EstIII_2_Modelos_Regresion_lineales"
 category: "estadistica"
+track: "aula"
 ---
 
 # Estadistica III: Modelos de Regresion Lineal

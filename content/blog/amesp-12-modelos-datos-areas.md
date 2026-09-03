@@ -5,6 +5,7 @@ excerpt: "Modelos SAR, CAR y sus variantes para datos espaciales agregados."
 tags: ["estadistica", "SAR", "CAR", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP12ModelosDatosareas"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 12: Modelos para Datos por Areas

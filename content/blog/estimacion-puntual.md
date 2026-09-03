@@ -5,6 +5,7 @@ excerpt: "Metodos de estimacion puntual: momentos, maxima verosimilitud. Propied
 tags: ["inferencia", "estimacion", "maxima verosimilitud", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/EstimacionPuntual"
 category: "estadistica"
+track: "aula"
 ---
 
 # Estimacion Puntual

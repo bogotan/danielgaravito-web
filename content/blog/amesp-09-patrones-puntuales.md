@@ -5,6 +5,7 @@ excerpt: "Analisis de patrones puntuales: CSR, funcion K de Ripley, procesos de 
 tags: ["estadistica", "patrones puntuales", "Ripley", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP9PatronesPuntuales"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 9: Analisis de Patrones Puntuales

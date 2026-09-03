@@ -5,6 +5,7 @@ excerpt: "Introduccion al curso de Analisis Multivariado Espacial. Por que neces
 tags: ["estadistica", "analisis espacial", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP1Motivacion"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 1: Motivacion del Analisis Multivariado Espacial

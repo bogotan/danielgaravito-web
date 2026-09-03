@@ -4,6 +4,7 @@ date: "2018-08-15"
 excerpt: "Curso completo de estadistica fundamental con R: desde medidas descriptivas hasta pruebas de hipotesis, pasando por probabilidad, distribuciones e inferencia."
 tags: ["estadistica", "R", "probabilidad", "inferencia", "educacion", "RPubs"]
 category: "clase"
+track: "aula"
 ---
 
 # Serie Estadistica Fundamental: De la Probabilidad a la Inferencia

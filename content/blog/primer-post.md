@@ -3,6 +3,7 @@ title: "Por qué los datos son el nuevo petróleo del sector público"
 date: "2026-04-15"
 excerpt: "En un país donde las decisiones de salud pública afectan a 52 millones de personas, los datos no son un lujo: son la herramienta más poderosa para cerrar brechas."
 tags: [datos, salud pública, innovación, Colombia]
+track: "analisis"
 ---
 
 ## Los datos como motor de equidad

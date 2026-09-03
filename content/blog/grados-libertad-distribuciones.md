@@ -5,6 +5,7 @@ excerpt: "Chi-cuadrado, t de Student, F de Fisher. Por que importan los grados d
 tags: ["inferencia", "t-Student", "F-Fisher", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/gl_Bessel_distribuciones"
 category: "estadistica"
+track: "aula"
 ---
 
 # Grados de Libertad y Distribuciones Muestrales

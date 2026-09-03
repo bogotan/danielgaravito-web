@@ -5,6 +5,7 @@ excerpt: "Variables categoricas: tablas de contingencia, prueba chi-cuadrado, V 
 tags: ["inferencia", "chi-cuadrado", "categoricas", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/CategoDepend"
 category: "estadistica"
+track: "aula"
 ---
 
 # Variables Categoricas y Pruebas de Dependencia

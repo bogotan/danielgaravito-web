@@ -5,6 +5,7 @@ excerpt: "Teoremas aditivo, multiplicativo, probabilidad total y teorema de Baye
 tags: ["probabilidad", "Bayes", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/TeoremasProb"
 category: "estadistica"
+track: "aula"
 ---
 
 # Teoremas de Probabilidad

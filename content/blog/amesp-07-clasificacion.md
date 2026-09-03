@@ -5,6 +5,7 @@ excerpt: "Metodos de clasificacion: clustering jerarquico, k-means, validacion d
 tags: ["estadistica", "clustering", "k-means", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP7Clasificacion"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 7: Clasificacion y Clustering

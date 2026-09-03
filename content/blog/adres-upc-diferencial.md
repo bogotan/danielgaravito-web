@@ -5,6 +5,7 @@ excerpt: "Analisis de la Unidad de Pago por Capitacion diferencial en el sistema
 tags: ["ADRES", "UPC", "salud publica", "Colombia", "aseguramiento", "R", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/adres_upc"
 category: "salud"
+track: "analisis"
 ---
 
 # ADRES: Analisis de la UPC Diferencial

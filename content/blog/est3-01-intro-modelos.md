@@ -5,6 +5,7 @@ excerpt: "Que es un modelo estadistico, tipos de modelos y supuestos fundamental
 tags: ["estadistica", "modelos", "regresion", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/EstIII_1_Intro_Modelos"
 category: "estadistica"
+track: "aula"
 ---
 
 # Estadistica III: Introduccion a Modelos Estadisticos

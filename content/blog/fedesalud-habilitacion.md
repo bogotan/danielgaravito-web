@@ -5,6 +5,7 @@ excerpt: "Estudio de habilitacion de servicios de salud para la Federacion Colom
 tags: ["salud publica", "habilitacion", "servicios de salud", "Colombia", "R", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/fedesalud_habilitacion"
 category: "salud"
+track: "analisis"
 ---
 
 # Habilitacion de Servicios de Salud - Fedesalud

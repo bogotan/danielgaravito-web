@@ -5,6 +5,7 @@ excerpt: "Construccion e interpretacion de intervalos para media, proporcion y v
 tags: ["inferencia", "intervalos confianza", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/Intervalos"
 category: "estadistica"
+track: "aula"
 ---
 
 # Intervalos de Confianza

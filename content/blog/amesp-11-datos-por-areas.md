@@ -5,6 +5,7 @@ excerpt: "Analisis de datos agregados por areas: vecindades, autocorrelacion esp
 tags: ["estadistica", "datos areales", "Moran", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP11DatosPorAreas"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 11: Datos Agregados por Areas

@@ -5,6 +5,7 @@ excerpt: "Analisis de componentes principales: reduccion de dimensionalidad, int
 tags: ["estadistica", "PCA", "reduccion dimensionalidad", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP4PCA"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 4: Analisis de Componentes Principales (PCA)

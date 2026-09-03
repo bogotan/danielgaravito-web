@@ -5,6 +5,7 @@ excerpt: "Pruebas de bondad de ajuste: Shapiro-Wilk, Kolmogorov-Smirnov, QQ-plot
 tags: ["inferencia", "normalidad", "Shapiro-Wilk", "estadistica", "R", "educacion", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/PruebasDist"
 category: "estadistica"
+track: "aula"
 ---
 
 # Pruebas de Distribucion y Bondad de Ajuste

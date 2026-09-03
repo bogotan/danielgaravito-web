@@ -5,6 +5,7 @@ excerpt: "Un ensayo sobre propiedad intelectual, escasez artificial y el camino 
 tags: ["propiedad intelectual", "salud publica", "economia", "Colombia", "innovacion", "NFTs", "post-escasez", "AlphaFold"]
 originalDate: "2016-10-01"
 updated: true
+track: "analisis"
 ---
 
 # De la idea de propiedad a la propiedad de la idea

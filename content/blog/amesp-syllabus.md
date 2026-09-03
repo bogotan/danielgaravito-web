@@ -5,6 +5,7 @@ excerpt: "Programa completo del curso de Estadistica Espacial: objetivos, conten
 tags: ["estadistica", "analisis espacial", "syllabus", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/Syllabus_Espacial"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP: Syllabus de Estadistica Espacial

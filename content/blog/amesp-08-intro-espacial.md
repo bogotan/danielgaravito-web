@@ -5,6 +5,7 @@ excerpt: "Fundamentos del analisis espacial: tipos de datos, coordenadas, sistem
 tags: ["estadistica", "analisis espacial", "R", "educacion", "AMESP", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/AMESP8IntroSpacial"
 category: "amesp"
+track: "aula"
 ---
 
 # AMESP 8: Introduccion al Analisis Espacial

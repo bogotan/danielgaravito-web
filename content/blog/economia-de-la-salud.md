@@ -5,6 +5,7 @@ excerpt: "Fundamentos de economia de la salud: eficiencia, equidad, fallas de me
 tags: ["economia de la salud", "R", "salud publica", "Colombia", "eficiencia", "RPubs"]
 rpubs: "https://rpubs.com/bogotan/EconomiaDeLaSalud"
 category: "salud"
+track: "analisis"
 ---
 
 # Economia de la Salud: Fundamentos y Aplicaciones en R
