@@ -90,7 +90,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Greeting */}
           <p className="text-text-muted text-lg md:text-xl mb-2 animate-fade-in">
-            Hola, soy
+            Anal&iacute;tica aplicada al sistema de salud colombiano
           </p>
 
           {/* Name */}
@@ -99,8 +99,10 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-text-muted mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Innovador Público &middot; Emprendedor &middot; Speaker
+          <p className="text-lg md:text-xl text-text-muted mb-6 max-w-2xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            Dirig&iacute; Innovaci&oacute;n y Anal&iacute;tica en ADRES. Hoy hago ese trabajo
+            desde afuera: investigaci&oacute;n con datos abiertos, talleres para
+            directivos y consultor&iacute;a para IPS y aseguradoras.
           </p>
 
           {/* Rotating quote */}
@@ -111,10 +113,10 @@ export default function Hero() {
           {/* CTA */}
           <div className="flex flex-wrap gap-4 mb-10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <Link href="#proyectos" className="btn-primary">
-              Ver proyectos
+              Qu&eacute; hago
             </Link>
             <Link href="#contacto" className="btn-secondary">
-              Contactar
+              Hablemos de un encargo
             </Link>
           </div>
 

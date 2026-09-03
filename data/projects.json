@@ -4,9 +4,111 @@
     "lastSync": "2026-04-20",
     "syncedBy": "sync-projects.js",
     "protocol": "01_FuerzaG_Sistema/documentacion/PROTOCOLO_SYNC_WEB_2026-04-20.md",
-    "rule": "No editar a mano. Modificar MEMORIA.md y correr npm run sync-projects."
+    "rule": "No editar a mano. Modificar MEMORIA.md y correr npm run sync-projects.",
+    "lastManualEdit": "2026-09-03",
+    "manualEditNote": "Portada reducida a oferta vendible tras la salida de ADRES. Espeja estos cambios en MEMORIA.md antes de correr npm run sync-projects, o el sync los revierte."
   },
   "projects": [
+    {
+      "emoji": "🩻",
+      "title": "MÉDULA",
+      "subtitle": "Gestión industrial de la información para IPS",
+      "description": "Una IPS reporta a doce o dieciocho sistemas obligatorios y decide a ciegas. El insumo es gratuito y obligatorio; lo que falta es la industria que lo convierte en decisión. MÉDULA no vende tableros: vende cinco decisiones, en doce módulos, por fases.",
+      "tags": [
+        "Consultoría",
+        "IPS",
+        "Datos",
+        "Producto"
+      ],
+      "color": "from-accent-blue to-accent-gold",
+      "status": "v2.0 — oferta documentada",
+      "statusCategory": "active",
+      "url": "",
+      "progress": 70,
+      "owners": [
+        "Daniel"
+      ],
+      "roadmap": [],
+      "blockers": [],
+      "deadline": "2026-12-31",
+      "public": true,
+      "slug": "medula"
+    },
+    {
+      "emoji": "⏳",
+      "title": "El Rezago",
+      "subtitle": "Simulador de calidad del dato en salud",
+      "description": "Serious game de 90 minutos para directivos de IPS. El participante maneja una IPS ficticia nueve meses: los tres primeros es coordinador de facturación y no ve señal alguna de calidad; del cuarto en adelante es gerente, y le llegan las glosas de sus propias decisiones de hace tres meses, con su letra dentro del sobre.",
+      "tags": [
+        "Serious game",
+        "Taller",
+        "IPS",
+        "Calidad del dato"
+      ],
+      "color": "from-accent-gold to-accent-green",
+      "status": "Motor funcional — 20 pruebas",
+      "statusCategory": "pre-launch",
+      "url": "",
+      "progress": 75,
+      "owners": [
+        "Daniel"
+      ],
+      "roadmap": [],
+      "blockers": [],
+      "deadline": "2026-11-30",
+      "public": true,
+      "slug": "el-rezago"
+    },
+    {
+      "emoji": "📐",
+      "title": "Estudios sobre la UPC",
+      "subtitle": "Suficiencia y ajustadores de riesgo, con datos públicos",
+      "description": "Dos investigaciones reproducibles: la réplica del balance contable del Auto 504 y el gasto antes de calidades, contrastados con cómo ocho sistemas del mundo evalúan la suficiencia de la capitación; y el censo 2006–2026 de los estudios y actos que fijan la UPC, con recálculo directo de los ponderadores. Todo verificable contra su repositorio.",
+      "tags": [
+        "Investigación",
+        "UPC",
+        "Datos abiertos",
+        "Reproducible"
+      ],
+      "color": "from-accent-blue to-blue-400",
+      "status": "En preparación para sometimiento",
+      "statusCategory": "writing",
+      "url": "",
+      "progress": 80,
+      "owners": [
+        "Daniel"
+      ],
+      "roadmap": [],
+      "blockers": [],
+      "deadline": "2026-12-31",
+      "public": true,
+      "slug": "estudios-upc"
+    },
+    {
+      "emoji": "📊",
+      "title": "Afiliados y concentración",
+      "subtitle": "De cuántas EPS a en qué banda",
+      "description": "La pregunta por el tamaño de las aseguradoras se ha planteado como un conteo, y un conteo no tiene respuesta técnica. Este documento la reemplaza por dos preguntas que sí la tienen: en qué banda queremos el mercado y medida con qué, y qué mecanismo lleva el mercado a esa banda sin destruir la mancomunación del riesgo. Sobre los 50.100.427 afiliados de la BDUA, corte del 4 de agosto de 2026.",
+      "tags": [
+        "Policy brief",
+        "Aseguramiento",
+        "BDUA",
+        "Datos abiertos"
+      ],
+      "color": "from-accent-green to-accent-blue",
+      "status": "Documento terminado",
+      "statusCategory": "pre-launch",
+      "url": "",
+      "progress": 90,
+      "owners": [
+        "Daniel"
+      ],
+      "roadmap": [],
+      "blockers": [],
+      "deadline": "2026-10-31",
+      "public": true,
+      "slug": "afiliados-ihh"
+    },
     {
       "slug": "nacer",
       "emoji": "🎮",
@@ -74,142 +176,60 @@
       "public": true
     },
     {
-      "slug": "sia",
-      "emoji": "🔍",
-      "title": "SIA",
-      "subtitle": "Iniciativa institucional ADRES",
-      "description": "Iniciativa de ADRES de auditoría potenciada con IA para el sector salud colombiano. Hago parte del equipo de Innovación y Analítica que acompaña su diseño y arquitectura.",
+      "slug": "educall",
+      "emoji": "📞",
+      "title": "EducALL",
+      "subtitle": "Llamadas para Educar",
+      "description": "Plataforma de educación por llamadas telefónicas. Si no hay internet, hay llamadas. +1.000 vidas impactadas. Finalista MIT Solve, Ganador Falling Walls, EY Emprendedor Social del Año.",
       "tags": [
-        "IA",
-        "Salud",
-        "Auditoría",
-        "Sector público"
+        "EdTech",
+        "Impacto social",
+        "Innovación",
+        "Educación"
       ],
-      "color": "from-accent-blue to-accent-gold",
-      "status": "Diseño",
+      "color": "from-accent-green to-accent-gold",
+      "status": "Operativo",
       "statusCategory": "active",
-      "url": "",
-      "progress": 35,
+      "url": "https://educall.co",
+      "progress": 70,
       "owners": [
-        "🐙 PULPO",
-        "🦦 NUTRIA",
-        "🦗 MANTIS",
-        "🦬 BÚFALO"
+        "Daniel (fundador)",
+        "Equipo EducALL"
       ],
       "roadmap": [
         {
           "step": 1,
-          "title": "Agendar reunión de arquitectura (pendiente hace 4 semanas)",
+          "title": "Completar pool de tutores activos",
+          "status": "in_progress",
+          "owner": "Equipo EducALL"
+        },
+        {
+          "step": 2,
+          "title": "Sistematizar reporte mensual de impacto",
+          "status": "pending",
+          "owner": "🦗 MANTIS"
+        },
+        {
+          "step": 3,
+          "title": "Explorar expansión a Perú y Ecuador",
           "status": "pending",
           "owner": "Daniel"
         },
         {
-          "step": 2,
-          "title": "Definir alcance MVP: 1 caso de auditoría específico",
-          "status": "pending",
-          "owner": "🦊 ZORRO"
-        },
-        {
-          "step": 3,
-          "title": "Mapeo de fuentes RIPS + BDUA disponibles",
-          "status": "pending",
-          "owner": "🦦 NUTRIA"
-        },
-        {
           "step": 4,
-          "title": "Diseño de detección de anomalías (modelo inicial)",
+          "title": "Modelo de sostenibilidad post-donación (B2G con secretarías)",
           "status": "pending",
-          "owner": "🦗 MANTIS"
+          "owner": "Daniel + 🐀 TOPO"
         },
         {
           "step": 5,
-          "title": "Revisión legal y de habeas data",
+          "title": "Publicar white paper de resultados 2020-2026",
           "status": "pending",
-          "owner": "🦬 BÚFALO"
-        },
-        {
-          "step": 6,
-          "title": "Prototipo funcional de 1 flujo end-to-end",
-          "status": "pending",
-          "owner": "🐙 PULPO"
-        },
-        {
-          "step": 7,
-          "title": "Piloto con 1 EPS colaboradora",
-          "status": "pending",
-          "owner": "Daniel + 🦁 JEFE"
-        }
-      ],
-      "blockers": [
-        "Sin reunión de arquitectura agendada",
-        "Evaluar congelar si no se mueve en sprint 17"
-      ],
-      "deadline": "2026-09-30",
-      "public": true
-    },
-    {
-      "slug": "sala-inteligencia-adres",
-      "emoji": "📊",
-      "title": "Sala de Inteligencia ADRES",
-      "subtitle": "Iniciativa institucional ADRES",
-      "description": "Iniciativa institucional de ADRES con dashboards en vivo para monitorear los recursos del sistema de salud de 52 millones de colombianos. Hago parte del equipo que la desarrolla y mantiene.",
-      "tags": [
-        "Datos",
-        "Dashboard",
-        "Salud pública",
-        "ADRES"
-      ],
-      "color": "from-accent-blue to-blue-400",
-      "status": "Operativo",
-      "statusCategory": "active",
-      "url": "https://www.youtube.com/watch?v=7LBM8KckIWU",
-      "progress": 60,
-      "owners": [
-        "🦗 MANTIS",
-        "🦦 NUTRIA",
-        "🪶 HALCÓN",
-        "🦁 JEFE"
-      ],
-      "roadmap": [
-        {
-          "step": 1,
-          "title": "Completar inventario Databricks (20 catálogos, 1.100+ tablas)",
-          "status": "done",
-          "owner": "🦦 NUTRIA"
-        },
-        {
-          "step": 2,
-          "title": "Definir 5 KPIs prioritarios para el Director General",
-          "status": "in_progress",
-          "owner": "🪶 HALCÓN"
-        },
-        {
-          "step": 3,
-          "title": "Construir dashboard ejecutivo v2 con esos 5 KPIs",
-          "status": "pending",
-          "owner": "🦗 MANTIS"
-        },
-        {
-          "step": 4,
-          "title": "Revisión por capas ADRES (8 capas, CAMALEÓN)",
-          "status": "pending",
-          "owner": "🦎 CAMALEÓN"
-        },
-        {
-          "step": 5,
-          "title": "Presentar a Junta Directiva ADRES",
-          "status": "pending",
-          "owner": "Daniel + 🦁 JEFE"
-        },
-        {
-          "step": 6,
-          "title": "Rollout a equipos operativos ADRES",
-          "status": "pending",
-          "owner": "🐺 LOBO"
+          "owner": "🐜 HORMIGA"
         }
       ],
       "blockers": [],
-      "deadline": "2026-07-31",
+      "deadline": "continuo",
       "public": true
     },
     {
@@ -296,11 +316,150 @@
       "public": true
     },
     {
+      "slug": "sia",
+      "emoji": "🔍",
+      "title": "SIA",
+      "subtitle": "Trabajo institucional en ADRES (hasta ago-2026)",
+      "description": "Iniciativa de ADRES de auditoría potenciada con IA para el sector salud colombiano. Hago parte del equipo de Innovación y Analítica que acompaña su diseño y arquitectura.",
+      "tags": [
+        "IA",
+        "Salud",
+        "Auditoría",
+        "Sector público"
+      ],
+      "color": "from-accent-blue to-accent-gold",
+      "status": "Diseño",
+      "statusCategory": "active",
+      "url": "",
+      "progress": 35,
+      "owners": [
+        "🐙 PULPO",
+        "🦦 NUTRIA",
+        "🦗 MANTIS",
+        "🦬 BÚFALO"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Agendar reunión de arquitectura (pendiente hace 4 semanas)",
+          "status": "pending",
+          "owner": "Daniel"
+        },
+        {
+          "step": 2,
+          "title": "Definir alcance MVP: 1 caso de auditoría específico",
+          "status": "pending",
+          "owner": "🦊 ZORRO"
+        },
+        {
+          "step": 3,
+          "title": "Mapeo de fuentes RIPS + BDUA disponibles",
+          "status": "pending",
+          "owner": "🦦 NUTRIA"
+        },
+        {
+          "step": 4,
+          "title": "Diseño de detección de anomalías (modelo inicial)",
+          "status": "pending",
+          "owner": "🦗 MANTIS"
+        },
+        {
+          "step": 5,
+          "title": "Revisión legal y de habeas data",
+          "status": "pending",
+          "owner": "🦬 BÚFALO"
+        },
+        {
+          "step": 6,
+          "title": "Prototipo funcional de 1 flujo end-to-end",
+          "status": "pending",
+          "owner": "🐙 PULPO"
+        },
+        {
+          "step": 7,
+          "title": "Piloto con 1 EPS colaboradora",
+          "status": "pending",
+          "owner": "Daniel + 🦁 JEFE"
+        }
+      ],
+      "blockers": [
+        "Sin reunión de arquitectura agendada",
+        "Evaluar congelar si no se mueve en sprint 17"
+      ],
+      "deadline": "2026-09-30",
+      "public": false
+    },
+    {
+      "slug": "sala-inteligencia-adres",
+      "emoji": "📊",
+      "title": "Sala de Inteligencia ADRES",
+      "subtitle": "Trabajo institucional en ADRES (hasta ago-2026)",
+      "description": "Iniciativa institucional de ADRES con dashboards en vivo para monitorear los recursos del sistema de salud de 52 millones de colombianos. Hago parte del equipo que la desarrolla y mantiene.",
+      "tags": [
+        "Datos",
+        "Dashboard",
+        "Salud pública",
+        "ADRES"
+      ],
+      "color": "from-accent-blue to-blue-400",
+      "status": "Operativo",
+      "statusCategory": "active",
+      "url": "https://www.youtube.com/watch?v=7LBM8KckIWU",
+      "progress": 60,
+      "owners": [
+        "🦗 MANTIS",
+        "🦦 NUTRIA",
+        "🪶 HALCÓN",
+        "🦁 JEFE"
+      ],
+      "roadmap": [
+        {
+          "step": 1,
+          "title": "Completar inventario Databricks (20 catálogos, 1.100+ tablas)",
+          "status": "done",
+          "owner": "🦦 NUTRIA"
+        },
+        {
+          "step": 2,
+          "title": "Definir 5 KPIs prioritarios para el Director General",
+          "status": "in_progress",
+          "owner": "🪶 HALCÓN"
+        },
+        {
+          "step": 3,
+          "title": "Construir dashboard ejecutivo v2 con esos 5 KPIs",
+          "status": "pending",
+          "owner": "🦗 MANTIS"
+        },
+        {
+          "step": 4,
+          "title": "Revisión por capas ADRES (8 capas, CAMALEÓN)",
+          "status": "pending",
+          "owner": "🦎 CAMALEÓN"
+        },
+        {
+          "step": 5,
+          "title": "Presentar a Junta Directiva ADRES",
+          "status": "pending",
+          "owner": "Daniel + 🦁 JEFE"
+        },
+        {
+          "step": 6,
+          "title": "Rollout a equipos operativos ADRES",
+          "status": "pending",
+          "owner": "🐺 LOBO"
+        }
+      ],
+      "blockers": [],
+      "deadline": "2026-07-31",
+      "public": false
+    },
+    {
       "slug": "babytongues",
       "emoji": "👶",
       "title": "BabyTongues",
-      "subtitle": "App trilingüe para Liam (0-12 meses)",
-      "description": "Programa de desarrollo infantil trilingüe (español, inglés, mandarín) con 8 canciones, karaoke sincronizado y PWA offline. Creada por Daniel para su hijo Liam. Single-file React.",
+      "subtitle": "App trilingüe de primera infancia (0-12 meses)",
+      "description": "Programa de desarrollo infantil trilingüe (español, inglés, mandarín) con 8 canciones, karaoke sincronizado y PWA offline. Nació como un proyecto familiar. Single-file React.",
       "tags": [
         "App",
         "Infantil",
@@ -363,7 +522,7 @@
       ],
       "blockers": [],
       "deadline": "2026-06-30",
-      "public": true
+      "public": false
     },
     {
       "slug": "fuerzag",
@@ -438,64 +597,7 @@
       ],
       "blockers": [],
       "deadline": "continuo",
-      "public": true
-    },
-    {
-      "slug": "educall",
-      "emoji": "📞",
-      "title": "EducALL",
-      "subtitle": "Llamadas para Educar",
-      "description": "Plataforma de educación por llamadas telefónicas. Si no hay internet, hay llamadas. +1.000 vidas impactadas. Finalista MIT Solve, Ganador Falling Walls, EY Emprendedor Social del Año.",
-      "tags": [
-        "EdTech",
-        "Impacto social",
-        "Innovación",
-        "Educación"
-      ],
-      "color": "from-accent-green to-accent-gold",
-      "status": "Operativo",
-      "statusCategory": "active",
-      "url": "https://educall.co",
-      "progress": 70,
-      "owners": [
-        "Daniel (fundador)",
-        "Equipo EducALL"
-      ],
-      "roadmap": [
-        {
-          "step": 1,
-          "title": "Completar pool de tutores activos",
-          "status": "in_progress",
-          "owner": "Equipo EducALL"
-        },
-        {
-          "step": 2,
-          "title": "Sistematizar reporte mensual de impacto",
-          "status": "pending",
-          "owner": "🦗 MANTIS"
-        },
-        {
-          "step": 3,
-          "title": "Explorar expansión a Perú y Ecuador",
-          "status": "pending",
-          "owner": "Daniel"
-        },
-        {
-          "step": 4,
-          "title": "Modelo de sostenibilidad post-donación (B2G con secretarías)",
-          "status": "pending",
-          "owner": "Daniel + 🐀 TOPO"
-        },
-        {
-          "step": 5,
-          "title": "Publicar white paper de resultados 2020-2026",
-          "status": "pending",
-          "owner": "🐜 HORMIGA"
-        }
-      ],
-      "blockers": [],
-      "deadline": "continuo",
-      "public": true
+      "public": false
     },
     {
       "slug": "tesis",
