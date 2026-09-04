@@ -91,13 +91,87 @@ const charlas = [
   },
 ];
 
-const podcasts = [
+type Podcast = {
+  title: string;
+  url: string;
+  embedId: string;
+  startSeconds?: number;
+  show: string;
+  year?: number;
+  grupo: 'salud' | 'otros';
+};
+
+// Conversatorios del sector salud (#ConversatoriosADRES). Se muestra el tema
+// como título: los dos ciclos numeran desde 1 y el número solo tiene sentido
+// dentro de su propio ciclo.
+const podcastsSalud: Podcast[] = [
+  {
+    title: 'Ética, confiabilidad y responsabilidad en el uso de IA',
+    url: 'https://www.youtube.com/watch?v=_afEdjVAghc',
+    embedId: '_afEdjVAghc',
+    show: '#ConversatoriosADRES',
+    grupo: 'salud',
+  },
+  {
+    title: 'IA para un sistema de salud predictivo y resolutivo',
+    url: 'https://www.youtube.com/watch?v=qG6zP3zGRY8',
+    embedId: 'qG6zP3zGRY8',
+    show: '#ConversatoriosADRES',
+    grupo: 'salud',
+  },
+  {
+    title: 'Las condiciones crónicas y la generación de valor en salud',
+    url: 'https://www.youtube.com/watch?v=zDyf4mEWEgo',
+    embedId: 'zDyf4mEWEgo',
+    show: '#ConversatoriosADRES',
+    grupo: 'salud',
+  },
+  {
+    title: 'Interoperabilidad: el costo de que los datos en salud no dialoguen',
+    url: 'https://www.youtube.com/watch?v=EjRUysxsXuo',
+    embedId: 'EjRUysxsXuo',
+    show: '#ConversatoriosADRES',
+    grupo: 'salud',
+  },
+  {
+    title: 'Sostenibilidad basada en evidencia',
+    url: 'https://www.youtube.com/watch?v=h8FLzaRRBHI',
+    embedId: 'h8FLzaRRBHI',
+    show: '#ConversatoriosADRES',
+    grupo: 'salud',
+  },
+  {
+    title: 'Redefiniendo el vínculo ADRES-IPS',
+    url: 'https://www.youtube.com/watch?v=ri5BV0UXyq4',
+    embedId: 'ri5BV0UXyq4',
+    show: '#ConversatoriosADRES',
+    grupo: 'salud',
+  },
+  {
+    title: 'Tecnología y generación de valor en el sistema de salud',
+    url: 'https://www.youtube.com/watch?v=jI1ri51yACE',
+    embedId: 'jI1ri51yACE',
+    show: '#ConversatoriosADRES',
+    grupo: 'salud',
+  },
+  {
+    title: 'ADRES en las regiones llega a Pereira',
+    url: 'https://www.youtube.com/watch?v=XUXtZmOMZrY',
+    embedId: 'XUXtZmOMZrY',
+    show: 'ADRES en las regiones',
+    grupo: 'salud',
+  },
+];
+
+// Entrevistas y podcasts de EducALL, emprendimiento y trayectoria personal.
+const podcastsOtros: Podcast[] = [
   {
     title: 'Innovar es conectar lo que está lejos: cómo Daniel Garavito busca sanar a Colombia con tecnología',
     url: 'https://youtu.be/qppgYHlYfMQ',
     embedId: 'qppgYHlYfMQ',
     show: 'Superlatinos',
     year: 2025,
+    grupo: 'otros',
   },
   {
     title: 'Efecto Colibrí - EducALL y educación inclusiva',
@@ -106,6 +180,7 @@ const podcasts = [
     startSeconds: 265,
     show: 'Efecto Colibrí',
     year: 2023,
+    grupo: 'otros',
   },
   {
     title: 'La voz que me cambió la vida — taller Campus Party Colombia',
@@ -113,6 +188,7 @@ const podcasts = [
     embedId: '4uJZUSno10A',
     show: 'Campus Party Colombia',
     year: 2021,
+    grupo: 'otros',
   },
   {
     title: 'Celebremos Colombia — EducALL',
@@ -120,21 +196,96 @@ const podcasts = [
     embedId: 'DvQ3e2IsyB8',
     show: 'EducALL',
     year: 2023,
+    grupo: 'otros',
   },
 ];
 
-const publications = [
+const podcasts: Podcast[] = [...podcastsSalud, ...podcastsOtros];
+
+type Columna = {
+  title: string;
+  url: string;
+  image: string;
+  dateLabel: string;
+  date: string;
+  summary: string;
+};
+
+// Columnas publicadas en CONSULTORSALUD. Las imágenes son las portadas del
+// propio medio y enlazan a su publicación original.
+const columnas: Columna[] = [
+  {
+    title: 'Siete pilares, un cuatrienio y una vara común',
+    url: 'https://consultorsalud.com/siete-pilares-un-cuatrienio-y-una-vara-comun/',
+    image: 'https://consultorsalud.com/wp-content/uploads/2026/08/Portada-Juan-Manuel-8.png',
+    dateLabel: '10 ago 2026',
+    date: '2026-08-10',
+    summary: 'Si la salud ha sido una inversión durante tres décadas, ¿dónde está el retorno? El BID lo cifra: hasta 4,5 años de vida sobre la mesa.',
+  },
+  {
+    title: 'El precio que nunca envejece: por qué la tecnología médica madura se sigue pagando como si fuera nueva',
+    url: 'https://consultorsalud.com/precio-que-nunca-envejece-tecnologia/',
+    image: 'https://consultorsalud.com/wp-content/uploads/2026/07/El-precio-que-nunca-envejece-por-que-la-tecnologia-medica-madura-se-sigue-pagando-como-si-fuera-nueva-2.jpg',
+    dateLabel: '21 jul 2026',
+    date: '2026-07-21',
+    summary: 'Subir un precio regulado es un trámite; bajarlo, un problema técnico y político. La curva de aprendizaje de 1936 aplicada a un tarifario que solo sabe multiplicar.',
+  },
+  {
+    title: '¿De quién es la culpa de la crisis del sistema de salud? Por qué es la pregunta equivocada',
+    url: 'https://consultorsalud.com/culpa-crisis-del-sistema-de-salud/',
+    image: 'https://consultorsalud.com/wp-content/uploads/2026/07/De-quien-es-la-culpa-de-la-crisis-del-sistema-de-salud.jpg',
+    dateLabel: '2 jul 2026',
+    date: '2026-07-02',
+    summary: 'El sistema no se diagnostica con indicadores subrogados. Buscar culpables reemplaza el método que dice cómo está, a dónde debe llegar y cómo llevarlo allí.',
+  },
+  {
+    title: 'De la opacidad a la transparencia: por qué la interoperabilidad es la mejor inversión que el sistema de salud puede hacer en sí mismo',
+    url: 'https://consultorsalud.com/opacidad-transparencia-interoperabilidad-salud/',
+    image: 'https://consultorsalud.com/wp-content/uploads/2026/06/De-la-opacidad-a-la-transparencia-por-que-la-interoperabilidad-es-la-mejor-inversion-que-el-sistema-de-salud-puede-hacer-en-si-mismo-1.jpg',
+    dateLabel: '22 jun 2026',
+    date: '2026-06-22',
+    summary: 'Un sistema que no puede verse a sí mismo no puede corregirse. La interoperabilidad no es un proyecto de tecnología: es la condición para saber qué está pasando.',
+  },
+  {
+    title: 'La crisis que siempre vuelve: anatomía de una regularidad',
+    url: 'https://consultorsalud.com/la-crisis-que-siempre-vuelve-anatomia-de-una-regularidad/',
+    image: 'https://consultorsalud.com/wp-content/uploads/2026/06/La-crisis-que-siempre-vuelve-anatomia-de-una-regularidad-1.jpg',
+    dateLabel: '18 jun 2026',
+    date: '2026-06-18',
+    summary: 'El Seguro Social en los 2000, los recobros en 2009, la intervención de 2011. La crisis no es un accidente que se repite: es una regularidad con anatomía propia.',
+  },
+  {
+    title: 'La trampa de la intervención: por qué cambiar la cúpula no cambia la organización',
+    url: 'https://consultorsalud.com/ntervenciones-supersalud-eps-fracasar/',
+    image: 'https://consultorsalud.com/wp-content/uploads/2026/04/Por-que-las-intervenciones-de-la-Supersalud-a-las-EPS-estan-destinadas-a-fracasar-una-lectura-desde-la-Teoria-de-las-Organizaciones.jpg',
+    dateLabel: '30 abr 2026',
+    date: '2026-04-30',
+    summary: 'Il Gattopardo leído desde la teoría de las organizaciones: cambiar a los de arriba sin tocar los planos profundos donde se decide no transforma nada.',
+  },
+  {
+    title: 'La IA dejó de vivir en la nube',
+    url: 'https://consultorsalud.com/la-ia-dejo-de-vivir-en-la-nube/',
+    image: 'https://consultorsalud.com/wp-content/uploads/2026/04/La-IA-dejo-de-vivir-en-la-nube.jpg',
+    dateLabel: '27 abr 2026',
+    date: '2026-04-27',
+    summary: 'La inteligencia artificial local y de código abierto ya existe. Lo urgente es aplicarla a problemas reales latinoamericanos, no esperar la que viene.',
+  },
+  {
+    title: 'La paradoja del facilismo en la política pública de salud',
+    url: 'https://consultorsalud.com/paradoja-del-facilismo-politica-publica-salud/',
+    image: 'https://consultorsalud.com/wp-content/uploads/2026/04/La-paradoja-del-facilismo-en-la-politica-publica-de-salud.jpg',
+    dateLabel: '22 abr 2026',
+    date: '2026-04-22',
+    summary: 'Cuando el sistema cruje, la respuesta automática es subir la UPC. Pedir más recursos no está mal: es insuficiente, y desvía del fondo.',
+  },
+];
+
+const otrasPublicaciones = [
   {
     title: 'Ni los dados ni los datos tienen ideología',
     type: 'Artículo',
     platform: 'LinkedIn',
-    description: 'Reflexion sobre la neutralidad de los datos y su papel en la política pública de salud.',
-  },
-  {
-    title: 'La paradoja del facilismo',
-    type: 'Artículo',
-    platform: 'LinkedIn',
-    description: 'Como la búsqueda de lo facil en la gestión pública termina generando complejidad.',
+    description: 'Reflexión sobre la neutralidad de los datos y su papel en la política pública de salud.',
   },
   {
     title: 'Reducción de dimensionalidad bayesiana vía AFE con priors spike-slab',
@@ -327,8 +478,11 @@ export default function Media() {
         </div>
       )}
 
-      {activeTab === 'podcasts' && (
-        <div className="animate-fade-in">
+      {/* El grid queda siempre en el DOM para que los conversatorios sean
+          rastreables; el reproductor solo se monta al abrir la pestaña, para no
+          cargar un iframe de YouTube en cada visita. */}
+      <div hidden={activeTab !== 'podcasts'}>
+        <div>
           <div className="max-w-3xl mx-auto mb-8 text-center">
             <p className="text-text-muted italic leading-relaxed">
               <span className="text-text font-semibold">“Conversaciones largas, sin prisa.”</span>
@@ -337,6 +491,7 @@ export default function Media() {
             </p>
           </div>
 
+          {activeTab === 'podcasts' && (
           <div className="max-w-4xl mx-auto mb-8">
             <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden bg-bg-secondary border border-gray-800">
               <iframe
@@ -352,79 +507,154 @@ export default function Media() {
                 {podcasts[activePodcast].show}
               </span>
               <h3 className="text-xl font-bold text-text">{podcasts[activePodcast].title}</h3>
-              <p className="text-text-muted text-sm mt-1">
-                {podcasts[activePodcast].show} - {podcasts[activePodcast].year}
-              </p>
+              {podcasts[activePodcast].year && (
+                <p className="text-text-muted text-sm mt-1">
+                  {podcasts[activePodcast].show} · {podcasts[activePodcast].year}
+                </p>
+              )}
             </div>
           </div>
+          )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {podcasts.map((p, i) => (
-              <button
-                key={p.embedId}
-                onClick={() => setActivePodcast(i)}
-                className={`group relative rounded-lg overflow-hidden border transition-all duration-300 text-left ${
-                  activePodcast === i
-                    ? 'border-accent-gold shadow-lg shadow-accent-gold/20 ring-2 ring-accent-gold/30'
-                    : 'border-gray-800 hover:border-gray-700'
-                }`}
-              >
-                <img
-                  src={`https://img.youtube.com/vi/${p.embedId}/mqdefault.jpg`}
-                  alt={p.title}
-                  className="w-full aspect-video object-cover"
-                  loading="lazy"
-                />
-                <div className="p-3 bg-bg-secondary">
-                  <p className="text-xs text-accent-gold font-semibold">{p.show}</p>
-                  <p className="text-sm text-text font-medium line-clamp-2">{p.title}</p>
-                  <p className="text-xs text-text-muted mt-1">{p.year}</p>
+          <div className="max-w-4xl mx-auto space-y-10">
+            {[
+              {
+                key: 'salud',
+                heading: 'Sector salud',
+                blurb: 'Conversatorios sobre IA, interoperabilidad, sostenibilidad y valor en el sistema de salud.',
+                items: podcastsSalud,
+              },
+              {
+                key: 'otros',
+                heading: 'EducALL y entrevistas',
+                blurb: 'Emprendimiento social, educación sin internet y trayectoria.',
+                items: podcastsOtros,
+              },
+            ].map((grupo) => (
+              <div key={grupo.key}>
+                <div className="mb-4 pb-3 border-b border-gray-800">
+                  <h3 className="text-lg font-bold text-text">{grupo.heading}</h3>
+                  <p className="text-text-muted text-sm mt-1">{grupo.blurb}</p>
                 </div>
-              </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {grupo.items.map((p) => {
+                    const i = podcasts.findIndex((x) => x.embedId === p.embedId);
+                    return (
+                      <button
+                        key={p.embedId}
+                        onClick={() => setActivePodcast(i)}
+                        className={`group relative rounded-lg overflow-hidden border transition-all duration-300 text-left ${
+                          activePodcast === i
+                            ? 'border-accent-gold shadow-lg shadow-accent-gold/20 ring-2 ring-accent-gold/30'
+                            : 'border-gray-800 hover:border-gray-700'
+                        }`}
+                      >
+                        <img
+                          src={`https://img.youtube.com/vi/${p.embedId}/mqdefault.jpg`}
+                          alt={p.title}
+                          className="w-full aspect-video object-cover"
+                          loading="lazy"
+                        />
+                        <div className="p-3 bg-bg-secondary">
+                          <p className="text-xs text-accent-gold font-semibold">{p.show}</p>
+                          <p className="text-sm text-text font-medium line-clamp-2">{p.title}</p>
+                          {p.year && <p className="text-xs text-text-muted mt-1">{p.year}</p>}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             ))}
           </div>
         </div>
-      )}
+      </div>
 
-      {activeTab === 'publicaciones' && (
-        <div className="animate-fade-in max-w-3xl mx-auto space-y-4">
-          {publications.map((pub, index) => (
-            <div key={index} className="card group hover:border-accent-blue/30">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-accent-blue text-sm font-bold">
-                    {pub.type === 'Artículo' ? '📄' : pub.type === 'Ponencia' ? '🎙' : '📋'}
+      {/* Siempre en el DOM (oculto cuando no está activo) para que las columnas
+          sean rastreables por buscadores, no solo visibles tras un clic. */}
+      <div hidden={activeTab !== 'publicaciones'} className="max-w-4xl mx-auto">
+        <div className="mb-6 pb-3 border-b border-gray-800">
+          <h3 className="text-lg font-bold text-text">Columnas en CONSULTORSALUD</h3>
+          <p className="text-text-muted text-sm mt-1">
+            Ocho columnas entre abril y agosto de 2026 sobre cómo se mide, se
+            paga y se decide en el sistema de salud colombiano.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {columnas.map((c) => (
+            <a
+              key={c.url}
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-lg overflow-hidden border border-gray-800 hover:border-accent-blue/50 transition-colors bg-bg-secondary flex flex-col"
+            >
+              <img
+                src={c.image}
+                alt={`Portada de la columna «${c.title}» en CONSULTORSALUD`}
+                className="w-full aspect-video object-cover bg-bg"
+                loading="lazy"
+              />
+              <div className="p-4 flex-1 flex flex-col">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
+                    CONSULTORSALUD
                   </span>
+                  <time dateTime={c.date} className="text-xs text-text-muted">
+                    {c.dateLabel}
+                  </time>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-text group-hover:text-accent-blue transition-colors">
-                    {pub.title}
-                  </h3>
-                  <p className="text-text-muted text-sm mt-1">{pub.description}</p>
-                  <span className="inline-block mt-2 text-xs font-medium px-2.5 py-1 rounded-full bg-bg border border-gray-800 text-text-muted">
-                    {pub.platform} - {pub.type}
-                  </span>
+                <h4 className="text-sm font-semibold text-text leading-snug group-hover:text-accent-blue transition-colors">
+                  {c.title}
+                </h4>
+                <p className="text-text-muted text-xs mt-2 leading-relaxed">{c.summary}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-gray-800">
+          <h3 className="text-lg font-semibold text-text mb-4">Otras publicaciones</h3>
+          <div className="space-y-3">
+            {otrasPublicaciones.map((pub, index) => (
+              <div key={index} className="card group hover:border-accent-blue/30">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-accent-blue text-sm font-bold">
+                      {pub.type === 'Artículo' ? '📄' : pub.type === 'Ponencia' ? '🎙' : '📋'}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-base font-semibold text-text group-hover:text-accent-blue transition-colors">
+                      {pub.title}
+                    </h4>
+                    <p className="text-text-muted text-sm mt-1">{pub.description}</p>
+                    <span className="inline-block mt-2 text-xs font-medium px-2.5 py-1 rounded-full bg-bg border border-gray-800 text-text-muted">
+                      {pub.platform} · {pub.type}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-
-          <div className="mt-8 pt-8 border-t border-gray-800">
-            <h3 className="text-lg font-semibold text-text mb-4">Mencionado en</h3>
-            <div className="flex flex-wrap gap-3">
-              {mediaMentions.map((mention, index) => (
-                <div
-                  key={index}
-                  className="px-4 py-2.5 rounded-lg bg-bg-secondary border border-gray-800 hover:border-gray-700 transition-colors"
-                >
-                  <p className="text-sm font-medium text-text">{mention.outlet}</p>
-                  <p className="text-xs text-text-muted">{mention.topic}</p>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
-      )}
+
+        <div className="mt-10 pt-8 border-t border-gray-800">
+          <h3 className="text-lg font-semibold text-text mb-4">Mencionado en</h3>
+          <div className="flex flex-wrap gap-3">
+            {mediaMentions.map((mention, index) => (
+              <div
+                key={index}
+                className="px-4 py-2.5 rounded-lg bg-bg-secondary border border-gray-800 hover:border-gray-700 transition-colors"
+              >
+                <p className="text-sm font-medium text-text">{mention.outlet}</p>
+                <p className="text-xs text-text-muted">{mention.topic}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {activeTab === 'reconocimientos' && (
         <div className="animate-fade-in max-w-4xl mx-auto">

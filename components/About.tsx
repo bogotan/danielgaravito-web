@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const stats = [
-  { value: '1K+', label: 'Vidas impactadas por EducALL' },
+  { value: '10K+', label: 'Personas impactadas por EducALL' },
   { value: '52M', label: 'Colombianos en el sistema que analizo' },
   { value: '10+', label: 'Años en datos y salud' },
 ];
@@ -47,17 +47,17 @@ export default function About() {
           <div className="space-y-4 text-text-muted leading-relaxed">
             <p>
               Soy <span className="text-text font-semibold">economista</span> de
-              la Universidad Nacional de Colombia con{' '}
-              <span className="text-text font-semibold">
-                Maestría en Ingeniería de Sistemas y Computación
-              </span>
-              . Actualmente curso el{' '}
+              la Universidad Nacional de Colombia, con{' '}
               <span className="text-text font-semibold">
                 Global Master in Business Analytics &amp; Data Strategy
               </span>{' '}
-              en <span className="text-text font-semibold">EAE Business School</span>{' '}
-              (Barcelona), con beca completa. Trabajo en la intersección entre
-              datos, salud pública e innovación social.
+              de <span className="text-text font-semibold">EAE Business School</span>{' '}
+              (Barcelona), cursado con beca completa. Actualmente adelanto la{' '}
+              <span className="text-text font-semibold">
+                Maestría en Ingeniería de Sistemas y Computación
+              </span>
+              . Trabajo en la intersección entre datos, salud pública e
+              innovación social.
             </p>
 
             <p>
