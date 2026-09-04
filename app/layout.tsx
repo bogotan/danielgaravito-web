@@ -6,6 +6,18 @@ import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.danielgaravito.co'),
+  alternates: {
+    canonical: '/',
+    types: { 'application/rss+xml': '/blog/rss.xml' },
+  },
+  authors: [{ name: 'Daniel Garavito', url: 'https://www.danielgaravito.co' }],
+  creator: 'Daniel Garavito',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' },
+  },
   title: 'Daniel Garavito | Anal\u00edtica y Salud P\u00fablica',
   description:
     'Investigaci\u00f3n aplicada, formaci\u00f3n y consultor\u00eda anal\u00edtica en salud. Dirigi\u00f3 Innovaci\u00f3n y Anal\u00edtica en ADRES hasta 2026; hoy trabaja de forma independiente con datos abiertos y m\u00e9todo reproducible. Fundador de EducALL y creador de NACER.',
@@ -117,6 +129,47 @@ export default function RootLayout({
   return (
     <html lang="es" className={inter.className}>
       <body className="bg-bg text-text">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Person',
+                  '@id': 'https://www.danielgaravito.co/#daniel',
+                  name: 'Daniel Garavito',
+                  alternateName: 'Daniel Alfonso Garavito Jim\u00e9nez',
+                  url: 'https://www.danielgaravito.co',
+                  jobTitle: 'Investigaci\u00f3n aplicada y consultor\u00eda anal\u00edtica en salud',
+                  knowsAbout: [
+                    'Sistema de salud colombiano',
+                    'Econom\u00eda de la salud',
+                    'Unidad de Pago por Capitaci\u00f3n',
+                    'Anal\u00edtica de datos',
+                    'Estad\u00edstica aplicada',
+                  ],
+                  sameAs: [
+                    'https://www.linkedin.com/in/daniel-alfonso-garavito-jim%C3%A9nez/',
+                    'https://x.com/danielgaravitoco',
+                    'https://bsky.app/profile/danielgaravito.co',
+                    'https://github.com/bogotan',
+                    'https://rpubs.com/bogotan',
+                    'https://consultorsalud.com/opinion/',
+                  ],
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://www.danielgaravito.co/#sitio',
+                  url: 'https://www.danielgaravito.co',
+                  name: 'Daniel Garavito',
+                  inLanguage: 'es-CO',
+                  author: { '@id': 'https://www.danielgaravito.co/#daniel' },
+                },
+              ],
+            }),
+          }}
+        />
         <Nav />
         <main className="pt-16">{children}</main>
         <footer className="border-t border-gray-800 py-8">

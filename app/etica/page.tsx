@@ -5,6 +5,7 @@ export const metadata = {
   description:
     'Declaración pública de Daniel Alfonso Garavito Jiménez sobre el fin de su vinculación con ADRES, las obligaciones que siguen vigentes después del cargo y las reglas con que maneja datos e información en su práctica independiente.',
   robots: { index: true, follow: true },
+  alternates: { canonical: '/etica' },
   openGraph: {
     title: 'Independencia y manejo de información · Daniel Garavito',
     description:

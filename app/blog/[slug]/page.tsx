@@ -1,9 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { getThemeFromCategory } from '@/lib/themes';
+import { SITE_URL, AUTHOR, stripLeadingH1 } from '@/lib/posts';
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
@@ -64,6 +66,60 @@ export async function generateStaticParams() {
     .map((f) => ({ slug: f.replace('.md', '') }));
 }
 
+function readPost(slug: string) {
+  const filePath = path.join(process.cwd(), 'content', 'blog', `${slug}.md`);
+  if (!fs.existsSync(filePath)) return null;
+  return parseFrontmatter(fs.readFileSync(filePath, 'utf-8'));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const post = readPost(params.slug);
+  if (!post) return { title: 'Entrada no encontrada' };
+
+  const { data, body } = post;
+  const title = (data.title as string) || params.slug;
+  const excerpt = (data.excerpt as string) || '';
+  const date = (data.date as string) || '';
+  const tags = (data.tags as string[]) || [];
+  const track = (data.track as string) || 'aula';
+  const url = `${SITE_URL}/blog/${params.slug}`;
+
+  // Sin excerpt, la descripción sale del primer párrafo real del cuerpo.
+  const fallback = body
+    .replace(/^#.*$/gm, '')
+    .replace(/[>*_`#\[\]]/g, '')
+    .split(/\n\s*\n/)
+    .map((s) => s.trim())
+    .find((s) => s.length > 80);
+  const description = (excerpt || fallback || '').slice(0, 300);
+
+  return {
+    title,
+    description,
+    keywords: tags,
+    authors: [{ name: AUTHOR, url: SITE_URL }],
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      url,
+      siteName: 'Daniel Garavito',
+      locale: 'es_CO',
+      publishedTime: date || undefined,
+      authors: [AUTHOR],
+      tags,
+      section: track === 'analisis' ? 'Análisis' : 'Aula',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      creator: '@danielgaravito',
+    },
+  };
+}
+
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const filePath = path.join(process.cwd(), 'content', 'blog', `${params.slug}.md`);
 
@@ -82,9 +138,29 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   const cover = getCoverGradient(params.slug);
   const theme = getThemeFromCategory(data.category as string);
   const readingTime = getReadingTime(body);
+  const cleanBody = stripLeadingH1(body, title);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: excerpt || undefined,
+    datePublished: date || undefined,
+    dateModified: originalDate || date || undefined,
+    author: { '@type': 'Person', name: AUTHOR, url: SITE_URL },
+    publisher: { '@type': 'Person', name: AUTHOR, url: SITE_URL },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${params.slug}` },
+    keywords: tags.join(', ') || undefined,
+    inLanguage: 'es-CO',
+    wordCount: body.trim().split(/\s+/).length,
+  };
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Cover doble capa: universo temático + cover personalizado */}
       <div
         className="relative w-full h-72 md:h-96 flex items-end overflow-hidden"
@@ -167,7 +243,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         </header>
 
         <article className="blog-article">
-          <ReactMarkdown>{body}</ReactMarkdown>
+          <ReactMarkdown>{cleanBody}</ReactMarkdown>
         </article>
 
         <div className="mt-16 pt-8 border-t border-gray-800 pb-16">

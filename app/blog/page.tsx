@@ -1,6 +1,25 @@
 import fs from 'fs';
 import path from 'path';
+import type { Metadata } from 'next';
 import BlogExplorer from '@/components/BlogExplorer';
+
+export const metadata: Metadata = {
+  title: 'Escritos | Daniel Garavito',
+  description:
+    'Análisis del sistema de salud colombiano —UPC, aseguramiento, gasto público— y material de mis cursos de estadística, bioestadística y análisis espacial en R.',
+  alternates: {
+    canonical: '/blog',
+    types: { 'application/rss+xml': '/blog/rss.xml' },
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Escritos · Daniel Garavito',
+    description:
+      'Análisis del sistema de salud colombiano y material de cursos de estadística aplicada.',
+    url: 'https://www.danielgaravito.co/blog',
+    locale: 'es_CO',
+  },
+};
 
 interface BlogPostData {
   slug: string;
