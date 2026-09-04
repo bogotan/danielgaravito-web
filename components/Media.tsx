@@ -98,13 +98,65 @@ type Podcast = {
   startSeconds?: number;
   show: string;
   year?: number;
+  dateLabel?: string;
+  guest?: string;
+  guestRole?: string;
   grupo: 'salud' | 'otros';
 };
 
-// Conversatorios del sector salud (#ConversatoriosADRES). Se muestra el tema
-// como título: los dos ciclos numeran desde 1 y el número solo tiene sentido
-// dentro de su propio ciclo.
+// Ciclo de Conversatorios ADRES. Invitados y fechas tomados de la pieza
+// gráfica de cada sesión; las tres últimas no anuncian invitado en su pieza.
 const podcastsSalud: Podcast[] = [
+  {
+    title: 'Sostenibilidad basada en evidencia',
+    url: 'https://www.youtube.com/watch?v=h8FLzaRRBHI',
+    embedId: 'h8FLzaRRBHI',
+    show: '#ConversatoriosADRES · Sesión 1',
+    dateLabel: '24 abr 2026',
+    guest: 'Gustavo Mery',
+    guestRole: 'Asesor de Sistemas y Servicios de Salud, OPS',
+    grupo: 'salud',
+  },
+  {
+    title: 'Redefiniendo el vínculo entre la ADRES y las IPS',
+    url: 'https://www.youtube.com/watch?v=ri5BV0UXyq4',
+    embedId: 'ri5BV0UXyq4',
+    show: '#ConversatoriosADRES · Sesión 2',
+    dateLabel: '6 may 2026',
+    guest: 'Jorge Toro',
+    guestRole: 'Director ejecutivo, Unión de IPS de Colombia (UNIPS)',
+    grupo: 'salud',
+  },
+  {
+    title: 'Cómo la tecnología permite medir la generación de valor',
+    url: 'https://www.youtube.com/watch?v=jI1ri51yACE',
+    embedId: 'jI1ri51yACE',
+    show: '#ConversatoriosADRES · Sesión 3',
+    dateLabel: '29 may 2026',
+    guest: 'Walberto Buelvas Argumedo',
+    guestRole: 'Director de Gestión Clínica e Innovación, MediSinú IPS',
+    grupo: 'salud',
+  },
+  {
+    title: 'Interoperabilidad: el costo de que los datos en salud no dialoguen',
+    url: 'https://www.youtube.com/watch?v=EjRUysxsXuo',
+    embedId: 'EjRUysxsXuo',
+    show: '#ConversatoriosADRES · Sesión 4',
+    dateLabel: '24 jun 2026',
+    guest: 'Mario Cortés',
+    guestRole: 'Presidente, HL7 Colombia',
+    grupo: 'salud',
+  },
+  {
+    title: 'ADRES en las Regiones — Pereira',
+    url: 'https://www.youtube.com/watch?v=XUXtZmOMZrY',
+    embedId: 'XUXtZmOMZrY',
+    show: 'ADRES en las Regiones',
+    dateLabel: '5 jun 2026',
+    guest: 'Félix León Martínez',
+    guestRole: 'Director general de la ADRES, con IPS, EPS y secretarías de salud del Eje Cafetero y Valle',
+    grupo: 'salud',
+  },
   {
     title: 'Ética, confiabilidad y responsabilidad en el uso de IA',
     url: 'https://www.youtube.com/watch?v=_afEdjVAghc',
@@ -113,7 +165,7 @@ const podcastsSalud: Podcast[] = [
     grupo: 'salud',
   },
   {
-    title: 'IA para un sistema de salud predictivo y resolutivo',
+    title: 'Anticipar para prevenir: IA para un sistema de salud predictivo y resolutivo',
     url: 'https://www.youtube.com/watch?v=qG6zP3zGRY8',
     embedId: 'qG6zP3zGRY8',
     show: '#ConversatoriosADRES',
@@ -124,41 +176,6 @@ const podcastsSalud: Podcast[] = [
     url: 'https://www.youtube.com/watch?v=zDyf4mEWEgo',
     embedId: 'zDyf4mEWEgo',
     show: '#ConversatoriosADRES',
-    grupo: 'salud',
-  },
-  {
-    title: 'Interoperabilidad: el costo de que los datos en salud no dialoguen',
-    url: 'https://www.youtube.com/watch?v=EjRUysxsXuo',
-    embedId: 'EjRUysxsXuo',
-    show: '#ConversatoriosADRES',
-    grupo: 'salud',
-  },
-  {
-    title: 'Sostenibilidad basada en evidencia',
-    url: 'https://www.youtube.com/watch?v=h8FLzaRRBHI',
-    embedId: 'h8FLzaRRBHI',
-    show: '#ConversatoriosADRES',
-    grupo: 'salud',
-  },
-  {
-    title: 'Redefiniendo el vínculo ADRES-IPS',
-    url: 'https://www.youtube.com/watch?v=ri5BV0UXyq4',
-    embedId: 'ri5BV0UXyq4',
-    show: '#ConversatoriosADRES',
-    grupo: 'salud',
-  },
-  {
-    title: 'Tecnología y generación de valor en el sistema de salud',
-    url: 'https://www.youtube.com/watch?v=jI1ri51yACE',
-    embedId: 'jI1ri51yACE',
-    show: '#ConversatoriosADRES',
-    grupo: 'salud',
-  },
-  {
-    title: 'ADRES en las regiones llega a Pereira',
-    url: 'https://www.youtube.com/watch?v=XUXtZmOMZrY',
-    embedId: 'XUXtZmOMZrY',
-    show: 'ADRES en las regiones',
     grupo: 'salud',
   },
 ];
@@ -507,9 +524,18 @@ export default function Media() {
                 {podcasts[activePodcast].show}
               </span>
               <h3 className="text-xl font-bold text-text">{podcasts[activePodcast].title}</h3>
-              {podcasts[activePodcast].year && (
+              {podcasts[activePodcast].guest && (
+                <p className="text-text text-sm mt-2">
+                  <span className="text-text-muted">Invitado: </span>
+                  <span className="font-medium">{podcasts[activePodcast].guest}</span>
+                  {podcasts[activePodcast].guestRole && (
+                    <span className="text-text-muted"> — {podcasts[activePodcast].guestRole}</span>
+                  )}
+                </p>
+              )}
+              {(podcasts[activePodcast].dateLabel || podcasts[activePodcast].year) && (
                 <p className="text-text-muted text-sm mt-1">
-                  {podcasts[activePodcast].show} · {podcasts[activePodcast].year}
+                  {podcasts[activePodcast].dateLabel || podcasts[activePodcast].year}
                 </p>
               )}
             </div>
@@ -558,7 +584,18 @@ export default function Media() {
                         <div className="p-3 bg-bg-secondary">
                           <p className="text-xs text-accent-gold font-semibold">{p.show}</p>
                           <p className="text-sm text-text font-medium line-clamp-2">{p.title}</p>
-                          {p.year && <p className="text-xs text-text-muted mt-1">{p.year}</p>}
+                          {p.guest && (
+                            <p className="text-xs text-text mt-2">
+                              <span className="text-text-muted">Invitado: </span>
+                              {p.guest}
+                            </p>
+                          )}
+                          {p.guestRole && (
+                            <p className="text-[11px] text-text-muted leading-snug">{p.guestRole}</p>
+                          )}
+                          {(p.dateLabel || p.year) && (
+                            <p className="text-xs text-text-muted mt-1">{p.dateLabel || p.year}</p>
+                          )}
                         </div>
                       </button>
                     );
