@@ -162,6 +162,7 @@ const podcastsSalud: Podcast[] = [
     url: 'https://www.youtube.com/watch?v=_afEdjVAghc',
     embedId: '_afEdjVAghc',
     show: '#ConversatoriosADRES',
+    guest: 'Nathalia Ortega',
     grupo: 'salud',
   },
   {
@@ -169,6 +170,7 @@ const podcastsSalud: Podcast[] = [
     url: 'https://www.youtube.com/watch?v=qG6zP3zGRY8',
     embedId: 'qG6zP3zGRY8',
     show: '#ConversatoriosADRES',
+    guest: 'Dr. Luis Pino',
     grupo: 'salud',
   },
   {
@@ -176,6 +178,7 @@ const podcastsSalud: Podcast[] = [
     url: 'https://www.youtube.com/watch?v=zDyf4mEWEgo',
     embedId: 'zDyf4mEWEgo',
     show: '#ConversatoriosADRES',
+    guest: 'Fabian Cardona',
     grupo: 'salud',
   },
 ];
