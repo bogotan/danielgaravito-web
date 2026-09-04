@@ -18,13 +18,19 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' },
   },
-  title: 'Daniel Garavito | Anal\u00edtica y Salud P\u00fablica',
+  title: 'Daniel Garavito | Salud Inteligente y Anal\u00edtica Avanzada',
   description:
-    'Investigaci\u00f3n aplicada, formaci\u00f3n y consultor\u00eda anal\u00edtica en salud. Dirigi\u00f3 Innovaci\u00f3n y Anal\u00edtica en ADRES hasta 2026; hoy trabaja de forma independiente con datos abiertos y m\u00e9todo reproducible. Fundador de EducALL y creador de NACER.',
+    'Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente. Investigaci\u00f3n aplicada, formaci\u00f3n y consultor\u00eda. Dirigi\u00f3 Innovaci\u00f3n y Anal\u00edtica en ADRES hasta 2026; hoy trabaja de forma independiente, con datos abiertos y m\u00e9todo reproducible. Fundador de EducALL y creador de NACER.',
   keywords: [
     'Daniel Garavito',
     'economista',
     'ciencia de datos',
+    'salud inteligente',
+    'anal\u00edtica avanzada',
+    'ingenier\u00eda de sistemas',
+    'salud digital',
+    'inteligencia artificial en salud',
+    'econom\u00eda de la salud',
     'salud p\u00fablica',
     'innovaci\u00f3n',
     'Colombia',
@@ -35,11 +41,29 @@ export const metadata: Metadata = {
     'datos abiertos',
   ],
   openGraph: {
-    title: 'Daniel Garavito | Anal\u00edtica y Salud P\u00fablica',
+    title: 'Daniel Garavito | Salud Inteligente y Anal\u00edtica Avanzada',
     description:
-      'Investigaci\u00f3n aplicada, formaci\u00f3n y consultor\u00eda anal\u00edtica en salud. Datos abiertos, m\u00e9todo reproducible.',
+      'Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente. Datos abiertos, m\u00e9todo reproducible.',
     type: 'website',
     locale: 'es_CO',
+    siteName: 'Daniel Garavito',
+    images: [
+      {
+        url: '/og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Daniel Garavito — economía, ingeniería y analítica avanzada aplicadas a la salud inteligente',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@danielgaravitoco',
+    creator: '@danielgaravitoco',
+    title: 'Daniel Garavito | Salud Inteligente y Anal\u00edtica Avanzada',
+    description:
+      'Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente. Datos abiertos, m\u00e9todo reproducible.',
+    images: ['/og.jpg'],
   },
 };
 
@@ -140,10 +164,16 @@ export default function RootLayout({
                   name: 'Daniel Garavito',
                   alternateName: 'Daniel Alfonso Garavito Jim\u00e9nez',
                   url: 'https://www.danielgaravito.co',
-                  jobTitle: 'Investigaci\u00f3n aplicada y consultor\u00eda anal\u00edtica en salud',
+                  jobTitle: 'Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente',
                   knowsAbout: [
-                    'Sistema de salud colombiano',
+                    'Salud inteligente',
+                    'Anal\u00edtica avanzada',
+                    'Ingenier\u00eda de sistemas',
+                    'Salud digital',
+                    'Inteligencia artificial aplicada a la salud',
                     'Econom\u00eda de la salud',
+                    'Interoperabilidad en salud',
+                    'Sistema de salud colombiano',
                     'Unidad de Pago por Capitaci\u00f3n',
                     'Anal\u00edtica de datos',
                     'Estad\u00edstica aplicada',

@@ -90,7 +90,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Greeting */}
           <p className="text-text-muted text-lg md:text-xl mb-2 animate-fade-in">
-            Anal&iacute;tica aplicada al sistema de salud colombiano
+            Econom&iacute;a &middot; Ingenier&iacute;a &middot; Anal&iacute;tica avanzada
           </p>
 
           {/* Name */}
@@ -100,9 +100,9 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-text-muted mb-6 max-w-2xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Dirig&iacute; Innovaci&oacute;n y Anal&iacute;tica en ADRES. Hoy hago ese trabajo
-            desde afuera: investigaci&oacute;n con datos abiertos, talleres para
-            directivos y consultor&iacute;a para IPS y aseguradoras.
+            Las tres, juntas, aplicadas a la salud inteligente. Dirig&iacute;
+            Innovaci&oacute;n y Anal&iacute;tica en ADRES; hoy hago ese trabajo desde afuera:
+            investigaci&oacute;n con datos abiertos, formaci&oacute;n y consultor&iacute;a.
           </p>
 
           {/* Rotating quote */}

@@ -12,6 +12,20 @@ export const metadata = {
       'Ex servidor público de ADRES. Qué obligaciones siguen vigentes, con qué datos trabajo y cómo se puede verificar.',
     type: 'article',
     locale: 'es_CO',
+    siteName: 'Daniel Garavito',
+    images: [
+      {
+        url: '/og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Daniel Garavito — economía, ingeniería y analítica avanzada aplicadas a la salud inteligente',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@danielgaravitoco',
+    images: ['/og.jpg'],
   },
 };
 
