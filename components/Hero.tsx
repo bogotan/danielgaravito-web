@@ -101,8 +101,17 @@ export default function Hero() {
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-text-muted mb-6 max-w-2xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Las tres, juntas, aplicadas a la salud inteligente. Dirig&iacute;
-            Innovaci&oacute;n y Anal&iacute;tica en ADRES; hoy hago ese trabajo desde afuera:
-            investigaci&oacute;n con datos abiertos, formaci&oacute;n y consultor&iacute;a.
+            Innovaci&oacute;n y Anal&iacute;tica en ADRES; hoy investigo con datos abiertos,
+            escribo y ense&ntilde;o. Lo que se contrata vive en{' '}
+            <a
+              href="https://sinergistica.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-green hover:text-accent-gold underline underline-offset-4 transition-colors"
+            >
+              Sinerg&iacute;stica
+            </a>
+            .
           </p>
 
           {/* Rotating quote */}
@@ -113,10 +122,10 @@ export default function Hero() {
           {/* CTA */}
           <div className="flex flex-wrap gap-4 mb-10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <Link href="#proyectos" className="btn-primary">
-              Qu&eacute; hago
+              Lo que investigo
             </Link>
-            <Link href="#contacto" className="btn-secondary">
-              Hablemos de un encargo
+            <Link href="/blog" className="btn-secondary">
+              Escritos
             </Link>
           </div>
 

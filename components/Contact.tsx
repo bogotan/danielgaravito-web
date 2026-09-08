@@ -66,9 +66,10 @@ export default function Contact() {
         <span className="gradient-text">Contacto</span>
       </h2>
       <p className="text-text-muted text-lg mb-6 max-w-2xl">
-        Hablemos sobre datos, innovación, salud pública o cómo colaborar.
-        Si tienes un evento, un medio o un proyecto donde mi perspectiva puede aportar,
-        escríbeme — respondo en menos de 48 horas.
+        Si tienes un evento, un medio, una investigación o una clase donde mi
+        perspectiva pueda aportar, escríbeme — respondo en menos de 48 horas.
+        Si lo que buscas es contratar consultoría o formación, eso se hace
+        desde Sinergística.
       </p>
       <div className="flex flex-wrap gap-3 mb-10">
         <a
@@ -89,8 +90,17 @@ export default function Contact() {
           href="#contact-form"
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-secondary border border-gray-700 text-text text-sm font-medium hover:border-accent-gold transition-all"
         >
-          Colaboración / consultoría
+          Investigación / docencia
           <span>→</span>
+        </a>
+        <a
+          href="https://sinergistica.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-secondary border border-accent-blue/40 text-accent-blue text-sm font-medium hover:border-accent-blue transition-all"
+        >
+          Contratar consultoría
+          <span>↗</span>
         </a>
       </div>
 

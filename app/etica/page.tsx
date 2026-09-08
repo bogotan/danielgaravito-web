@@ -40,7 +40,7 @@ export default function EticaPage() {
           <span className="gradient-text">Independencia y manejo de información</span>
         </h1>
         <p className="text-text-muted">
-          Daniel Alfonso Garavito Jiménez · Actualizada el 3 de septiembre de 2026
+          Daniel Alfonso Garavito Jiménez · Actualizada el 8 de septiembre de 2026
         </p>
       </header>
 
@@ -64,8 +64,20 @@ export default function EticaPage() {
         </p>
         <p>
           <strong>Práctica independiente.</strong> Hoy hago investigación
-          aplicada, formación y consultoría analítica en salud, a través de
-          EducALL, de la que soy fundador y representante legal.
+          aplicada, escribo y enseño. La consultoría y los productos —MÉDULA,
+          el taller <em>El Rezago</em>, la auditoría de una cifra, la
+          formación— se contratan a través de{' '}
+          <a
+            href="https://sinergistica.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-green hover:underline"
+          >
+            Sinergística
+          </a>
+          , la empresa que fundé y de la que soy representante legal, y bajo la
+          que opera EducALL. Esta página es la mitad de autoría: lo que se
+          publica aquí se puede citar, verificar y reproducir.
         </p>
         <p>
           Salir del Estado no cancela las obligaciones que vienen del cargo.
@@ -126,6 +138,68 @@ export default function EticaPage() {
           </div>
         </div>
 
+        <h2 className="text-2xl font-bold text-text mt-12 mb-4">
+          Investigo un sector al que también le vendo
+        </h2>
+        <p>
+          Esta es la tensión incómoda y prefiero nombrarla yo antes de que me la
+          nombren en público: publico mediciones independientes sobre
+          aseguradores y prestadores, y al mismo tiempo tengo una empresa que le
+          vende servicios analíticos a esos mismos aseguradores y prestadores.
+          Las reglas con que la manejo son estas cuatro, y son verificables.
+        </p>
+
+        <div className="space-y-5">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+            <h3 className="font-bold text-text mb-2">
+              La investigación es mía, no de la empresa
+            </h3>
+            <p className="text-text-muted">
+              Los estudios sobre la UPC, la concentración de afiliados y la
+              sostenibilidad del sistema son de autoría personal. Sinergística
+              los usa bajo una licencia no exclusiva y revocable que no le da
+              injerencia sobre el contenido. Si la empresa desapareciera mañana,
+              los estudios seguirían publicados igual.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+            <h3 className="font-bold text-text mb-2">
+              Publicar una medición no es ofrecer un servicio
+            </h3>
+            <p className="text-text-muted">
+              Que una entidad aparezca en un análisis mío no es una insinuación
+              de que necesita contratarme, ni un juicio sobre su gestión. No uso
+              una medición como antesala de una propuesta comercial, y no le
+              escribo a una entidad a raíz de cómo salió en una.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+            <h3 className="font-bold text-text mb-2">
+              Ningún cliente decide qué se mide ni qué se publica
+            </h3>
+            <p className="text-text-muted">
+              El método, el corte de los datos y los resultados no se negocian.
+              Un cliente no puede pedir que una cifra no salga, ni que salga de
+              otra forma. Si eso fuera condición del encargo, no acepto el
+              encargo.
+            </p>
+          </div>
+
+          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+            <h3 className="font-bold text-text mb-2">
+              Si hay relación comercial vigente, se declara antes de publicar
+            </h3>
+            <p className="text-text-muted">
+              Cuando una entidad incluida en una medición sea cliente en ese
+              momento, lo digo en el propio documento, arriba, no en una nota al
+              pie. Es la única forma de que el lector pondere lo que está
+              leyendo.
+            </p>
+          </div>
+        </div>
+
         <h2 className="text-2xl font-bold text-text mt-12 mb-4">Marco de referencia</h2>
         <p className="text-text-muted">
           Las reglas anteriores se apoyan, entre otras, en el Estatuto
@@ -155,7 +229,7 @@ export default function EticaPage() {
         <p>Esta declaración se revisa y actualiza:</p>
         <ul className="list-disc pl-6 space-y-1 text-text-muted">
           <li>Anualmente, antes del 31 de marzo.</li>
-          <li>Cuando cambien mis vínculos profesionales o mi participación en EducALL.</li>
+          <li>Cuando cambien mis vínculos profesionales o mi participación en Sinergística.</li>
           <li>Cuando asuma un encargo con una entidad del sector salud.</li>
           <li>Cuando se modifique normatividad aplicable.</li>
         </ul>
@@ -169,7 +243,9 @@ export default function EticaPage() {
           <p className="text-sm text-text-muted italic">
             Publicada el 23 de abril de 2026 como declaración de conflicto de
             interés durante mi vinculación con ADRES · Reescrita el 3 de
-            septiembre de 2026 tras el fin de esa vinculación
+            septiembre de 2026 tras el fin de esa vinculación · Ampliada el 8 de
+            septiembre de 2026 con las reglas de independencia frente a mi
+            propia empresa
           </p>
           <p className="font-bold text-text mt-4">Daniel Alfonso Garavito Jiménez</p>
           <p className="text-sm text-text-muted">
