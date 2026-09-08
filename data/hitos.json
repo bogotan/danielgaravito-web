@@ -145,9 +145,20 @@
   {
     "year": 2026,
     "emoji": "📊",
-    "title": "Sala de Inteligencia ADRES",
-    "desc": "Iniciativa institucional ADRES con dashboards en vivo para monitorear los recursos del sistema de salud. Hago parte del equipo que la desarrolla.",
-    "type": "proyecto",
+    "title": "Sala de Inteligencia — ADRES",
+    "desc": "Iniciativa institucional de ADRES: tableros en vivo para monitorear los recursos del sistema de salud. Dirigí el área de Innovación y Analítica que la construyó y la sostuvo, hasta agosto de 2026.",
+    "type": "gobierno",
+    "image": "",
+    "url": "https://www.youtube.com/watch?v=7LBM8KckIWU",
+    "highlight": false,
+    "color": "#0A6EBF"
+  },
+  {
+    "year": 2026,
+    "emoji": "🔍",
+    "title": "SIA — Auditoría potenciada con IA, ADRES",
+    "desc": "Iniciativa institucional de ADRES para llevar inteligencia artificial a la auditoría del gasto en salud. El área de Innovación y Analítica que dirigí acompañó su diseño y su arquitectura hasta agosto de 2026.",
+    "type": "gobierno",
     "image": "",
     "url": "",
     "highlight": false,

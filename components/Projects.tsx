@@ -25,7 +25,18 @@ export default function Projects() {
         <span className="gradient-text">Proyectos</span>
       </h2>
       <p className="text-text-muted text-lg mb-10 max-w-2xl">
-        Iniciativas en la intersección de tecnología, datos y impacto social.
+        Investigación propia y proyectos donde se cruzan la economía, la
+        ingeniería y la analítica avanzada. Lo que aquí se publica se puede
+        citar y reproducir; lo que se contrata vive en{' '}
+        <a
+          href="https://sinergistica.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent-green hover:text-accent-gold underline underline-offset-4 transition-colors"
+        >
+          Sinergística
+        </a>
+        .
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -76,6 +87,32 @@ export default function Projects() {
           </div>
         ))}
       </div>
+
+      <aside className="mt-10 card border-accent-blue/30 bg-gradient-to-br from-accent-blue/5 to-transparent">
+        <p className="text-xs font-semibold uppercase tracking-wider text-accent-blue mb-2">
+          ¿Busca contratar?
+        </p>
+        <h3 className="text-lg font-bold text-text mb-2">
+          La consultoría y los productos viven en Sinergística
+        </h3>
+        <p className="text-text-muted text-sm leading-relaxed mb-4 max-w-2xl">
+          MÉDULA —gestión industrial de la información para prestadores—, el
+          taller <em>El Rezago</em>, la auditoría de una cifra y la formación
+          ejecutiva se contratan a través de Sinergística S.A.S., la casa desde
+          la que trabajo. Esta página guarda la otra mitad: la investigación, las
+          columnas, los libros y las charlas, que son de autoría personal y se
+          publican con fuentes abiertas.
+        </p>
+        <a
+          href="https://sinergistica.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-blue hover:text-accent-gold transition-colors"
+        >
+          Ver el portafolio de Sinergística
+          <span aria-hidden>↗</span>
+        </a>
+      </aside>
     </section>
   );
 }

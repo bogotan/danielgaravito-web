@@ -178,6 +178,7 @@ export default function RootLayout({
                     'Anal\u00edtica de datos',
                     'Estad\u00edstica aplicada',
                   ],
+                  worksFor: { '@id': 'https://sinergistica.com/#org' },
                   sameAs: [
                     'https://www.linkedin.com/in/daniel-alfonso-garavito-jim%C3%A9nez/',
                     'https://x.com/danielgaravitoco',
@@ -186,6 +187,13 @@ export default function RootLayout({
                     'https://rpubs.com/bogotan',
                     'https://consultorsalud.com/opinion/',
                   ],
+                },
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://sinergistica.com/#org',
+                  name: 'Sinerg\u00edstica S.A.S.',
+                  url: 'https://sinergistica.com/',
+                  founder: { '@id': 'https://www.danielgaravito.co/#daniel' },
                 },
                 {
                   '@type': 'WebSite',

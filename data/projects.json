@@ -5,60 +5,10 @@
     "syncedBy": "sync-projects.js",
     "protocol": "01_FuerzaG_Sistema/documentacion/PROTOCOLO_SYNC_WEB_2026-04-20.md",
     "rule": "No editar a mano. Modificar MEMORIA.md y correr npm run sync-projects.",
-    "lastManualEdit": "2026-09-03",
-    "manualEditNote": "Portada reducida a oferta vendible tras la salida de ADRES. Espeja estos cambios en MEMORIA.md antes de correr npm run sync-projects, o el sync los revierte."
+    "lastManualEdit": "2026-09-08",
+    "manualEditNote": "Reparto GTM (docs/GTM.md de Sinergistica, 7 sep 2026): MÉDULA y El Rezago salen del sitio personal y viven en sinergistica.com (si se factura, vive en la empresa; si se cita, vive aquí). SIA y Sala de Inteligencia salen de proyectos y quedan en trayectoria (data/hitos.json), en pasado, como trabajo institucional de ADRES. Metro 22 y Furiosa fuera del JSON. Sostenibilidad entra con public:false hasta radicar el memorando. Espeja estos cambios en MEMORIA.md antes de correr npm run sync-projects, o el sync los revierte."
   },
   "projects": [
-    {
-      "emoji": "🩻",
-      "title": "MÉDULA",
-      "subtitle": "Gestión industrial de la información para IPS",
-      "description": "Una IPS reporta a doce o dieciocho sistemas obligatorios y decide a ciegas. El insumo es gratuito y obligatorio; lo que falta es la industria que lo convierte en decisión. MÉDULA no vende tableros: vende cinco decisiones, en doce módulos, por fases.",
-      "tags": [
-        "Consultoría",
-        "IPS",
-        "Datos",
-        "Producto"
-      ],
-      "color": "from-accent-blue to-accent-gold",
-      "status": "v2.0 — oferta documentada",
-      "statusCategory": "active",
-      "url": "",
-      "progress": 70,
-      "owners": [
-        "Daniel"
-      ],
-      "roadmap": [],
-      "blockers": [],
-      "deadline": "2026-12-31",
-      "public": true,
-      "slug": "medula"
-    },
-    {
-      "emoji": "⏳",
-      "title": "El Rezago",
-      "subtitle": "Simulador de calidad del dato en salud",
-      "description": "Serious game de 90 minutos para directivos de IPS. El participante maneja una IPS ficticia nueve meses: los tres primeros es coordinador de facturación y no ve señal alguna de calidad; del cuarto en adelante es gerente, y le llegan las glosas de sus propias decisiones de hace tres meses, con su letra dentro del sobre.",
-      "tags": [
-        "Serious game",
-        "Taller",
-        "IPS",
-        "Calidad del dato"
-      ],
-      "color": "from-accent-gold to-accent-green",
-      "status": "Motor funcional — 20 pruebas",
-      "statusCategory": "pre-launch",
-      "url": "",
-      "progress": 75,
-      "owners": [
-        "Daniel"
-      ],
-      "roadmap": [],
-      "blockers": [],
-      "deadline": "2026-11-30",
-      "public": true,
-      "slug": "el-rezago"
-    },
     {
       "emoji": "📐",
       "title": "Estudios sobre la UPC",
@@ -108,6 +58,33 @@
       "deadline": "2026-10-31",
       "public": true,
       "slug": "afiliados-ihh"
+    },
+    {
+      "emoji": "♻️",
+      "title": "Sostenibilidad del SGSSS 2026–2035",
+      "subtitle": "Modelo, simulador y 46 métodos de proyección",
+      "description": "Manuscrito terminado con modelo de proyección de la sostenibilidad financiera del sistema de salud colombiano a diez años, simulador asociado y una revisión de 46 métodos de proyección usados en sistemas comparables. Autoría personal, construida sobre fuentes públicas.",
+      "tags": [
+        "Investigación",
+        "Sostenibilidad",
+        "SGSSS",
+        "Modelo"
+      ],
+      "color": "from-accent-green to-accent-blue",
+      "status": "Terminado — publicación en espera",
+      "statusCategory": "pre-launch",
+      "url": "",
+      "progress": 95,
+      "owners": [
+        "Daniel"
+      ],
+      "roadmap": [],
+      "blockers": [
+        "No difundir hasta radicar el memorando ante Jurídica y Control Interno de ADRES"
+      ],
+      "deadline": "",
+      "public": false,
+      "slug": "sostenibilidad-sgsss"
     },
     {
       "slug": "nacer",
@@ -314,145 +291,6 @@
       ],
       "deadline": "2026-12-31",
       "public": true
-    },
-    {
-      "slug": "sia",
-      "emoji": "🔍",
-      "title": "SIA",
-      "subtitle": "Trabajo institucional en ADRES (hasta ago-2026)",
-      "description": "Iniciativa de ADRES de auditoría potenciada con IA para el sector salud colombiano. Hago parte del equipo de Innovación y Analítica que acompaña su diseño y arquitectura.",
-      "tags": [
-        "IA",
-        "Salud",
-        "Auditoría",
-        "Sector público"
-      ],
-      "color": "from-accent-blue to-accent-gold",
-      "status": "Diseño",
-      "statusCategory": "active",
-      "url": "",
-      "progress": 35,
-      "owners": [
-        "🐙 PULPO",
-        "🦦 NUTRIA",
-        "🦗 MANTIS",
-        "🦬 BÚFALO"
-      ],
-      "roadmap": [
-        {
-          "step": 1,
-          "title": "Agendar reunión de arquitectura (pendiente hace 4 semanas)",
-          "status": "pending",
-          "owner": "Daniel"
-        },
-        {
-          "step": 2,
-          "title": "Definir alcance MVP: 1 caso de auditoría específico",
-          "status": "pending",
-          "owner": "🦊 ZORRO"
-        },
-        {
-          "step": 3,
-          "title": "Mapeo de fuentes RIPS + BDUA disponibles",
-          "status": "pending",
-          "owner": "🦦 NUTRIA"
-        },
-        {
-          "step": 4,
-          "title": "Diseño de detección de anomalías (modelo inicial)",
-          "status": "pending",
-          "owner": "🦗 MANTIS"
-        },
-        {
-          "step": 5,
-          "title": "Revisión legal y de habeas data",
-          "status": "pending",
-          "owner": "🦬 BÚFALO"
-        },
-        {
-          "step": 6,
-          "title": "Prototipo funcional de 1 flujo end-to-end",
-          "status": "pending",
-          "owner": "🐙 PULPO"
-        },
-        {
-          "step": 7,
-          "title": "Piloto con 1 EPS colaboradora",
-          "status": "pending",
-          "owner": "Daniel + 🦁 JEFE"
-        }
-      ],
-      "blockers": [
-        "Sin reunión de arquitectura agendada",
-        "Evaluar congelar si no se mueve en sprint 17"
-      ],
-      "deadline": "2026-09-30",
-      "public": false
-    },
-    {
-      "slug": "sala-inteligencia-adres",
-      "emoji": "📊",
-      "title": "Sala de Inteligencia ADRES",
-      "subtitle": "Trabajo institucional en ADRES (hasta ago-2026)",
-      "description": "Iniciativa institucional de ADRES con dashboards en vivo para monitorear los recursos del sistema de salud de 52 millones de colombianos. Hago parte del equipo que la desarrolla y mantiene.",
-      "tags": [
-        "Datos",
-        "Dashboard",
-        "Salud pública",
-        "ADRES"
-      ],
-      "color": "from-accent-blue to-blue-400",
-      "status": "Operativo",
-      "statusCategory": "active",
-      "url": "https://www.youtube.com/watch?v=7LBM8KckIWU",
-      "progress": 60,
-      "owners": [
-        "🦗 MANTIS",
-        "🦦 NUTRIA",
-        "🪶 HALCÓN",
-        "🦁 JEFE"
-      ],
-      "roadmap": [
-        {
-          "step": 1,
-          "title": "Completar inventario Databricks (20 catálogos, 1.100+ tablas)",
-          "status": "done",
-          "owner": "🦦 NUTRIA"
-        },
-        {
-          "step": 2,
-          "title": "Definir 5 KPIs prioritarios para el Director General",
-          "status": "in_progress",
-          "owner": "🪶 HALCÓN"
-        },
-        {
-          "step": 3,
-          "title": "Construir dashboard ejecutivo v2 con esos 5 KPIs",
-          "status": "pending",
-          "owner": "🦗 MANTIS"
-        },
-        {
-          "step": 4,
-          "title": "Revisión por capas ADRES (8 capas, CAMALEÓN)",
-          "status": "pending",
-          "owner": "🦎 CAMALEÓN"
-        },
-        {
-          "step": 5,
-          "title": "Presentar a Junta Directiva ADRES",
-          "status": "pending",
-          "owner": "Daniel + 🦁 JEFE"
-        },
-        {
-          "step": 6,
-          "title": "Rollout a equipos operativos ADRES",
-          "status": "pending",
-          "owner": "🐺 LOBO"
-        }
-      ],
-      "blockers": [],
-      "deadline": "2026-07-31",
-      "public": false
     },
     {
       "slug": "babytongues",
@@ -663,111 +501,6 @@
         "Sin pregunta de investigación definida"
       ],
       "deadline": "2028-12-31",
-      "public": false
-    },
-    {
-      "slug": "furiosa",
-      "emoji": "🏎️",
-      "title": "Furiosa",
-      "subtitle": "Simulador profesional de carreras",
-      "description": "Setup de SimRacing profesional para entrenamiento y contenido. Operativa, falta completar el pool de periféricos y experiencias.",
-      "tags": [
-        "SimRacing",
-        "Hardware",
-        "Contenido"
-      ],
-      "color": "from-red-500 to-accent-gold",
-      "status": "Operativo",
-      "statusCategory": "active",
-      "url": "",
-      "progress": 65,
-      "owners": [
-        "Daniel",
-        "🦝 MAPACHE"
-      ],
-      "roadmap": [
-        {
-          "step": 1,
-          "title": "Completar pool de periféricos (volante direct drive, pedales)",
-          "status": "in_progress",
-          "owner": "🦝 MAPACHE"
-        },
-        {
-          "step": 2,
-          "title": "Definir 3 series de contenido (F1, Rally, Endurance)",
-          "status": "pending",
-          "owner": "🐦 COLIBRÍ"
-        },
-        {
-          "step": 3,
-          "title": "Grabación de piloto + 2 capítulos",
-          "status": "pending",
-          "owner": "Daniel"
-        },
-        {
-          "step": 4,
-          "title": "Publicar canal YouTube + TikTok de SimRacing",
-          "status": "pending",
-          "owner": "🦜 LORO"
-        },
-        {
-          "step": 5,
-          "title": "Explorar monetización (sponsors de hardware)",
-          "status": "pending",
-          "owner": "Daniel"
-        }
-      ],
-      "blockers": [],
-      "deadline": "2026-08-31",
-      "public": false
-    },
-    {
-      "slug": "metro22",
-      "emoji": "🏗️",
-      "title": "Metro 22",
-      "subtitle": "Inversión inmobiliaria",
-      "description": "2 apartamentos apartados en proyecto Metro 22. Inversión patrimonial para Liam y diversificación de flujos.",
-      "tags": [
-        "Inversión",
-        "Inmobiliario",
-        "Patrimonio"
-      ],
-      "color": "from-gray-500 to-accent-blue",
-      "status": "Construcción",
-      "statusCategory": "active",
-      "url": "",
-      "progress": 50,
-      "owners": [
-        "Daniel"
-      ],
-      "roadmap": [
-        {
-          "step": 1,
-          "title": "Pagos mensuales al día",
-          "status": "in_progress",
-          "owner": "Daniel"
-        },
-        {
-          "step": 2,
-          "title": "Seguimiento trimestral de obra",
-          "status": "in_progress",
-          "owner": "Daniel"
-        },
-        {
-          "step": 3,
-          "title": "Decidir uso final: arriendo / venta / vivienda",
-          "status": "pending",
-          "owner": "Daniel + 🦅 ÁGUILA"
-        },
-        {
-          "step": 4,
-          "title": "Entrega esperada",
-          "status": "pending",
-          "owner": "Constructora"
-        }
-      ],
-      "blockers": [],
-      "deadline": "2027-12-31",
       "public": false
     }
   ]

@@ -1,6 +1,7 @@
 # danielgaravito.co
 
-> Sitio personal de **Daniel Garavito** — Asesor de Innovación y Analítica en ADRES, ingeniero industrial, papá de Liam, y arquitecto del sistema multi-agente **FuerzaG**.
+> Sitio personal de **Daniel Garavito** — economía, ingeniería y analítica avanzada aplicadas a la salud inteligente.
+> Dirigió Innovación y Analítica en ADRES hasta agosto de 2026; hoy investiga, enseña y asesora desde afuera.
 
 ![Next.js](https://img.shields.io/badge/Next.js-14.2-black?logo=next.js)
 ![React](https://img.shields.io/badge/React-18.3-61dafb?logo=react)
@@ -13,12 +14,24 @@
 
 ## Qué es este sitio
 
-**danielgaravito.co** es la presencia pública de Daniel Garavito. No es un CV. Es un **tablero vivo** donde cada proyecto muestra no solo qué hace sino **cómo se termina** — el roadmap paso a paso, los bloqueos activos, el progreso real. Todo sincronizado automáticamente con mi sistema personal de memoria (ELEFANTE) para que lo que ves aquí **sea siempre la verdad del día**.
+**danielgaravito.co** es la presencia pública de Daniel Garavito: la **mitad de autoría** de su trabajo. Investigación reproducible, escritos, libros, charlas y podcast. No es un CV y no es un catálogo comercial.
+
+### El reparto con sinergistica.com
+
+> **Si se factura, vive en Sinergística. Si se cita, vive en danielgaravito.co.**
+
+| | danielgaravito.co | sinergistica.com |
+|---|---|---|
+| Qué es | autoría personal | la empresa |
+| Qué muestra | estudios UPC, afiliados y concentración, escritos, libros, charlas, podcast | MÉDULA, El Rezago, Auditoría de una cifra, Termómetro, diplomado |
+| Llamado a la acción | leer, citar, verificar | contratar |
+
+Por eso **MÉDULA** y **El Rezago** ya no están en `data/projects.json`: son productos consultivos y viven en [sinergistica.com](https://sinergistica.com). El reparto completo está en `Sinergistica/docs/GTM.md` y la titularidad en `Sinergistica/docs/PROYECTOS.md`.
 
 **Filosofía:**
 
+- **Cada cifra rastreable hasta su fuente** — lo que se publica aquí se construye con datos abiertos y es reproducible contra su repositorio. Ver [`/etica`](https://danielgaravito.co/etica).
 - **Radical transparencia** — si un proyecto está bloqueado, se dice. Si va al 35%, no al 100% para vender humo.
-- **Roadmap abierto** — cada proyecto expone su plan de acción; cualquiera puede ver qué falta y ofrecerse a ayudar.
 - **Sincronización con realidad** — los proyectos no viven en una diapositiva, viven en MEMORIA.md y de ahí fluyen a esta web.
 - **Sin tracking, sin cookies invasivas** — tu visita no se mide ni se vende.
 
@@ -27,10 +40,12 @@
 ## Features
 
 - **Hero** con rotación de citas y llamado a la acción
-- **Proyectos activos** con acordeón "Ver cómo terminarlo" — roadmap paso a paso, progreso %, bloqueos, owners (humanos y agentes de FuerzaG), deadline
-- **Timeline** de hitos profesionales (años, emojis, highlights)
-- **Publicaciones** académicas y de divulgación
-- **Blog** con MDX + frontmatter (gray-matter)
+- **Proyectos** de autoría personal, con puente explícito a Sinergística para lo que se contrata
+- **Timeline** de trayectoria (incluye el trabajo institucional en ADRES, en pasado)
+- **En Acción** — charlas, podcast (con invitado y fecha) y publicaciones, incluidas las columnas de CONSULTORSALUD
+- **Escritos** con MDX + frontmatter (gray-matter), segmentados en Análisis y Aula
+- **SEO**: `sitemap.xml`, `robots.txt`, RSS, JSON-LD (Person, WebSite, BlogPosting) y `og.jpg` propio
+- **`/etica`** — declaración de independencia y manejo de información
 - **Dashboard de admin** privado (con auth ligera) para métricas
 - **Lead form** conectado a Supabase
 - **API routes** para contacto, leads, auth
@@ -74,6 +89,10 @@
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+> ⚠️ **`data/projects.json` tiene ediciones manuales.** El reparto GTM (sacar MÉDULA, El Rezago,
+> SIA, Sala de Inteligencia, Metro 22 y Furiosa) se hizo a mano sobre el JSON. Espeja esos cambios
+> en `MEMORIA.md` **antes** de correr `npm run sync-projects`, o el sync los revierte. Ver `_meta.manualEditNote`.
+
 **Protocolo completo:** [`../../../../01_FuerzaG_Sistema/documentacion/PROTOCOLO_SYNC_WEB_2026-04-20.md`](../../../01_FuerzaG_Sistema/documentacion/PROTOCOLO_SYNC_WEB_2026-04-20.md)
 
 ---
@@ -85,7 +104,7 @@
 | Framework | Next.js 14.2 (App Router) |
 | Lenguaje | TypeScript 5.4 |
 | UI | React 18.3 + Tailwind 3.4 |
-| Contenido | MDX + gray-matter + react-markdown |
+| Contenido | Markdown + gray-matter + react-markdown |
 | Datos | JSON tipado + Supabase (leads/auth) |
 | Hosting | Vercel |
 | Sync | Node.js scripts sobre `MEMORIA.md` |
@@ -138,17 +157,19 @@ danielgaravito_next/
 │   ├── api/                   # Routes serverless (auth, contact, leads)
 │   ├── blog/[slug]/           # Posts dinámicos desde MDX
 │   ├── layout.tsx             # Shell global
-│   └── page.tsx               # Home (Hero + Projects + Timeline + Publications)
+│   ├── etica/                 # Independencia y manejo de información
+│   ├── sitemap.ts · robots.ts # SEO
+│   └── page.tsx               # Home (Hero + About + Projects + Timeline + Media)
 ├── components/
 │   ├── Hero.tsx               # Cita rotativa + CTA
 │   ├── Projects.tsx           # Tarjetas con acordeón "Cómo terminarlo"
 │   ├── Timeline.tsx           # Hitos profesionales
-│   ├── Publications.tsx       # Papers y divulgación
+│   ├── Media.tsx              # Charlas, podcast y publicaciones
 │   ├── BlogExplorer.tsx       # Filtro y listado de posts
 │   └── ...
 ├── content/blog/              # Markdown posts con frontmatter
 ├── data/
-│   ├── projects.json          # ← generado/sincronizado desde MEMORIA
+│   ├── projects.json          # ← generado/sincronizado desde MEMORIA (ojo: ver _meta)
 │   └── hitos.json             # ← generado desde timeline_hitos.xlsx
 ├── scripts/
 │   ├── sync-projects.js       # MEMORIA.md → projects.json
@@ -221,9 +242,10 @@ El código fuente de este sitio es **propietario**. La información sobre proyec
 ## Contacto
 
 - **Web:** [danielgaravito.co](https://danielgaravito.co)
-- **Email:** bogotan@gmail.com
-- **LinkedIn:** [linkedin.com/in/danielgaravito](https://linkedin.com/in/danielgaravito)
+- **Empresa:** [sinergistica.com](https://sinergistica.com) — ahí se contrata
+- **Email:** dagaravitoj@gmail.com
+- **LinkedIn:** [Daniel Alfonso Garavito Jiménez](https://www.linkedin.com/in/daniel-alfonso-garavito-jim%C3%A9nez/)
 
 ---
 
-<sub>Construido con cariño para mostrar que las ideas se terminan cuando se exponen a la luz. Por Liam.</sub>
+<sub>Construido para mostrar que las ideas se terminan cuando se exponen a la luz.</sub>
