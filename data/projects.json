@@ -5,87 +5,10 @@
     "syncedBy": "sync-projects.js",
     "protocol": "01_FuerzaG_Sistema/documentacion/PROTOCOLO_SYNC_WEB_2026-04-20.md",
     "rule": "No editar a mano. Modificar MEMORIA.md y correr npm run sync-projects.",
-    "lastManualEdit": "2026-09-08",
-    "manualEditNote": "Reparto GTM (docs/GTM.md de Sinergistica, 7 sep 2026): MÉDULA y El Rezago salen del sitio personal y viven en sinergistica.com (si se factura, vive en la empresa; si se cita, vive aquí). SIA y Sala de Inteligencia salen de proyectos y quedan en trayectoria (data/hitos.json), en pasado, como trabajo institucional de ADRES. Metro 22 y Furiosa fuera del JSON. Sostenibilidad entra con public:false hasta radicar el memorando. Espeja estos cambios en MEMORIA.md antes de correr npm run sync-projects, o el sync los revierte."
+    "lastManualEdit": "2026-09-10",
+    "manualEditNote": "Reparto GTM (docs/GTM.md de Sinergistica, 7 sep 2026): MÉDULA y El Rezago salen del sitio personal y viven en sinergistica.com (si se factura, vive en la empresa; si se cita, vive aquí). SIA y Sala de Inteligencia salen de proyectos y quedan en trayectoria (data/hitos.json), en pasado, como trabajo institucional de ADRES. Metro 22 y Furiosa fuera del JSON. Sostenibilidad entra con public:false hasta radicar el memorando. Espeja estos cambios en MEMORIA.md antes de correr npm run sync-projects, o el sync los revierte. 10 sep 2026: los estudios (UPC, afiliados/IHH, sostenibilidad) salen de projects.json y viven en data/investigacion.json, que es la fuente de la sección Investigación. Proyectos queda con lo que no es paper."
   },
   "projects": [
-    {
-      "emoji": "📐",
-      "title": "Estudios sobre la UPC",
-      "subtitle": "Suficiencia y ajustadores de riesgo, con datos públicos",
-      "description": "Dos investigaciones reproducibles: la réplica del balance contable del Auto 504 y el gasto antes de calidades, contrastados con cómo ocho sistemas del mundo evalúan la suficiencia de la capitación; y el censo 2006–2026 de los estudios y actos que fijan la UPC, con recálculo directo de los ponderadores. Todo verificable contra su repositorio.",
-      "tags": [
-        "Investigación",
-        "UPC",
-        "Datos abiertos",
-        "Reproducible"
-      ],
-      "color": "from-accent-blue to-blue-400",
-      "status": "En preparación para sometimiento",
-      "statusCategory": "writing",
-      "url": "",
-      "progress": 80,
-      "owners": [
-        "Daniel"
-      ],
-      "roadmap": [],
-      "blockers": [],
-      "deadline": "2026-12-31",
-      "public": true,
-      "slug": "estudios-upc"
-    },
-    {
-      "emoji": "📊",
-      "title": "Afiliados y concentración",
-      "subtitle": "De cuántas EPS a en qué banda",
-      "description": "La pregunta por el tamaño de las aseguradoras se ha planteado como un conteo, y un conteo no tiene respuesta técnica. Este documento la reemplaza por dos preguntas que sí la tienen: en qué banda queremos el mercado y medida con qué, y qué mecanismo lleva el mercado a esa banda sin destruir la mancomunación del riesgo. Sobre los 50.100.427 afiliados de la BDUA, corte del 4 de agosto de 2026.",
-      "tags": [
-        "Policy brief",
-        "Aseguramiento",
-        "BDUA",
-        "Datos abiertos"
-      ],
-      "color": "from-accent-green to-accent-blue",
-      "status": "Documento terminado",
-      "statusCategory": "pre-launch",
-      "url": "",
-      "progress": 90,
-      "owners": [
-        "Daniel"
-      ],
-      "roadmap": [],
-      "blockers": [],
-      "deadline": "2026-10-31",
-      "public": true,
-      "slug": "afiliados-ihh"
-    },
-    {
-      "emoji": "♻️",
-      "title": "Sostenibilidad del SGSSS 2026–2035",
-      "subtitle": "Modelo, simulador y 46 métodos de proyección",
-      "description": "Manuscrito terminado con modelo de proyección de la sostenibilidad financiera del sistema de salud colombiano a diez años, simulador asociado y una revisión de 46 métodos de proyección usados en sistemas comparables. Autoría personal, construida sobre fuentes públicas.",
-      "tags": [
-        "Investigación",
-        "Sostenibilidad",
-        "SGSSS",
-        "Modelo"
-      ],
-      "color": "from-accent-green to-accent-blue",
-      "status": "Terminado — publicación en espera",
-      "statusCategory": "pre-launch",
-      "url": "",
-      "progress": 95,
-      "owners": [
-        "Daniel"
-      ],
-      "roadmap": [],
-      "blockers": [
-        "No difundir hasta radicar el memorando ante Jurídica y Control Interno de ADRES"
-      ],
-      "deadline": "",
-      "public": false,
-      "slug": "sostenibilidad-sgsss"
-    },
     {
       "slug": "nacer",
       "emoji": "🎮",

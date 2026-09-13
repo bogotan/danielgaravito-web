@@ -1,0 +1,29 @@
+{
+ "_nota": "Fragmento para pegar dentro del arreglo \"projects\" de data/projects.json. No reemplaza el archivo.",
+ "proyecto": {
+  "emoji": "🌡️",
+  "title": "Termómetro del SGSSS",
+  "subtitle": "Quince indicadores del sistema de salud desde la encuesta de hogares",
+  "description": "Casi toda la estadística del sistema de salud la produce quien es evaluado por ella. Esta serie rompe la circularidad: trece rondas de la ENCV del DANE, 235.350 personas en 2025, quince indicadores estimados con el diseño muestral complejo y con la incertidumbre a la vista. Tablero interactivo, siete documentos de trabajo y seis columnas.",
+  "tags": ["Salud", "Datos", "DANE", "Política pública", "Investigación"],
+  "color": "from-accent-blue to-accent-gold",
+  "status": "v1.0 — borrador en revisión externa",
+  "statusCategory": "active",
+  "url": "/encv/",
+  "progress": 85,
+  "owners": ["Daniel"],
+  "roadmap": [
+   {"step": 1, "title": "Cubo de indicadores sobre trece rondas", "status": "done", "owner": "Daniel"},
+   {"step": 2, "title": "Errores estándar con diseño complejo y validación contra boletines DANE", "status": "done", "owner": "Daniel"},
+   {"step": 3, "title": "Tablero interactivo con los siete cortes", "status": "done", "owner": "Daniel"},
+   {"step": 4, "title": "Siete documentos de trabajo", "status": "done", "owner": "Daniel"},
+   {"step": 5, "title": "Seis columnas para CONSULTOR SALUD", "status": "done", "owner": "Daniel"},
+   {"step": 6, "title": "Revisión externa y verificación de fuentes", "status": "in_progress", "owner": "Daniel"},
+   {"step": 7, "title": "Publicación de la versión definitiva y del código reproducible", "status": "pending", "owner": "Daniel"}
+  ],
+  "blockers": ["El DANE no publica las variables de diseño de todos los años, lo que obliga a un factor de corrección declarado en los años sin módulo de diseño"],
+  "deadline": "2026-12-31",
+  "public": true,
+  "slug": "termometro-sgsss"
+ }
+}

@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "descripcion": "Fichas de investigación reproducible del sitio personal. Cada entrada apunta a su repositorio y declara su estado real.",
+    "regla": "Una ficha solo pasa a public:true cuando (a) el repositorio es accesible sin autenticación y (b) no hay restricción de sometimiento o institucional que lo impida.",
+    "actualizado": "2026-09-10"
+  },
+  "estudios": [
+    {
+      "slug": "nlp-upc",
+      "titulo": "¿Recuperar o reconstruir?",
+      "subtitulo": "El instrumento que fija la UPC, auditado acto por acto",
+      "periodo": "2006–2026",
+      "pregunta": "El debate sobre la UPC comparte el diagnóstico —hay insuficiencia— pero esconde dos marcos opuestos: recuperar un rezago, como si la base hubiera sido correcta, o reconstruir una base que nunca se recalculó. Del diagnóstico depende la política.",
+      "corpus": "21 estudios de suficiencia · 23 resoluciones y acuerdos · 1,13 millones de palabras · 15 notas técnicas actuariales",
+      "hallazgos": [
+        {
+          "cifra": "19 % vs 1 %",
+          "texto": "Cada estudio reutiliza literalmente cerca de una quinta parte del texto del anterior, frente al 1 % entre años lejanos. Contra un corpus de control del mismo género —el Marco Fiscal de Mediano Plazo—, el reúso literal de la UPC es unas cuatro veces mayor: la copia es específica del instrumento, no del género."
+        },
+        {
+          "cifra": "Idéntico a 4 decimales",
+          "texto": "El vector de 14 ponderadores etarios del régimen contributivo no se movió en las nueve vigencias 2013–2021, con una única recalibración en 2022. El subsidiado publica su propio vector, idéntico en las catorce vigencias 2013–2026, sin una sola recalibración."
+        },
+        {
+          "cifra": "13 de 14 grupos",
+          "texto": "Aplicando la fórmula que el propio estudio declara a los insumos que el propio Ministerio publica, se reconstruye el vector que los datos implicaban en las dos únicas vigencias que desagregan el gasto por edad. En 2020, trece de los catorce grupos difieren más del 10 % del vector publicado. No depende de ningún supuesto estadístico: contrasta dos cantidades que la misma entidad publica."
+        }
+      ],
+      "implicacion": "El vector subvalora el aseguramiento de la población infantil y sobrevalora el de los adultos jóvenes: un incentivo estructural a la selección de riesgo por edad.",
+      "metodos": ["Text-as-data", "TF-IDF y coseno", "Reúso literal por n-gramas", "Embeddings multilingües", "Log-verosimilitud de Dunning", "Auditoría documental", "Recálculo actuarial"],
+      "repo": "https://github.com/bogotan/NLP-UPC",
+      "doi": "",
+      "articulo": "",
+      "reproducir": "python reproducir.py",
+      "estado": "Artículo en sometimiento",
+      "estadoTipo": "sometimiento",
+      "public": true
+    },
+    {
+      "slug": "afiliados-ihh",
+      "titulo": "Afiliados y concentración",
+      "subtitulo": "Concentración del mercado asegurador y reasignación de afiliados",
+      "periodo": "",
+      "pregunta": "Cuánto se concentra el aseguramiento en salud cuando se reasignan los afiliados de una EPS que sale del mercado, y qué bandas de concentración serían defendibles como regla previa en lugar de decidirse caso por caso.",
+      "corpus": "Bases públicas de afiliación · Índice Herfindahl-Hirschman por departamento y municipio",
+      "hallazgos": [],
+      "implicacion": "",
+      "metodos": ["Índice Herfindahl-Hirschman", "Datos abiertos", "Análisis de mercados"],
+      "repo": "",
+      "doi": "",
+      "articulo": "",
+      "reproducir": "",
+      "estado": "En preparación — repositorio al publicar",
+      "estadoTipo": "preparacion",
+      "public": true
+    },
+    {
+      "slug": "primas-internacional",
+      "titulo": "¿Cada cuánto se recalibra un ajustador de riesgo?",
+      "subtitulo": "Estudio comparado de once jurisdicciones",
+      "periodo": "1996–2026",
+      "pregunta": "Los esquemas de capitación ajustada por riesgo publican vectores de coeficientes que reparten cientos de miles de millones al año. Casi nadie ha preguntado con qué frecuencia esos números se reestiman de verdad.",
+      "corpus": "Actos y archivos oficiales de once jurisdicciones: Alemania, Suiza, Países Bajos, Estados Unidos (dos regímenes), Israel, Uruguay, Nueva Zelanda, entre otras",
+      "hallazgos": [
+        {
+          "cifra": "100 % vs 1,6 %",
+          "texto": "Estados Unidos opera dos regímenes a la vez: el modelo de Medicare Advantage mantiene sus 1.237 coeficientes idénticos durante años, mientras el del mercado ACA se reestima cada doce meses. La hipótesis de partida —que recalibrar separa a los sistemas maduros de los inmaduros— no sobrevive al primer contacto con los datos."
+        },
+        {
+          "cifra": "La tesis",
+          "texto": "Congelar un ajustador es una decisión de diseño legítima; no declarar que está congelado no lo es. Lo que distingue a los sistemas no es si congelan, sino si documentan con qué datos se estimaron los coeficientes vigentes y cuándo serán reemplazados."
+        }
+      ],
+      "implicacion": "",
+      "metodos": ["Comparado internacional", "Auditoría documental", "Series de coeficientes"],
+      "repo": "",
+      "doi": "",
+      "articulo": "",
+      "reproducir": "",
+      "estado": "En curso — hallazgo preliminar",
+      "estadoTipo": "curso",
+      "public": false
+    },
+    {
+      "slug": "sostenibilidad-sgsss",
+      "titulo": "Sostenibilidad financiera del SGSSS",
+      "subtitulo": "Modelo de proyección, simulador y 46 métodos documentados",
+      "periodo": "2026–2035",
+      "pregunta": "Cuánto se abre la brecha entre la necesidad de gasto y la capacidad de ingreso del sistema de salud colombiano en la próxima década, y cuánto de esa brecha es demografía y cuánto no lo es.",
+      "corpus": "Calibrado exclusivamente con información pública · Corte de datos: 15 de agosto de 2026",
+      "hallazgos": [],
+      "implicacion": "",
+      "metodos": ["Modelo de proyección", "Descomposición demográfica", "Análisis de robustez", "Contraste retrospectivo", "Simulador replicable"],
+      "repo": "",
+      "doi": "",
+      "articulo": "",
+      "reproducir": "",
+      "estado": "Manuscrito listo — publicación en espera",
+      "estadoTipo": "espera",
+      "public": false,
+      "bloqueo": "No difundir hasta radicar el memorando ante Jurídica y Control Interno de ADRES."
+    },
+    {
+      "slug": "nlp-normatividad",
+      "titulo": "Normograma del SGSSS con NLP",
+      "subtitulo": "Toda la normatividad del sector, indexada y consultable",
+      "periodo": "",
+      "pregunta": "Qué dice, en conjunto, el cuerpo normativo que gobierna el sistema de salud colombiano, y cómo se navega sin leerlo entero.",
+      "corpus": "Corpus normativo del sector · Índices y herramienta de consulta",
+      "hallazgos": [],
+      "implicacion": "",
+      "metodos": ["NLP", "Indexación documental", "OCR", "Corpus normativo"],
+      "repo": "",
+      "doi": "",
+      "articulo": "",
+      "reproducir": "",
+      "estado": "En construcción",
+      "estadoTipo": "curso",
+      "public": false
+    }
+  ]
+}
