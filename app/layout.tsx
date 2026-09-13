@@ -68,10 +68,11 @@ export const metadata: Metadata = {
 };
 
 const navLinks = [
+  { href: '/#media', label: 'En Acci\u00f3n' },
   { href: '/#sobre-mi', label: 'Sobre m\u00ed' },
   { href: '/#proyectos', label: 'Proyectos' },
+  { href: '/#investigacion', label: 'Investigaci\u00f3n' },
   { href: '/#trayectoria', label: 'Trayectoria' },
-  { href: '/#media', label: 'En Acci\u00f3n' },
   { href: '/blog', label: 'Escritos' },
   { href: '/libros', label: 'Libros' },
   { href: '/etica', label: 'Independencia' },
@@ -217,6 +218,18 @@ export default function RootLayout({
             </p>
             <p className="mt-1">
               Hecho con amor desde Colombia
+            </p>
+            <p className="mt-4 text-xs text-text-muted/70">
+              Lo que se contrata vive en{' '}
+              <a
+                href="https://sinergistica.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 decoration-gray-700 hover:text-text-muted hover:decoration-gray-500 transition-colors"
+              >
+                Sinerg&iacute;stica
+              </a>
+              .
             </p>
           </div>
         </footer>

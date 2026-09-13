@@ -25,16 +25,13 @@ export default function Projects() {
         <span className="gradient-text">Proyectos</span>
       </h2>
       <p className="text-text-muted text-lg mb-10 max-w-2xl">
-        Investigación propia y proyectos donde se cruzan la economía, la
-        ingeniería y la analítica avanzada. Lo que aquí se publica se puede
-        citar y reproducir; lo que se contrata vive en{' '}
+        Cosas que construí y que siguen vivas: un juego serio, una plataforma
+        de formación, libros. Los estudios están más abajo, en{' '}
         <a
-          href="https://sinergistica.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#investigacion"
           className="text-accent-green hover:text-accent-gold underline underline-offset-4 transition-colors"
         >
-          Sinergística
+          Investigación
         </a>
         .
       </p>

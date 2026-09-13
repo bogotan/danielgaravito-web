@@ -101,17 +101,8 @@ export default function Hero() {
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-text-muted mb-6 max-w-2xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Las tres, juntas, aplicadas a la salud inteligente. Dirig&iacute;
-            Innovaci&oacute;n y Anal&iacute;tica en ADRES; hoy investigo con datos abiertos,
-            escribo y ense&ntilde;o. Lo que se contrata vive en{' '}
-            <a
-              href="https://sinergistica.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent-green hover:text-accent-gold underline underline-offset-4 transition-colors"
-            >
-              Sinerg&iacute;stica
-            </a>
-            .
+            Innovaci&oacute;n y Anal&iacute;tica en ADRES; hoy investigo con datos
+            abiertos, escribo y ense&ntilde;o.
           </p>
 
           {/* Rotating quote */}
