@@ -1,7 +1,7 @@
 ---
 title: "Termómetro del SGSSS: quince indicadores desde la encuesta de hogares"
 date: "2026-09-06"
-excerpt: "Trece rondas de la Encuesta Nacional de Calidad de Vida, 235.350 personas en 2025, quince indicadores del sistema de salud estimados con el diseño muestral complejo. Tablero interactivo, siete documentos de trabajo y seis columnas."
+excerpt: "Trece rondas de la Encuesta Nacional de Calidad de Vida, 235.350 personas en 2025, quince indicadores del sistema de salud estimados con el diseño muestral complejo. El tablero, el cubo de datos y los documentos de trabajo se publican en datos.sinergistica.com."
 tags: ["ENCV", "DANE", "SGSSS", "salud publica", "Colombia", "diseño muestral", "goce efectivo del derecho", "tablero"]
 category: "salud"
 track: "analisis"
@@ -12,7 +12,10 @@ track: "analisis"
 > texto interpretativo, las referencias normativas y las comparaciones internacionales siguen
 > sometidos a verificación.
 
-**[→ Abrir el proyecto completo: tablero, documentos y datos](/encv/)**
+**[→ Abrir el proyecto completo: tablero, documentos y datos](https://datos.sinergistica.com/)**
+
+El tablero, el cubo y los documentos viven en **datos.sinergistica.com**, la vertical de salud y
+datos de Sinergística. Aquí queda el argumento; allá, el producto y sus descargas.
 
 ---
 
@@ -110,12 +113,14 @@ empeora: si más gente desiste, la cola de los que quedan se acorta.
 - **Un tablero interactivo** con los quince indicadores, sus siete cortes, la serie completa, y un
   generador de reporte diagnóstico por departamento, región, clase, quintil, etnia o sexo.
 - **Siete documentos de trabajo (DT-01 a DT-07)**, uno por resultado, autocontenidos, con su
-  definición, denominador, método, cuadro completo de la serie y una sección de límites.
-- **Seis columnas** con la misma evidencia escrita para lectura general.
+  definición, denominador, método, cuadro completo de la serie y una sección de límites. Se publican
+  de a uno, a medida que cada uno cierra su revisión externa; hoy está disponible el de
+  medicamentos. Publicar los siete de golpe sería pedir confianza en un lote.
+- **Una columna por documento** con la misma evidencia escrita para lectura general.
 - **El cubo de datos en JSON**, con todas las estimaciones, sus errores estándar, intervalos,
   efectos de diseño y contrastes.
 
-**[→ Ver todo el proyecto](/encv/)**
+**[→ Ver todo el proyecto en datos.sinergistica.com](https://datos.sinergistica.com/)**
 
 ---
 
