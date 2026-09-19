@@ -1,0 +1,20 @@
+fix(hero): la frase deja de saltar · En Acción primero · Sinergística al pie
+
+- RotatingQuote: las frases van de 51 a 187 caracteres y la caja se encogía y
+  se estiraba con cada cambio. Medido en Chromium: saltaba 96 px de ancho y
+  17 de alto en escritorio, 11 de alto en móvil, empujando los botones. Ahora
+  las 26 se apilan en la misma celda de una rejilla, así que el contenedor
+  siempre mide lo de la más larga y no se mueve: 0 px en ambas medidas, y el
+  CTA se queda quieto durante toda la rotación.
+  El fundido pasa a dos tiempos (sale una, entra la otra 300 ms después) para
+  que no se vean dos frases superpuestas, e items-center centra las cortas en
+  el alto reservado en vez de dejar el hueco debajo.
+- En Acción sube al primer lugar, antes de Sobre mí: quien llega ve el trabajo
+  antes que la biografía. El menú sigue el mismo orden.
+- "Lo que se contrata vive en Sinergística" sale del hero y de la entrada de
+  Proyectos, y queda una sola vez al pie de página, en voz baja. El puente a
+  la empresa sigue en la tarjeta de Proyectos y en el botón de Contacto.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_012ZPVXvT7ZDAMhy72Zfj8qp
+

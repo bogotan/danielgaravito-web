@@ -1,0 +1,24 @@
+feat(investigación): sección propia con ficha por estudio y enlace al repositorio
+
+El sitio prometía en /etica que cada cifra se puede rastrear hasta su fuente y
+que los estudios "son reproducibles contra su repositorio", pero esa promesa no
+tenía dónde aterrizar: los estudios estaban como tarjetas de proyecto, sin
+corpus, sin método y sin enlace al código.
+
+- data/investigacion.json: fuente de la sección. Cada ficha declara pregunta,
+  corpus, hallazgos con cifra, método, estado real y enlaces (repo, DOI,
+  artículo, comando de reproducción). El campo public controla qué se muestra:
+  una ficha solo pasa a true cuando el repositorio es accesible sin
+  autenticación y no hay restricción de sometimiento o institucional.
+- components/Research.tsx: render de las fichas + JSON-LD Dataset por estudio
+  público, para que sean citables y rastreables por buscadores académicos.
+- Publicadas: NLP-UPC (con repo) y Afiliados/IHH (sin repo todavía).
+  Preparadas y ocultas: primas internacional, sostenibilidad (bloqueada por el
+  memorando), normograma.
+- Los tres estudios salen de projects.json para no decir lo mismo dos veces.
+  Proyectos queda con lo que no es paper: NACER, EducALL y Libros.
+- Entrada "Investigación" en el menú.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_012ZPVXvT7ZDAMhy72Zfj8qp
+
