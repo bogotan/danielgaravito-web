@@ -9,7 +9,8 @@
     "lint": "next lint",
     "sync-timeline": "node scripts/sync-timeline.js",
     "sync-projects": "node scripts/sync-projects.js",
-    "sync-all": "npm run sync-timeline && npm run sync-projects"
+    "sync-all": "npm run sync-timeline && npm run sync-projects",
+    "sync-columnas": "node scripts/sync-columnas.mjs"
   },
   "dependencies": {
     "next": "^14.2.0",

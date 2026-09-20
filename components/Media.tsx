@@ -1,5 +1,7 @@
 'use client';
 
+import columnasData from '@/data/columnas.json';
+
 import { useState } from 'react';
 
 const charlas = [
@@ -223,82 +225,53 @@ const podcastsOtros: Podcast[] = [
 const podcasts: Podcast[] = [...podcastsSalud, ...podcastsOtros];
 
 type Columna = {
+  slug?: string;
   title: string;
   url: string;
   image: string;
   dateLabel: string;
   date: string;
   summary: string;
+  slugsAlternos?: string[];
 };
 
 // Columnas publicadas en CONSULTORSALUD. Las imágenes son las portadas del
 // propio medio y enlazan a su publicación original.
-const columnas: Columna[] = [
-  {
-    title: 'Siete pilares, un cuatrienio y una vara común',
-    url: 'https://consultorsalud.com/siete-pilares-un-cuatrienio-y-una-vara-comun/',
-    image: 'https://consultorsalud.com/wp-content/uploads/2026/08/Portada-Juan-Manuel-8.png',
-    dateLabel: '10 ago 2026',
-    date: '2026-08-10',
-    summary: 'Si la salud ha sido una inversión durante tres décadas, ¿dónde está el retorno? El BID lo cifra: hasta 4,5 años de vida sobre la mesa.',
-  },
-  {
-    title: 'El precio que nunca envejece: por qué la tecnología médica madura se sigue pagando como si fuera nueva',
-    url: 'https://consultorsalud.com/precio-que-nunca-envejece-tecnologia/',
-    image: 'https://consultorsalud.com/wp-content/uploads/2026/07/El-precio-que-nunca-envejece-por-que-la-tecnologia-medica-madura-se-sigue-pagando-como-si-fuera-nueva-2.jpg',
-    dateLabel: '21 jul 2026',
-    date: '2026-07-21',
-    summary: 'Subir un precio regulado es un trámite; bajarlo, un problema técnico y político. La curva de aprendizaje de 1936 aplicada a un tarifario que solo sabe multiplicar.',
-  },
-  {
-    title: '¿De quién es la culpa de la crisis del sistema de salud? Por qué es la pregunta equivocada',
-    url: 'https://consultorsalud.com/culpa-crisis-del-sistema-de-salud/',
-    image: 'https://consultorsalud.com/wp-content/uploads/2026/07/De-quien-es-la-culpa-de-la-crisis-del-sistema-de-salud.jpg',
-    dateLabel: '2 jul 2026',
-    date: '2026-07-02',
-    summary: 'El sistema no se diagnostica con indicadores subrogados. Buscar culpables reemplaza el método que dice cómo está, a dónde debe llegar y cómo llevarlo allí.',
-  },
-  {
-    title: 'De la opacidad a la transparencia: por qué la interoperabilidad es la mejor inversión que el sistema de salud puede hacer en sí mismo',
-    url: 'https://consultorsalud.com/opacidad-transparencia-interoperabilidad-salud/',
-    image: 'https://consultorsalud.com/wp-content/uploads/2026/06/De-la-opacidad-a-la-transparencia-por-que-la-interoperabilidad-es-la-mejor-inversion-que-el-sistema-de-salud-puede-hacer-en-si-mismo-1.jpg',
-    dateLabel: '22 jun 2026',
-    date: '2026-06-22',
-    summary: 'Un sistema que no puede verse a sí mismo no puede corregirse. La interoperabilidad no es un proyecto de tecnología: es la condición para saber qué está pasando.',
-  },
-  {
-    title: 'La crisis que siempre vuelve: anatomía de una regularidad',
-    url: 'https://consultorsalud.com/la-crisis-que-siempre-vuelve-anatomia-de-una-regularidad/',
-    image: 'https://consultorsalud.com/wp-content/uploads/2026/06/La-crisis-que-siempre-vuelve-anatomia-de-una-regularidad-1.jpg',
-    dateLabel: '18 jun 2026',
-    date: '2026-06-18',
-    summary: 'El Seguro Social en los 2000, los recobros en 2009, la intervención de 2011. La crisis no es un accidente que se repite: es una regularidad con anatomía propia.',
-  },
-  {
-    title: 'La trampa de la intervención: por qué cambiar la cúpula no cambia la organización',
-    url: 'https://consultorsalud.com/ntervenciones-supersalud-eps-fracasar/',
-    image: 'https://consultorsalud.com/wp-content/uploads/2026/04/Por-que-las-intervenciones-de-la-Supersalud-a-las-EPS-estan-destinadas-a-fracasar-una-lectura-desde-la-Teoria-de-las-Organizaciones.jpg',
-    dateLabel: '30 abr 2026',
-    date: '2026-04-30',
-    summary: 'Il Gattopardo leído desde la teoría de las organizaciones: cambiar a los de arriba sin tocar los planos profundos donde se decide no transforma nada.',
-  },
-  {
-    title: 'La IA dejó de vivir en la nube',
-    url: 'https://consultorsalud.com/la-ia-dejo-de-vivir-en-la-nube/',
-    image: 'https://consultorsalud.com/wp-content/uploads/2026/04/La-IA-dejo-de-vivir-en-la-nube.jpg',
-    dateLabel: '27 abr 2026',
-    date: '2026-04-27',
-    summary: 'La inteligencia artificial local y de código abierto ya existe. Lo urgente es aplicarla a problemas reales latinoamericanos, no esperar la que viene.',
-  },
-  {
-    title: 'La paradoja del facilismo en la política pública de salud',
-    url: 'https://consultorsalud.com/paradoja-del-facilismo-politica-publica-salud/',
-    image: 'https://consultorsalud.com/wp-content/uploads/2026/04/La-paradoja-del-facilismo-en-la-politica-publica-de-salud.jpg',
-    dateLabel: '22 abr 2026',
-    date: '2026-04-22',
-    summary: 'Cuando el sistema cruje, la respuesta automática es subir la UPC. Pedir más recursos no está mal: es insuficiente, y desvía del fondo.',
-  },
+// Las columnas viven en data/columnas.json, que actualiza solo
+// scripts/sync-columnas.mjs una vez por semana. No editar aquí: editar el JSON.
+const columnas: Columna[] = [...(columnasData as { columnas: Columna[] }).columnas].sort(
+  (a, b) => b.date.localeCompare(a.date)
+);
+
+const MESES_LARGOS = [
+  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre',
 ];
+const CARDINALES = [
+  '', 'Una', 'Dos', 'Tres', 'Cuatro', 'Cinco', 'Seis', 'Siete', 'Ocho', 'Nueve', 'Diez',
+  'Once', 'Doce', 'Trece', 'Catorce', 'Quince', 'Dieciséis', 'Diecisiete', 'Dieciocho',
+  'Diecinueve', 'Veinte',
+];
+
+// El encabezado se calcula: decía "Ocho columnas entre abril y agosto" a mano y
+// quedaba desactualizado en cuanto entraba una nueva.
+function resumenColumnas(lista: Columna[]): string {
+  if (lista.length === 0) return '';
+  const cuenta = CARDINALES[lista.length] ?? String(lista.length);
+  const sustantivo = lista.length === 1 ? 'columna' : 'columnas';
+  const nueva = new Date(`${lista[0].date}T12:00:00Z`);
+  const vieja = new Date(`${lista[lista.length - 1].date}T12:00:00Z`);
+  const mesN = MESES_LARGOS[nueva.getUTCMonth()];
+  const mesV = MESES_LARGOS[vieja.getUTCMonth()];
+  const anioN = nueva.getUTCFullYear();
+  const anioV = vieja.getUTCFullYear();
+  if (lista.length === 1) return `${cuenta} ${sustantivo} de ${mesN} de ${anioN}`;
+  const rango =
+    anioN === anioV
+      ? `entre ${mesV} y ${mesN} de ${anioN}`
+      : `entre ${mesV} de ${anioV} y ${mesN} de ${anioN}`;
+  return `${cuenta} ${sustantivo} ${rango}`;
+}
 
 const otrasPublicaciones = [
   {
@@ -616,8 +589,8 @@ export default function Media() {
         <div className="mb-6 pb-3 border-b border-gray-800">
           <h3 className="text-lg font-bold text-text">Columnas en CONSULTORSALUD</h3>
           <p className="text-text-muted text-sm mt-1">
-            Ocho columnas entre abril y agosto de 2026 sobre cómo se mide, se
-            paga y se decide en el sistema de salud colombiano.
+            {resumenColumnas(columnas)} sobre cómo se mide, se paga y se decide
+            en el sistema de salud colombiano.
           </p>
         </div>
 
@@ -648,7 +621,9 @@ export default function Media() {
                 <h4 className="text-sm font-semibold text-text leading-snug group-hover:text-accent-blue transition-colors">
                   {c.title}
                 </h4>
-                <p className="text-text-muted text-xs mt-2 leading-relaxed">{c.summary}</p>
+                {c.summary && (
+                  <p className="text-text-muted text-xs mt-2 leading-relaxed">{c.summary}</p>
+                )}
               </div>
             </a>
           ))}

@@ -1,0 +1,30 @@
+feat(columnas): sincronización semanal con CONSULTORSALUD
+
+Las columnas estaban escritas a mano dentro de Media.tsx, así que cada nueva
+había que agregarla a mano y el encabezado decía "Ocho columnas entre abril y
+agosto" aunque ya fueran diez.
+
+- data/columnas.json: las columnas salen del componente y pasan a ser datos.
+- scripts/sync-columnas.mjs: busca las nuevas y las agrega. SOLO agrega; nunca
+  toca una entrada existente, porque los títulos y los summary están editados a
+  mano y son de Daniel, no extractos del portal. Las nuevas entran con summary
+  vacío y la tarjeta se ve bien sin él.
+  Usa dos fuentes y las cruza: la API REST por autor y el archivo HTML del
+  autor. Cada candidata del HTML se verifica contra la API —si el autor no es
+  113777, no entra—, que es lo que vuelve segura la lectura del HTML. Si las dos
+  fuentes fallan, sale con error sin escribir, en vez de dejar el archivo a
+  medias. Cae al og:image cuando featured_media da 404, que ya pasó.
+- .github/workflows/sync-columnas.yml: lunes 6 a. m. hora de Colombia. Valida el
+  JSON, compila el sitio y solo entonces commitea. Vercel despliega con eso.
+- Media.tsx lee el JSON; el conteo y el rango de meses del encabezado se
+  calculan solos, y el resumen es opcional.
+- Entran las dos columnas de septiembre, sin resumen.
+- Se corrige el enlace de "La trampa de la intervención": apuntaba a un slug
+  viejo que redirige. Queda en slugsAlternos para que el sync no la duplique.
+
+Probado contra el portal: detecta una columna retirada a propósito y la vuelve a
+agregar, dejando las otras nueve idénticas carácter por carácter.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_012ZPVXvT7ZDAMhy72Zfj8qp
+

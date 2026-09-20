@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "descripcion": "Columnas de Daniel Garavito en CONSULTORSALUD. Fuente de la pestaña Publicaciones.",
+    "actualizadoPor": "scripts/sync-columnas.mjs (semanal, vía GitHub Actions)",
+    "regla": "El script SOLO agrega columnas nuevas. Nunca modifica ni borra una entrada existente: los títulos y los summary están editados a mano y son de Daniel, no del portal.",
+    "comoEscribirUnSummary": "Una o dos frases, con la tesis de la columna, no su tema. Las nuevas entran con summary vacío; la tarjeta se ve bien sin él.",
+    "autorWordPress": 113777,
+    "ultimaSync": "2026-09-20",
+    "slugsAlternos": "Si el portal cambia el slug de una columna, guarda el viejo en slugsAlternos para que el sync no la vuelva a agregar como nueva."
+  },
+  "columnas": [
+    {
+      "slug": "huerfano-institucional-sostenibilidad-sistema",
+      "title": "El huérfano institucional: ¿quién responde por la sostenibilidad del sistema de salud?",
+      "url": "https://consultorsalud.com/huerfano-institucional-sostenibilidad-sistema/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/09/El-huerfano-institucional-%C2%BFquien-responde-por-la-sostenibilidad-del-sistema-de-salud.png",
+      "date": "2026-09-18",
+      "dateLabel": "18 sep 2026",
+      "summary": "Ninguna entidad del Estado tiene el mandato explícito de responder por la sostenibilidad financiera del sistema. Ese huérfano institucional explica por qué la crisis siempre vuelve."
+    },
+    {
+      "slug": "cuanto-cuesta-atender-a-un-paciente",
+      "title": "El número que nadie acepta – Por qué Colombia sabe cuánto cuesta una campaña electoral y no cuánto cuesta atender a un paciente",
+      "url": "https://consultorsalud.com/cuanto-cuesta-atender-a-un-paciente/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/09/El-numero-que-nadie-acepta-Por-que-Colombia-sabe-cuanto-cuesta-una-campana-electoral-y-no-cuanto-cuesta-atender-a-un-paciente.jpg",
+      "date": "2026-09-15",
+      "dateLabel": "15 sep 2026",
+      "summary": "Colombia mide el costo de casi todo, menos el de atender a un paciente. Sin un índice sectorial de costos en salud, las tarifas se fijan por decisión política, no por evidencia."
+    },
+    {
+      "slug": "siete-pilares-un-cuatrienio-y-una-vara-comun",
+      "title": "Siete pilares, un cuatrienio y una vara común",
+      "url": "https://consultorsalud.com/siete-pilares-un-cuatrienio-y-una-vara-comun/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/08/Portada-Juan-Manuel-8.png",
+      "date": "2026-08-10",
+      "dateLabel": "10 ago 2026",
+      "summary": "Si la salud ha sido una inversión durante tres décadas, ¿dónde está el retorno? El BID lo cifra: hasta 4,5 años de vida sobre la mesa."
+    },
+    {
+      "slug": "precio-que-nunca-envejece-tecnologia",
+      "title": "El precio que nunca envejece: por qué la tecnología médica madura se sigue pagando como si fuera nueva",
+      "url": "https://consultorsalud.com/precio-que-nunca-envejece-tecnologia/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/07/El-precio-que-nunca-envejece-por-que-la-tecnologia-medica-madura-se-sigue-pagando-como-si-fuera-nueva-2.jpg",
+      "date": "2026-07-21",
+      "dateLabel": "21 jul 2026",
+      "summary": "Subir un precio regulado es un trámite; bajarlo, un problema técnico y político. La curva de aprendizaje de 1936 aplicada a un tarifario que solo sabe multiplicar."
+    },
+    {
+      "slug": "culpa-crisis-del-sistema-de-salud",
+      "title": "¿De quién es la culpa de la crisis del sistema de salud? Por qué es la pregunta equivocada",
+      "url": "https://consultorsalud.com/culpa-crisis-del-sistema-de-salud/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/07/De-quien-es-la-culpa-de-la-crisis-del-sistema-de-salud.jpg",
+      "date": "2026-07-02",
+      "dateLabel": "2 jul 2026",
+      "summary": "El sistema no se diagnostica con indicadores subrogados. Buscar culpables reemplaza el método que dice cómo está, a dónde debe llegar y cómo llevarlo allí."
+    },
+    {
+      "slug": "opacidad-transparencia-interoperabilidad-salud",
+      "title": "De la opacidad a la transparencia: por qué la interoperabilidad es la mejor inversión que el sistema de salud puede hacer en sí mismo",
+      "url": "https://consultorsalud.com/opacidad-transparencia-interoperabilidad-salud/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/06/De-la-opacidad-a-la-transparencia-por-que-la-interoperabilidad-es-la-mejor-inversion-que-el-sistema-de-salud-puede-hacer-en-si-mismo-1.jpg",
+      "date": "2026-06-22",
+      "dateLabel": "22 jun 2026",
+      "summary": "Un sistema que no puede verse a sí mismo no puede corregirse. La interoperabilidad no es un proyecto de tecnología: es la condición para saber qué está pasando."
+    },
+    {
+      "slug": "la-crisis-que-siempre-vuelve-anatomia-de-una-regularidad",
+      "title": "La crisis que siempre vuelve: anatomía de una regularidad",
+      "url": "https://consultorsalud.com/la-crisis-que-siempre-vuelve-anatomia-de-una-regularidad/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/06/La-crisis-que-siempre-vuelve-anatomia-de-una-regularidad-1.jpg",
+      "date": "2026-06-18",
+      "dateLabel": "18 jun 2026",
+      "summary": "El Seguro Social en los 2000, los recobros en 2009, la intervención de 2011. La crisis no es un accidente que se repite: es una regularidad con anatomía propia."
+    },
+    {
+      "slug": "la-trampa-de-la-intervencion",
+      "title": "La trampa de la intervención: por qué cambiar la cúpula no cambia la organización",
+      "url": "https://consultorsalud.com/la-trampa-de-la-intervencion/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/04/Por-que-las-intervenciones-de-la-Supersalud-a-las-EPS-estan-destinadas-a-fracasar-una-lectura-desde-la-Teoria-de-las-Organizaciones.jpg",
+      "date": "2026-04-30",
+      "dateLabel": "30 abr 2026",
+      "summary": "Il Gattopardo leído desde la teoría de las organizaciones: cambiar a los de arriba sin tocar los planos profundos donde se decide no transforma nada.",
+      "slugsAlternos": [
+        "ntervenciones-supersalud-eps-fracasar"
+      ]
+    },
+    {
+      "slug": "la-ia-dejo-de-vivir-en-la-nube",
+      "title": "La IA dejó de vivir en la nube",
+      "url": "https://consultorsalud.com/la-ia-dejo-de-vivir-en-la-nube/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/04/La-IA-dejo-de-vivir-en-la-nube.jpg",
+      "date": "2026-04-27",
+      "dateLabel": "27 abr 2026",
+      "summary": "La inteligencia artificial local y de código abierto ya existe. Lo urgente es aplicarla a problemas reales latinoamericanos, no esperar la que viene."
+    },
+    {
+      "slug": "paradoja-del-facilismo-politica-publica-salud",
+      "title": "La paradoja del facilismo en la política pública de salud",
+      "url": "https://consultorsalud.com/paradoja-del-facilismo-politica-publica-salud/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/04/La-paradoja-del-facilismo-en-la-politica-publica-de-salud.jpg",
+      "date": "2026-04-22",
+      "dateLabel": "22 abr 2026",
+      "summary": "Cuando el sistema cruje, la respuesta automática es subir la UPC. Pedir más recursos no está mal: es insuficiente, y desvía del fondo."
+    }
+  ]
+}
