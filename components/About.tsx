@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 const stats = [
-  { value: '10K+', label: 'Personas impactadas por EducALL' },
+  { value: '4', label: 'Instrumentos de medición con datos abiertos' },
   { value: '52M', label: 'Colombianos en el sistema que analizo' },
-  { value: '10+', label: 'Años en datos y salud' },
+  { value: '10K+', label: 'Personas impactadas por EducALL' },
 ];
 
 export default function About() {
@@ -74,6 +74,32 @@ export default function About() {
                 bajo estas reglas
               </a>
               .
+            </p>
+
+            <p>
+              Ese trabajo hoy toma la forma de{' '}
+              <span className="text-text font-semibold">instrumentos de medición</span>{' '}
+              construidos solo con datos públicos: un{' '}
+              <a
+                href="https://datos.sinergistica.com/termometro"
+                className="text-accent-blue hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                termómetro del acceso
+              </a>{' '}
+              sobre la Encuesta de Calidad de Vida, una serie sobre quién sostiene el
+              financiamiento con la GEIH, veintisiete años de mortalidad del registro de
+              estadísticas vitales, y un radar de precios de medicamentos. Cada cifra se
+              publica con su incertidumbre a la vista y se puede recalcular.
+            </p>
+
+            <p>
+              Un termómetro no diagnostica: dice que hay fiebre.{' '}
+              <span className="text-text font-semibold">
+                No soy el médico — hago el instrumento
+              </span>
+              , y lo dejo sobre la mesa para que lo use cualquiera.
             </p>
 
             <p>

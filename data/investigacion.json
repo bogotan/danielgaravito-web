@@ -2,9 +2,128 @@
   "_meta": {
     "descripcion": "Fichas de investigación reproducible del sitio personal. Cada entrada apunta a su repositorio y declara su estado real.",
     "regla": "Una ficha solo pasa a public:true cuando (a) el repositorio es accesible sin autenticación y (b) no hay restricción de sometimiento o institucional que lo impida.",
-    "actualizado": "2026-09-10"
+    "actualizado": "2026-10-11",
+    "nota": "Los cuatro instrumentos de datos (ENCV, EEVV, GEIH, Medicamentos) entran aqui el 11 oct 2026. Radar queda public:false hasta cerrar la auditoria de alertas y la revision legal."
   },
   "estudios": [
+    {
+      "slug": "termometro-sgsss",
+      "titulo": "Termómetro del SGSSS",
+      "subtitulo": "Quince indicadores de acceso medidos desde los hogares, 2012–2025",
+      "periodo": "2012–2025",
+      "pregunta": "Casi toda la estadística del sistema de salud la produce quien es evaluado por ella. ¿Qué muestra el sistema cuando se le mide desde el hogar y no desde el reporte de la institución?",
+      "corpus": "Encuesta Nacional de Calidad de Vida (DANE) · 13 rondas · 15 indicadores · 7 cortes de desagregación",
+      "hallazgos": [
+        {
+          "cifra": "46,9 %",
+          "texto": "De las personas con fórmula médica, 46,9 % no recibieron todos sus medicamentos en 2025 (IC 95 %: 43,6–50,2). Es el valor más alto de la serie, doce puntos por encima del promedio prepandemia. El deterioro no se concentra en los quintiles bajos, lo que apunta a falla de suministro antes que a barrera de ingreso."
+        },
+        {
+          "cifra": "46,9 % frente a 87 %",
+          "texto": "Las cifras altas que circulan sobre lo mismo describen a quien se quejó; esta describe al país. La diferencia no es estadística: es a quién se le preguntó."
+        }
+      ],
+      "implicacion": "Un termómetro no diagnostica: dice que hay fiebre. La serie se publica abierta, con el intervalo de cada estimación a la vista y con fe de erratas.",
+      "metodos": [
+        "Diseño muestral complejo",
+        "Estimación por dominios",
+        "Intervalos de confianza",
+        "Series comparables entre rondas",
+        "Datos abiertos"
+      ],
+      "repo": "https://datos.sinergistica.com/termometro",
+      "doi": "",
+      "articulo": "https://consultorsalud.com/la-formula-que-no-llega-quien-queda-medicamento/",
+      "reproducir": "Cubo completo descargable desde el tablero",
+      "estado": "Publicado — v1, en revisión abierta",
+      "estadoTipo": "publicado",
+      "public": true
+    },
+    {
+      "slug": "eevv-mortalidad",
+      "titulo": "Mortalidad colombiana, de la cuenta a los años perdidos",
+      "subtitulo": "Cinco estudios sobre el registro completo de defunciones del DANE",
+      "periodo": "1998–2024",
+      "pregunta": "Contar muertes y contar años de vida perdidos no dan el mismo país. ¿Qué cambia en el mapa de la mortalidad cuando se descuenta la estructura de edad y se mide la completitud del registro?",
+      "corpus": "Registro completo de defunciones (EEVV/DANE) · tres formatos de microdato empalmados · cada cifra trazada a su archivo fuente en la bitácora de verificación",
+      "hallazgos": [
+        {
+          "cifra": "11,1 % → 21,6 %",
+          "texto": "Las causas externas pasan de 11,1 % de las defunciones a 21,6 % de los años de vida perdidos. Estandarizar por edad reordena tanto el ranking de causas como el mapa territorial: del Eje Cafetero envejecido a las periferias jóvenes de frontera."
+        },
+        {
+          "cifra": "I de Moran 0,539",
+          "texto": "La mortalidad se agrupa en el espacio (p = 0,001), pero el conglomerado «sano» de la frontera es en realidad un mapa del subregistro. Ninguna técnica espacial distingue bajo riesgo de bajo registro."
+        },
+        {
+          "cifra": "39,3 → 24,9",
+          "texto": "El país registra cada vez más muertes y pierde cada vez menos años por muerte. La transición epidemiológica condensada en una línea, con el pico pandémico de 2021 como el mayor de la serie."
+        }
+      ],
+      "implicacion": "La estructura de edad y la completitud del registro son los dos grandes confusores de cualquier comparación territorial ingenua de la mortalidad.",
+      "metodos": [
+        "AVPP/YLL (método GBD)",
+        "Estandarización directa con IC de Fay-Feuer",
+        "Análisis de correspondencias y fuzzy c-means",
+        "SMR con intervalos de Byar",
+        "I de Moran y LISA",
+        "Tablas de vida y desigualdad en la duración de la vida"
+      ],
+      "repo": "",
+      "doi": "",
+      "articulo": "",
+      "reproducir": "",
+      "estado": "Cinco manuscritos terminados y verificados — sin someter",
+      "estadoTipo": "preparacion",
+      "public": true
+    },
+    {
+      "slug": "geih-quien-sostiene",
+      "titulo": "¿Quién sostiene el sistema?",
+      "subtitulo": "Informalidad, régimen y base cotizante del aseguramiento en salud",
+      "periodo": "2007–2026",
+      "pregunta": "El Termómetro mira el acceso, que es el lado de la demanda. Esta serie mira el otro: quién cotiza, quién es subsidiado y qué tan estrecha es la base que sostiene el financiamiento, departamento por departamento.",
+      "corpus": "Gran Encuesta Integrada de Hogares (DANE) · serie nacional y departamental · batería de hipótesis con error estándar, intervalo y veredicto",
+      "hallazgos": [],
+      "implicacion": "",
+      "metodos": [
+        "Diseño muestral complejo",
+        "Series departamentales",
+        "Vulnerabilidad a gasto catastrófico",
+        "Batería de hipótesis con veredicto"
+      ],
+      "repo": "",
+      "doi": "",
+      "articulo": "",
+      "reproducir": "",
+      "estado": "Pipeline y tablero construidos — publicación pendiente",
+      "estadoTipo": "preparacion",
+      "public": true
+    },
+    {
+      "slug": "radar-medicamentos",
+      "titulo": "Radar de Medicamentos",
+      "subtitulo": "Observatorio abierto de precios, cobertura y abastecimiento",
+      "periodo": "2012–2026",
+      "pregunta": "¿Cuánto vale un medicamento en cada eslabón, cuál es su techo regulado, lo cubre la UPC, y pagamos más que otros países por la misma tableta?",
+      "corpus": "SISMED 2012-T4 a 2026-T1 (tres formatos empalmados) · 42 circulares de la CNPMDM · CUM, vitales no disponibles y protección de datos del INVIMA · giro de presupuestos máximos · cinco listas oficiales de precios extranjeras",
+      "hallazgos": [],
+      "implicacion": "",
+      "metodos": [
+        "Empalme de series administrativas",
+        "Precio implícito por eslabón",
+        "Comparación internacional ajustada por PPA",
+        "Cobertura por CUM y consumo en DDD",
+        "Reglas de alerta con verificación por segundo camino"
+      ],
+      "repo": "",
+      "doi": "",
+      "articulo": "",
+      "reproducir": "",
+      "estado": "Borrador v2026.4 — en auditoría de alertas y revisión legal",
+      "estadoTipo": "curso",
+      "public": false
+    },
     {
       "slug": "nlp-upc",
       "titulo": "¿Recuperar o reconstruir?",
@@ -27,7 +146,15 @@
         }
       ],
       "implicacion": "El vector subvalora el aseguramiento de la población infantil y sobrevalora el de los adultos jóvenes: un incentivo estructural a la selección de riesgo por edad.",
-      "metodos": ["Text-as-data", "TF-IDF y coseno", "Reúso literal por n-gramas", "Embeddings multilingües", "Log-verosimilitud de Dunning", "Auditoría documental", "Recálculo actuarial"],
+      "metodos": [
+        "Text-as-data",
+        "TF-IDF y coseno",
+        "Reúso literal por n-gramas",
+        "Embeddings multilingües",
+        "Log-verosimilitud de Dunning",
+        "Auditoría documental",
+        "Recálculo actuarial"
+      ],
       "repo": "https://github.com/bogotan/NLP-UPC",
       "doi": "",
       "articulo": "",
@@ -45,7 +172,11 @@
       "corpus": "Bases públicas de afiliación · Índice Herfindahl-Hirschman por departamento y municipio",
       "hallazgos": [],
       "implicacion": "",
-      "metodos": ["Índice Herfindahl-Hirschman", "Datos abiertos", "Análisis de mercados"],
+      "metodos": [
+        "Índice Herfindahl-Hirschman",
+        "Datos abiertos",
+        "Análisis de mercados"
+      ],
       "repo": "",
       "doi": "",
       "articulo": "",
@@ -72,7 +203,11 @@
         }
       ],
       "implicacion": "",
-      "metodos": ["Comparado internacional", "Auditoría documental", "Series de coeficientes"],
+      "metodos": [
+        "Comparado internacional",
+        "Auditoría documental",
+        "Series de coeficientes"
+      ],
       "repo": "",
       "doi": "",
       "articulo": "",
@@ -90,7 +225,13 @@
       "corpus": "Calibrado exclusivamente con información pública · Corte de datos: 15 de agosto de 2026",
       "hallazgos": [],
       "implicacion": "",
-      "metodos": ["Modelo de proyección", "Descomposición demográfica", "Análisis de robustez", "Contraste retrospectivo", "Simulador replicable"],
+      "metodos": [
+        "Modelo de proyección",
+        "Descomposición demográfica",
+        "Análisis de robustez",
+        "Contraste retrospectivo",
+        "Simulador replicable"
+      ],
       "repo": "",
       "doi": "",
       "articulo": "",
@@ -109,7 +250,12 @@
       "corpus": "Corpus normativo del sector · Índices y herramienta de consulta",
       "hallazgos": [],
       "implicacion": "",
-      "metodos": ["NLP", "Indexación documental", "OCR", "Corpus normativo"],
+      "metodos": [
+        "NLP",
+        "Indexación documental",
+        "OCR",
+        "Corpus normativo"
+      ],
       "repo": "",
       "doi": "",
       "articulo": "",
