@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   title: 'Daniel Garavito | Salud Inteligente y Anal\u00edtica Avanzada',
   description:
-    'Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente. Investigaci\u00f3n aplicada, formaci\u00f3n y consultor\u00eda. Dirigi\u00f3 Innovaci\u00f3n y Anal\u00edtica en ADRES hasta 2026; hoy trabaja de forma independiente, con datos abiertos y m\u00e9todo reproducible. Fundador de EducALL y creador de NACER.',
+    'Estudia ingenier\u00eda de sistemas; sus sistemas son los humanos. Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente: investigaci\u00f3n con datos abiertos y m\u00e9todo reproducible, escritos y formaci\u00f3n. Dirigi\u00f3 Innovaci\u00f3n y Anal\u00edtica en ADRES hasta 2026. Fundador de EducALL y creador de NACER.',
   keywords: [
     'Daniel Garavito',
     'economista',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Daniel Garavito | Salud Inteligente y Anal\u00edtica Avanzada',
     description:
-      'Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente. Datos abiertos, m\u00e9todo reproducible.',
+      'Estudio ingenier\u00eda de sistemas; mis sistemas son los humanos. Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente.',
     type: 'website',
     locale: 'es_CO',
     siteName: 'Daniel Garavito',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     creator: '@danielgaravitoco',
     title: 'Daniel Garavito | Salud Inteligente y Anal\u00edtica Avanzada',
     description:
-      'Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente. Datos abiertos, m\u00e9todo reproducible.',
+      'Estudio ingenier\u00eda de sistemas; mis sistemas son los humanos. Econom\u00eda, ingenier\u00eda y anal\u00edtica avanzada aplicadas a la salud inteligente.',
     images: ['/og.jpg'],
   },
 };

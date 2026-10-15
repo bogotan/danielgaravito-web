@@ -98,11 +98,24 @@ export default function Hero() {
             <span className="gradient-text">Daniel Garavito</span>
           </h1>
 
+          {/* Tesis. Va antes que el oficio a propósito: dice QUÉ es, y el
+              párrafo de abajo dice dónde lo aplica. La antítesis sostiene lo
+              técnico en vez de ablandarlo — sin la primera mitad, "sistemas
+              humanos" sonaría a humanismo suelto. */}
+          <p className="text-xl md:text-2xl text-text-muted mb-4 max-w-2xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            Estudio ingenier&iacute;a de sistemas.{' '}
+            {/* El giro de la frase se ve: apagado -> encendido. Sin degradado,
+                que es de la firma y no debe competir con el nombre. */}
+            <span className="text-text font-semibold">
+              Mis sistemas son los humanos.
+            </span>
+          </p>
+
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-text-muted mb-6 max-w-2xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Las tres, juntas, aplicadas a la salud inteligente. Dirig&iacute;
-            Innovaci&oacute;n y Anal&iacute;tica en ADRES; hoy investigo con datos
-            abiertos, escribo y ense&ntilde;o.
+          <p className="text-lg md:text-xl text-text-muted mb-6 max-w-2xl animate-slide-up" style={{ animationDelay: '0.15s' }}>
+            Econom&iacute;a, ingenier&iacute;a y anal&iacute;tica avanzada aplicadas a
+            la salud inteligente. Dirig&iacute; Innovaci&oacute;n y Anal&iacute;tica en
+            ADRES; hoy investigo con datos abiertos, escribo y ense&ntilde;o.
           </p>
 
           {/* Rotating quote */}
