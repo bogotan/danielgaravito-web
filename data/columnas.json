@@ -5,10 +5,37 @@
     "regla": "El script SOLO agrega columnas nuevas. Nunca modifica ni borra una entrada existente: los títulos y los summary están editados a mano y son de Daniel, no del portal.",
     "comoEscribirUnSummary": "Una o dos frases, con la tesis de la columna, no su tema. Las nuevas entran con summary vacío; la tarjeta se ve bien sin él.",
     "autorWordPress": 113777,
-    "ultimaSync": "2026-09-20",
+    "ultimaSync": "2026-11-11",
     "slugsAlternos": "Si el portal cambia el slug de una columna, guarda el viejo en slugsAlternos para que el sync no la vuelva a agregar como nueva."
   },
   "columnas": [
+    {
+      "slug": "quien-cotiza-cuando-trabaja-la-maquina",
+      "title": "¿Quién cotiza cuando trabaja la máquina?",
+      "url": "https://consultorsalud.com/quien-cotiza-cuando-trabaja-la-maquina/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/11/%C2%BFQuien-cotiza-cuando-trabaja-la-maquina.png",
+      "date": "2026-11-10",
+      "dateLabel": "10 nov 2026",
+      "summary": ""
+    },
+    {
+      "slug": "proteccion-de-pais-rico-cotizacion-de-pais",
+      "title": "Protección de país rico, cotización de país informal",
+      "url": "https://consultorsalud.com/proteccion-de-pais-rico-cotizacion-de-pais/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/10/Proteccion-de-pais-rico-cotizacion-de-pais-informal.jpg",
+      "date": "2026-10-23",
+      "dateLabel": "23 oct 2026",
+      "summary": ""
+    },
+    {
+      "slug": "la-formula-que-no-llega-quien-queda-medicamento",
+      "title": "La fórmula que no llega: Quién se queda sin su medicamento, por qué y cómo lo sabríamos",
+      "url": "https://consultorsalud.com/la-formula-que-no-llega-quien-queda-medicamento/",
+      "image": "https://consultorsalud.com/wp-content/uploads/2026/10/La-formula-que-no-llega-Quien-se-queda-sin-su-medicamento-por-que-y-como-lo-sabriamos.png",
+      "date": "2026-10-01",
+      "dateLabel": "1 oct 2026",
+      "summary": ""
+    },
     {
       "slug": "huerfano-institucional-sostenibilidad-sistema",
       "title": "El huérfano institucional: ¿quién responde por la sostenibilidad del sistema de salud?",
