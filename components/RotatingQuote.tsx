@@ -42,10 +42,10 @@ export default function RotatingQuote() {
               activa ? 'opacity-100 delay-300' : 'opacity-0 pointer-events-none'
             }`}
           >
-            <p className="text-accent-gold italic text-base md:text-lg leading-snug">
+            <p className="font-serif italic text-text-muted text-base md:text-[1.0625rem] leading-snug">
               &ldquo;{q.text}&rdquo;
             </p>
-            <span className="mt-1 block text-[11px] uppercase tracking-widest text-text-muted/70">
+            <span className="mt-1.5 block text-[10px] font-sans uppercase tracking-[0.2em] text-text-muted">
               {q.category}
             </span>
           </div>

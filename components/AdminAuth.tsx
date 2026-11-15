@@ -80,13 +80,13 @@ export default function AdminAuth({ children }: { children: ReactNode }) {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 bg-bg border border-gray-700 rounded-lg text-text focus:outline-none focus:border-accent-green transition-colors text-sm"
+              className="w-full px-4 py-3 bg-bg border border-rule rounded-lg text-text focus:outline-none focus:border-accent-green transition-colors text-sm"
               placeholder="Ingresa la clave"
               autoFocus
             />
           </div>
 
-          {error && <p className="text-red-400 text-sm">{error}</p>}
+          {error && <p className="text-red-700 text-sm">{error}</p>}
 
           <button type="submit" disabled={checking} className="w-full btn-primary justify-center disabled:opacity-50">
             {checking ? 'Verificando...' : 'Ingresar'}

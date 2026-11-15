@@ -40,18 +40,15 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.slug}
-            className="group card relative overflow-hidden transition-all hover:border-accent-green/30"
+            className="group card relative overflow-hidden"
           >
-            <div
-              className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.color} opacity-60 group-hover:opacity-100 transition-opacity duration-300`}
-            />
-
-            <div className="flex items-start justify-between mb-3">
-              <span className="text-4xl">{project.emoji}</span>
-            </div>
-
-            <h3 className="text-lg font-bold text-text mb-1">{project.title}</h3>
-            <p className="text-accent-green text-xs font-medium mb-3">
+            {/* Se fueron dos cosas: el emoji de 36 px y la barra de color
+                distinta en cada tarjeta. El emoji sigue en projects.json
+                —ese archivo lo escribe el sync, no la mano— pero la vista ya
+                no lo pinta. Las tarjetas ahora se distinguen por lo que
+                dicen, no por el color de su borde. */}
+            <h3 className="font-serif text-xl text-text mb-1.5">{project.title}</h3>
+            <p className="text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
               {project.subtitle}
             </p>
 
@@ -63,7 +60,7 @@ export default function Projects() {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] px-2 py-0.5 rounded-full bg-bg border border-gray-700 text-text-muted"
+                  className="text-[10px] px-2 py-0.5 rounded-full bg-bg border border-rule text-text-muted"
                 >
                   {tag}
                 </span>

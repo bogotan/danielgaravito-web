@@ -51,14 +51,14 @@ export default function LeadForm({
   if (status === 'success') {
     return (
       <div className={`${compact ? 'p-4' : 'p-6'} bg-accent-green/10 border border-accent-green/30 rounded-xl text-center`}>
-        <div className="text-3xl mb-2">🎉</div>
+        <div className="text-3xl mb-2"></div>
         <p className="text-accent-green font-semibold">{message}</p>
       </div>
     );
   }
 
   return (
-    <div className={compact ? '' : 'bg-bg-secondary border border-gray-800 rounded-xl p-6'}>
+    <div className={compact ? '' : 'bg-bg-secondary border border-rule rounded-xl p-6'}>
       {!compact && (
         <>
           <h3 className="text-lg font-bold text-text mb-1">{title}</h3>
@@ -73,7 +73,7 @@ export default function LeadForm({
             placeholder="Tu nombre (opcional)"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-3 bg-bg border border-gray-700 rounded-lg text-text placeholder-text-muted focus:outline-none focus:border-accent-green transition-colors text-sm"
+            className="w-full px-4 py-3 bg-bg border border-rule rounded-lg text-text placeholder-text-muted focus:outline-none focus:border-accent-green transition-colors text-sm"
           />
         )}
 
@@ -84,7 +84,7 @@ export default function LeadForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className={`${compact ? 'flex-1' : 'w-full'} px-4 py-3 bg-bg border border-gray-700 rounded-lg text-text placeholder-text-muted focus:outline-none focus:border-accent-green transition-colors text-sm`}
+            className={`${compact ? 'flex-1' : 'w-full'} px-4 py-3 bg-bg border border-rule rounded-lg text-text placeholder-text-muted focus:outline-none focus:border-accent-green transition-colors text-sm`}
           />
           <button
             type="submit"
@@ -108,7 +108,7 @@ export default function LeadForm({
         </div>
 
         {status === 'error' && (
-          <p className="text-red-400 text-xs mt-1">{message}</p>
+          <p className="text-red-700 text-xs mt-1">{message}</p>
         )}
       </form>
     </div>

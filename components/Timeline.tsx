@@ -16,25 +16,16 @@ interface Hito {
   color?: string;
 }
 
-const typeColors: Record<string, string> = {
-  premio: 'bg-accent-gold/20 text-accent-gold border-accent-gold/30',
-  charla: 'bg-accent-green/20 text-accent-green border-accent-green/30',
-  hito: 'bg-accent-blue/20 text-accent-blue border-accent-blue/30',
-  fundacion: 'bg-accent-green/20 text-accent-green border-accent-green/30',
-  video: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
-  ensayo: 'bg-pink-500/20 text-pink-400 border-pink-500/30',
-  proyecto: 'bg-accent-blue/20 text-accent-blue border-accent-blue/30',
-  libro: 'bg-pink-500/20 text-pink-400 border-pink-500/30',
-  tecnología: 'bg-accent-green/20 text-accent-green border-accent-green/30',
-  gobierno: 'bg-accent-blue/20 text-accent-blue border-accent-blue/30',
-  educación: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
-  innovación: 'bg-accent-green/20 text-accent-green border-accent-green/30',
-  emprendimiento: 'bg-accent-gold/20 text-accent-gold border-accent-gold/30',
-  publicación: 'bg-pink-500/20 text-pink-400 border-pink-500/30',
-};
+// Catorce tipos de hito pintados de siete colores distintos hacían que la
+// trayectoria pareciera un semáforo. El tipo ya está escrito en la etiqueta:
+// no necesita además un color propio. Solo se distingue lo publicado —lo que
+// alguien puede ir a leer— del resto.
+const TIPOS_DESTACADOS = new Set(['premio', 'libro', 'publicación', 'ensayo']);
 
 function getTypeClasses(type: string): string {
-  return typeColors[type] || 'bg-gray-500/20 text-gray-400 border-gray-500/30';
+  return TIPOS_DESTACADOS.has(type)
+    ? 'bg-accent-green/10 text-accent-green border-accent-green/25'
+    : 'bg-bg-secondary text-text-muted border-rule';
 }
 
 export default function Timeline() {
@@ -122,7 +113,7 @@ export default function Timeline() {
         {canScrollLeft && (
           <button
             onClick={() => scroll('left')}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-bg-secondary border border-gray-700 flex items-center justify-center hover:border-accent-green hover:text-accent-green transition-all shadow-lg"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-bg-secondary border border-rule flex items-center justify-center hover:border-accent-green hover:text-accent-green transition-all shadow-lg"
             aria-label="Anterior"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,7 +124,7 @@ export default function Timeline() {
         {canScrollRight && (
           <button
             onClick={() => scroll('right')}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-bg-secondary border border-gray-700 flex items-center justify-center hover:border-accent-green hover:text-accent-green transition-all shadow-lg"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-bg-secondary border border-rule flex items-center justify-center hover:border-accent-green hover:text-accent-green transition-all shadow-lg"
             aria-label="Siguiente"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -174,7 +165,7 @@ export default function Timeline() {
                         .filter((_, i) => i % 2 === 0)
                         .map((_, i) => (
                           <div key={`conn-above-${i}`} className="w-[248px] flex justify-center">
-                            <div className="w-0.5 h-6 bg-gradient-to-b from-gray-600 to-gray-700" />
+                            <div className="w-0.5 h-6 bg-gradient-to-b from-rule-strong to-rule" />
                           </div>
                         ))}
                     </div>
@@ -195,7 +186,7 @@ export default function Timeline() {
                         .filter((_, i) => i % 2 === 1)
                         .map((_, i) => (
                           <div key={`conn-below-${i}`} className="w-[248px] flex justify-center">
-                            <div className="w-0.5 h-6 bg-gradient-to-t from-gray-600 to-gray-700" />
+                            <div className="w-0.5 h-6 bg-gradient-to-t from-rule-strong to-rule" />
                           </div>
                         ))}
                     </div>
@@ -229,7 +220,7 @@ export default function Timeline() {
                 <div className="w-12 h-12 rounded-full bg-bg border-2 border-accent-green flex items-center justify-center z-10 shadow-lg shadow-accent-green/20">
                   <span className="text-xs font-bold text-accent-green">{year}</span>
                 </div>
-                <div className="ml-4 h-px flex-1 bg-gradient-to-r from-gray-700 to-transparent" />
+                <div className="ml-4 h-px flex-1 bg-gradient-to-r from-rule-strong to-transparent" />
               </div>
 
               {/* Cards */}
@@ -254,8 +245,8 @@ function HitoCard({ hito, position }: { hito: Hito; position: 'above' | 'below' 
     <div
       className={`${cardWidth} bg-bg-secondary border rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex-shrink-0 ${
         isHighlighted
-          ? 'border-accent-gold/50 animate-glow'
-          : 'border-gray-800 hover:border-gray-700'
+          ? 'border-accent-green/40'
+          : 'border-rule hover:border-rule'
       }`}
     >
       {/* Image header */}
@@ -271,11 +262,10 @@ function HitoCard({ hito, position }: { hito: Hito; position: 'above' | 'below' 
       )}
 
       <div className="p-4">
-        {/* Emoji */}
-        <div className="text-3xl mb-2">{hito.emoji}</div>
-
-        {/* Title */}
-        <h3 className="font-bold text-text text-sm leading-tight mb-2">
+        {/* El emoji sigue en hitos.json; la vista dejó de pintarlo. Un emoji
+            de 30 px encima de cada hito convertía la trayectoria en una tira
+            de calcomanías. */}
+        <h3 className="font-serif text-base text-text leading-snug mb-2">
           {hito.title}
         </h3>
 

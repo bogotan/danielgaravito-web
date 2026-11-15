@@ -52,7 +52,7 @@ export default function AdminPage() {
         <h1 className="text-3xl font-bold gradient-text">Dashboard Admin</h1>
         <button
           onClick={logout}
-          className="text-text-muted hover:text-red-400 text-sm transition-colors"
+          className="text-text-muted hover:text-red-700 text-sm transition-colors"
         >
           Cerrar sesi&oacute;n
         </button>
@@ -101,7 +101,7 @@ export default function AdminPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-800">
+                <tr className="border-b border-rule">
                   <th className="text-left py-2 px-3 text-text-muted font-medium">Email</th>
                   <th className="text-left py-2 px-3 text-text-muted font-medium">Nombre</th>
                   <th className="text-left py-2 px-3 text-text-muted font-medium">Fuente</th>
@@ -110,7 +110,7 @@ export default function AdminPage() {
               </thead>
               <tbody>
                 {leads.map((lead) => (
-                  <tr key={lead.id} className="border-b border-gray-800/50 hover:bg-bg">
+                  <tr key={lead.id} className="border-b border-rule/70 hover:bg-bg">
                     <td className="py-2 px-3 text-text">{lead.email}</td>
                     <td className="py-2 px-3 text-text-muted">{lead.name || '\u2014'}</td>
                     <td className="py-2 px-3">

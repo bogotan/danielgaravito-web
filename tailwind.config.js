@@ -1,4 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+
+// Paleta "Papel": fondo claro, tinta cálida y UN solo acento.
+//
+// Antes había tres acentos (azul oscuro, azul eléctrico y naranja) usados los
+// tres como color de texto, y peleaban entre sí. Ahora hay uno: la terracota.
+// Los nombres accent-green / accent-blue / accent-gold se conservan porque los
+// usan decenas de sitios del código; lo que cambió es a qué apuntan:
+//
+//   accent-green -> el acento (acciones, enlaces, cifras)
+//   accent-gold  -> el mismo acento (era el naranja de las cifras)
+//   accent-blue  -> tinta apagada: todo lo que antes era azul decorativo
+//                   (subtítulos, etiquetas) ahora simplemente se calla.
+//
+// Contraste sobre #F6F3EE: tinta 15.9:1, apagado 5.7:1, acento 5.3:1.
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,26 +22,35 @@ module.exports = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#0D1117',
-          secondary: '#161B22',
+          DEFAULT: '#F6F3EE',
+          secondary: '#FFFDF9',
         },
         accent: {
-          green: '#1565C0',
-          blue: '#13AFF0',
-          gold: '#F07B2E',
+          green: '#A8551F',
+          blue: '#65605A',
+          gold: '#A8551F',
         },
         text: {
-          DEFAULT: '#E6EDF3',
-          muted: '#8B949E',
+          DEFAULT: '#1A1916',
+          muted: '#65605A',
+        },
+        // Los filetes. Sustituyen a border-gray-800/700, que sobre fondo claro
+        // dibujaban cajas negras.
+        rule: {
+          DEFAULT: '#DFD9D0',
+          strong: '#CFC8BD',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        // Inter para lo que se usa (navegación, botones, etiquetas, datos).
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        // Spectral para lo que se lee (nombre, tesis, títulos, citas).
+        // Es el cambio de mayor efecto: mueve el sitio de tablero a publicación.
+        serif: ['var(--font-spectral)', 'Georgia', 'Times New Roman', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
         'slide-up': 'slideUp 0.6s ease-out',
-        'glow': 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
         fadeIn: {
@@ -37,10 +60,6 @@ module.exports = {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 5px rgba(240, 123, 46, 0.3)' },
-          '100%': { boxShadow: '0 0 20px rgba(240, 123, 46, 0.6), 0 0 40px rgba(240, 123, 46, 0.2)' },
         },
       },
     },

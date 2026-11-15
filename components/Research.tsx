@@ -25,19 +25,6 @@ const estudios: Estudio[] = (
   investigacionData as { estudios: Estudio[] }
 ).estudios.filter((e) => e.public !== false);
 
-// El color del estado dice en qué punto del camino está el estudio, no si es bueno.
-const estadoClases: Record<string, string> = {
-  publicado: 'bg-accent-green/10 text-accent-green border-accent-green/30',
-  sometimiento: 'bg-accent-gold/10 text-accent-gold border-accent-gold/30',
-  preparacion: 'bg-accent-blue/10 text-accent-blue border-accent-blue/30',
-  curso: 'bg-accent-blue/10 text-accent-blue border-accent-blue/30',
-  espera: 'bg-gray-500/10 text-text-muted border-gray-700',
-};
-
-function clasesEstado(tipo: string): string {
-  return estadoClases[tipo] || estadoClases.espera;
-}
-
 const SITIO = 'https://www.danielgaravito.co';
 
 function jsonLd() {
@@ -59,8 +46,115 @@ function jsonLd() {
   };
 }
 
+/** Los enlaces de un estudio: iguales en la ficha abierta y en las filas. */
+function Enlaces({ e }: { e: Estudio }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-7 gap-y-1">
+      {e.repo ? (
+        <a
+          href={e.repo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center min-h-[44px] text-sm text-accent-green hover:text-text transition-colors"
+        >
+          Repositorio
+        </a>
+      ) : (
+        <span className="inline-flex items-center min-h-[44px] text-sm text-text-muted">
+          Repositorio al publicar
+        </span>
+      )}
+
+      {e.doi && (
+        <a
+          href={e.doi}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center min-h-[44px] text-sm text-accent-green hover:text-text transition-colors"
+        >
+          DOI
+        </a>
+      )}
+
+      {e.articulo && (
+        <a
+          href={e.articulo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center min-h-[44px] text-sm text-accent-green hover:text-text transition-colors"
+        >
+          Art&iacute;culo
+        </a>
+      )}
+
+      {e.reproducir && (
+        <span className="text-xs text-text-muted">
+          Reproducir:{' '}
+          <code className="px-1.5 py-0.5 rounded bg-bg border border-rule text-text">
+            {e.reproducir}
+          </code>
+        </span>
+      )}
+    </div>
+  );
+}
+
+/** El detalle: hallazgos, por qué importa, corpus y método. */
+function Detalle({ e, desde }: { e: Estudio; desde: number }) {
+  const hallazgos = e.hallazgos.slice(desde);
+  return (
+    <div className="pt-6">
+      {hallazgos.length > 0 && (
+        <dl className="space-y-5 mb-6">
+          {hallazgos.map((h) => (
+            <div key={h.cifra} className="sm:flex sm:gap-6">
+              <dt className="font-serif text-xl text-accent-green sm:w-52 sm:flex-shrink-0 sm:text-right">
+                {h.cifra}
+              </dt>
+              <dd className="text-sm leading-[1.75] text-text-muted max-w-[62ch] mt-1 sm:mt-0">
+                {h.texto}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
+      {e.implicacion && (
+        <p className="text-sm leading-[1.75] text-text-muted mb-6 max-w-[68ch]">
+          <span className="font-semibold text-text">Por qu&eacute; importa: </span>
+          {e.implicacion}
+        </p>
+      )}
+
+      {e.corpus && (
+        <p className="text-xs leading-relaxed text-text-muted mb-3 max-w-[80ch]">
+          <span className="font-semibold uppercase tracking-[0.14em]">Corpus &middot; </span>
+          {e.corpus}
+        </p>
+      )}
+
+      {/* Los métodos dejan de ser etiquetas con borde y pasan a ser lo que
+          son: una lista, separada por puntos. Cinco cápsulas por tarjeta,
+          por cinco tarjetas, eran veinticinco cajitas compitiendo con las
+          cifras. */}
+      {e.metodos.length > 0 && (
+        <p className="text-xs leading-relaxed text-text-muted mb-6 max-w-[80ch]">
+          <span className="font-semibold uppercase tracking-[0.14em]">M&eacute;todo &middot; </span>
+          {e.metodos.join(' · ')}
+        </p>
+      )}
+    </div>
+  );
+}
+
 export default function Research() {
   if (estudios.length === 0) return null;
+
+  // El primero se muestra abierto; los demás, en una línea cada uno que se
+  // despliega al tocarla. Antes los cinco venían completos, uno tras otro:
+  // 3.211 px de alto, y nadie llegaba al quinto.
+  const [principal, ...resto] = estudios;
+  const primerHallazgo = principal.hallazgos[0];
 
   return (
     <section id="investigacion" className="section-container">
@@ -69,158 +163,108 @@ export default function Research() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }}
       />
       <h2 className="section-title">
-        <span className="gradient-text">Investigación</span>
+        <span className="gradient-text">Investigaci&oacute;n</span>
       </h2>
-      <p className="text-text-muted text-lg mb-10 max-w-3xl">
+      <p className="text-text-muted text-lg mb-14 max-w-[68ch]">
         Estudios propios sobre el sistema de salud colombiano, construidos solo
-        con fuentes públicas. Cada uno declara su corpus, su método y su fecha de
+        con fuentes p&uacute;blicas. Cada uno declara su corpus, su m&eacute;todo y su fecha de
         corte, y se puede reproducir contra su repositorio: si un resultado se
-        reproduce desde fuentes públicas, no hay nada adentro que no pudiera
+        reproduce desde fuentes p&uacute;blicas, no hay nada adentro que no pudiera
         estar.
       </p>
 
-      <div className="space-y-8">
-        {estudios.map((e) => (
-          <article
-            key={e.slug}
-            className="card relative overflow-hidden transition-colors hover:border-accent-green/30"
-          >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-blue to-accent-green opacity-60" />
+      {/* El estudio que abre la sección */}
+      <article>
+        <h3 className="font-serif text-3xl md:text-4xl leading-tight text-text mb-2">
+          {principal.titulo}
+        </h3>
+        <p className="text-sm text-text-muted mb-8">
+          {principal.subtitulo}
+          {principal.periodo && <span> &middot; {principal.periodo}</span>}
+          <span> &middot; </span>
+          <span className="text-accent-green">{principal.estado}</span>
+        </p>
 
-            {/* Encabezado */}
-            <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-text">
-                  {e.titulo}
-                </h3>
-                <p className="text-accent-green text-sm font-medium mt-1">
-                  {e.subtitulo}
-                  {e.periodo && (
-                    <span className="text-text-muted"> · {e.periodo}</span>
-                  )}
-                </p>
-              </div>
-              <span
-                className={`shrink-0 text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full border ${clasesEstado(
-                  e.estadoTipo
-                )}`}
-              >
-                {e.estado}
-              </span>
-            </div>
+        <p className="font-serif text-xl md:text-[1.375rem] leading-[1.5] text-text mb-10 max-w-[62ch]">
+          {principal.pregunta}
+        </p>
 
-            {/* La pregunta */}
-            <p className="text-text leading-relaxed mb-5 max-w-3xl">
-              {e.pregunta}
+        {/* Una cifra, no cuatro: la que resume el estudio. El resto vive
+            detrás del desplegable. */}
+        {primerHallazgo && (
+          <div className="sm:flex sm:items-start sm:gap-8 py-7 border-y border-rule mb-8">
+            <p className="font-serif text-4xl md:text-5xl leading-none text-accent-green mb-3 sm:mb-0 sm:flex-shrink-0">
+              {primerHallazgo.cifra}
             </p>
+            <p className="text-[15px] leading-[1.75] text-text-muted max-w-[62ch]">
+              {primerHallazgo.texto}
+            </p>
+          </div>
+        )}
 
-            {/* Hallazgos */}
-            {e.hallazgos.length > 0 && (
-              <dl className="space-y-4 mb-5 border-l-2 border-gray-800 pl-5">
-                {e.hallazgos.map((h) => (
-                  <div key={h.cifra}>
-                    <dt className="text-accent-gold font-bold text-sm tracking-wide">
-                      {h.cifra}
-                    </dt>
-                    <dd className="text-text-muted text-sm leading-relaxed mt-1 max-w-3xl">
-                      {h.texto}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            )}
+        <details className="group">
+          <summary className="list-none cursor-pointer inline-flex items-center gap-2 min-h-[44px] text-sm font-medium text-accent-green hover:text-text transition-colors">
+            Hallazgos, corpus y m&eacute;todo
+            <svg
+              className="w-3.5 h-3.5 transition-transform group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.8}
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 9.5 12 15.5 18 9.5" />
+            </svg>
+          </summary>
+          <Detalle e={principal} desde={1} />
+        </details>
 
-            {e.implicacion && (
-              <p className="text-sm text-text-muted italic mb-5 max-w-3xl">
-                <span className="not-italic font-semibold text-text">
-                  Por qué importa:{' '}
-                </span>
-                {e.implicacion}
+        <div className="mt-4">
+          <Enlaces e={principal} />
+        </div>
+      </article>
+
+      {/* Los demás: una línea cada uno */}
+      <div className="border-t border-rule mt-14">
+        {resto.map((e) => (
+          <details key={e.slug} className="group border-b border-rule">
+            <summary className="list-none cursor-pointer py-5 flex flex-wrap items-baseline gap-x-6 gap-y-1">
+              <h3 className="font-serif text-xl text-text group-hover:text-accent-green transition-colors sm:w-[24rem] sm:flex-shrink-0">
+                {e.titulo}
+              </h3>
+              <p className="text-sm text-text-muted flex-1 min-w-[15rem]">
+                {e.subtitulo}
+                {e.periodo && <span> &middot; {e.periodo}</span>}
               </p>
-            )}
+              <span className="text-xs text-text-muted">{e.estado}</span>
+              <svg
+                className="w-3.5 h-3.5 text-text-muted transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.8}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 9.5 12 15.5 18 9.5" />
+              </svg>
+            </summary>
 
-            {/* Corpus */}
-            {e.corpus && (
-              <p className="text-xs text-text-muted mb-4">
-                <span className="font-semibold uppercase tracking-wider">
-                  Corpus ·{' '}
-                </span>
-                {e.corpus}
+            <div className="pb-8">
+              <p className="font-serif text-lg leading-[1.55] text-text max-w-[62ch]">
+                {e.pregunta}
               </p>
-            )}
-
-            {/* Métodos */}
-            <div className="flex flex-wrap gap-2 mb-5">
-              {e.metodos.map((m) => (
-                <span
-                  key={m}
-                  className="text-[10px] px-2 py-0.5 rounded-full bg-bg border border-gray-700 text-text-muted"
-                >
-                  {m}
-                </span>
-              ))}
+              <Detalle e={e} desde={0} />
+              <Enlaces e={e} />
             </div>
-
-            {/* Enlaces */}
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-gray-800">
-              {e.repo ? (
-                <a
-                  href={e.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-green hover:text-accent-gold transition-colors"
-                >
-                  Repositorio
-                  <span aria-hidden>↗</span>
-                </a>
-              ) : (
-                <span className="text-sm text-text-muted">
-                  Repositorio al publicar
-                </span>
-              )}
-
-              {e.doi && (
-                <a
-                  href={e.doi}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-accent-blue hover:text-accent-gold transition-colors"
-                >
-                  DOI
-                  <span aria-hidden>↗</span>
-                </a>
-              )}
-
-              {e.articulo && (
-                <a
-                  href={e.articulo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-accent-blue hover:text-accent-gold transition-colors"
-                >
-                  Artículo
-                  <span aria-hidden>↗</span>
-                </a>
-              )}
-
-              {e.reproducir && (
-                <span className="text-xs text-text-muted">
-                  Reproducir:{' '}
-                  <code className="px-1.5 py-0.5 rounded bg-bg border border-gray-700 text-text">
-                    {e.reproducir}
-                  </code>
-                </span>
-              )}
-            </div>
-          </article>
+          </details>
         ))}
       </div>
 
-      <p className="mt-8 text-sm text-text-muted max-w-3xl">
-        Las reglas con que manejo estos trabajos —autoría, licencia, fuentes y
-        relación comercial— están en{' '}
-        <a href="/etica" className="text-accent-blue hover:underline">
-          Independencia y manejo de información
+      <p className="mt-10 text-sm text-text-muted max-w-[68ch]">
+        Las reglas con que manejo estos trabajos &mdash;autor&iacute;a, licencia, fuentes y
+        relaci&oacute;n comercial&mdash; est&aacute;n en{' '}
+        <a href="/etica" className="text-accent-green hover:text-text underline underline-offset-4 transition-colors">
+          Independencia y manejo de informaci&oacute;n
         </a>
         .
       </p>

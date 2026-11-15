@@ -367,36 +367,36 @@ export default function Media() {
   const [activeCharla, setActiveCharla] = useState(0);
   const [activePodcast, setActivePodcast] = useState(0);
 
-  const tabs: { id: Tab; label: string; icon: string }[] = [
-    { id: 'charlas', label: 'Charlas', icon: '🎬' },
-    { id: 'podcasts', label: 'Podcasts', icon: '🎙' },
-    { id: 'publicaciones', label: 'Publicaciones', icon: '📝' },
-    { id: 'reconocimientos', label: 'Reconocimientos', icon: '🏆' },
+  // Sin emoji. Cuatro de ellos en fila eran la forma más rápida que tenía
+  // el sitio de parecer aficionado.
+  const tabs: { id: Tab; label: string }[] = [
+    { id: 'charlas', label: 'Charlas' },
+    { id: 'podcasts', label: 'Podcasts' },
+    { id: 'publicaciones', label: 'Publicaciones' },
+    { id: 'reconocimientos', label: 'Reconocimientos' },
   ];
 
   return (
     <section id="media" className="section-container">
-      <div className="text-center mb-12">
-        <h2 className="section-title">
-          <span className="gradient-text">En Acción</span>
-        </h2>
-        <p className="text-text-muted text-lg max-w-2xl mx-auto">
-          Charlas, podcasts, publicaciones y reconocimientos que documentan el camino.
-        </p>
-      </div>
+      <h2 className="section-title">
+        <span className="gradient-text">En Acción</span>
+      </h2>
+      <p className="text-text-muted text-lg mb-10 max-w-2xl">
+        Charlas, podcasts, publicaciones y reconocimientos que documentan el camino.
+      </p>
 
-      <div className="flex flex-wrap justify-center gap-2 mb-10">
+      <div className="flex flex-wrap gap-x-8 gap-y-2 mb-10 border-b border-rule">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 ${
+            aria-current={activeTab === tab.id ? 'true' : undefined}
+            className={`min-h-[44px] -mb-px border-b-2 text-sm transition-colors ${
               activeTab === tab.id
-                ? 'bg-accent-green text-white shadow-lg shadow-accent-green/20'
-                : 'bg-bg-secondary text-text-muted hover:text-text hover:bg-bg-secondary/80 border border-gray-800'
+                ? 'border-accent-green text-text font-medium'
+                : 'border-transparent text-text-muted hover:text-text'
             }`}
           >
-            <span className="mr-1.5">{tab.icon}</span>
             {tab.label}
           </button>
         ))}
@@ -413,7 +413,7 @@ export default function Media() {
           </div>
 
           <div className="max-w-4xl mx-auto mb-8">
-            <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden bg-bg-secondary border border-gray-800">
+            <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden bg-bg-secondary border border-rule">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src={buildEmbedUrl(charlas[activeCharla].embedId, charlas[activeCharla].startSeconds)}
@@ -442,7 +442,7 @@ export default function Media() {
                 className={`group relative rounded-lg overflow-hidden border transition-all duration-300 text-left ${
                   activeCharla === i
                     ? 'border-accent-blue shadow-lg shadow-accent-blue/20 ring-2 ring-accent-blue/30'
-                    : 'border-gray-800 hover:border-gray-700'
+                    : 'border-rule hover:border-rule'
                 }`}
               >
                 <img
@@ -455,7 +455,7 @@ export default function Media() {
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover:scale-110 ${
                     activeCharla === i ? 'bg-accent-blue' : 'bg-white/80'
                   }`}>
-                    <svg className={`w-4 h-4 ml-0.5 ${activeCharla === i ? 'text-white' : 'text-gray-900'}`} fill="currentColor" viewBox="0 0 24 24">
+                    <svg className={`w-4 h-4 ml-0.5 ${activeCharla === i ? 'text-bg' : 'text-text'}`} fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
@@ -486,7 +486,7 @@ export default function Media() {
 
           {activeTab === 'podcasts' && (
           <div className="max-w-4xl mx-auto mb-8">
-            <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden bg-bg-secondary border border-gray-800">
+            <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden bg-bg-secondary border border-rule">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src={buildEmbedUrl(podcasts[activePodcast].embedId, podcasts[activePodcast].startSeconds)}
@@ -534,7 +534,7 @@ export default function Media() {
               },
             ].map((grupo) => (
               <div key={grupo.key}>
-                <div className="mb-4 pb-3 border-b border-gray-800">
+                <div className="mb-4 pb-3 border-b border-rule">
                   <h3 className="text-lg font-bold text-text">{grupo.heading}</h3>
                   <p className="text-text-muted text-sm mt-1">{grupo.blurb}</p>
                 </div>
@@ -548,7 +548,7 @@ export default function Media() {
                         className={`group relative rounded-lg overflow-hidden border transition-all duration-300 text-left ${
                           activePodcast === i
                             ? 'border-accent-gold shadow-lg shadow-accent-gold/20 ring-2 ring-accent-gold/30'
-                            : 'border-gray-800 hover:border-gray-700'
+                            : 'border-rule hover:border-rule'
                         }`}
                       >
                         <img
@@ -586,7 +586,7 @@ export default function Media() {
       {/* Siempre en el DOM (oculto cuando no está activo) para que las columnas
           sean rastreables por buscadores, no solo visibles tras un clic. */}
       <div hidden={activeTab !== 'publicaciones'} className="max-w-4xl mx-auto">
-        <div className="mb-6 pb-3 border-b border-gray-800">
+        <div className="mb-6 pb-3 border-b border-rule">
           <h3 className="text-lg font-bold text-text">Columnas en CONSULTORSALUD</h3>
           <p className="text-text-muted text-sm mt-1">
             {resumenColumnas(columnas)} sobre cómo se mide, se paga y se decide
@@ -601,7 +601,7 @@ export default function Media() {
               href={c.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg overflow-hidden border border-gray-800 hover:border-accent-blue/50 transition-colors bg-bg-secondary flex flex-col"
+              className="group rounded-lg overflow-hidden border border-rule hover:border-accent-blue/50 transition-colors bg-bg-secondary flex flex-col"
             >
               <img
                 src={c.image}
@@ -629,23 +629,22 @@ export default function Media() {
           ))}
         </div>
 
-        <div className="mt-10 pt-8 border-t border-gray-800">
+        <div className="mt-10 pt-8 border-t border-rule">
           <h3 className="text-lg font-semibold text-text mb-4">Otras publicaciones</h3>
           <div className="space-y-3">
             {otrasPublicaciones.map((pub, index) => (
               <div key={index} className="card group hover:border-accent-blue/30">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-accent-blue text-sm font-bold">
-                      {pub.type === 'Artículo' ? '📄' : pub.type === 'Ponencia' ? '🎙' : '📋'}
-                    </span>
-                  </div>
+                <div className="flex items-start gap-5">
+                  {/* El tipo de publicación se dice, no se dibuja. */}
+                  <span className="w-24 flex-shrink-0 mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-text-muted">
+                    {pub.type}
+                  </span>
                   <div className="flex-1">
-                    <h4 className="text-base font-semibold text-text group-hover:text-accent-blue transition-colors">
+                    <h4 className="font-serif text-lg text-text transition-colors">
                       {pub.title}
                     </h4>
                     <p className="text-text-muted text-sm mt-1">{pub.description}</p>
-                    <span className="inline-block mt-2 text-xs font-medium px-2.5 py-1 rounded-full bg-bg border border-gray-800 text-text-muted">
+                    <span className="inline-block mt-2 text-xs font-medium px-2.5 py-1 rounded-full bg-bg border border-rule text-text-muted">
                       {pub.platform} · {pub.type}
                     </span>
                   </div>
@@ -655,13 +654,13 @@ export default function Media() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-gray-800">
+        <div className="mt-10 pt-8 border-t border-rule">
           <h3 className="text-lg font-semibold text-text mb-4">Mencionado en</h3>
           <div className="flex flex-wrap gap-3">
             {mediaMentions.map((mention, index) => (
               <div
                 key={index}
-                className="px-4 py-2.5 rounded-lg bg-bg-secondary border border-gray-800 hover:border-gray-700 transition-colors"
+                className="px-4 py-2.5 rounded-lg bg-bg-secondary border border-rule hover:border-rule transition-colors"
               >
                 <p className="text-sm font-medium text-text">{mention.outlet}</p>
                 <p className="text-xs text-text-muted">{mention.topic}</p>
@@ -699,7 +698,7 @@ export default function Media() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             {awards.filter((a) => a.photo && !a.hero).map((a, i) => (
-              <div key={i} className="rounded-xl overflow-hidden border border-gray-800 hover:border-accent-gold/40 transition-colors">
+              <div key={i} className="rounded-xl overflow-hidden border border-rule hover:border-accent-gold/40 transition-colors">
                 <img src={a.photo} alt={a.title} className="w-full h-auto" loading="lazy" />
                 <div className="p-4 bg-bg-secondary">
                   <h4 className="font-semibold text-text text-sm">{a.title}</h4>
@@ -711,12 +710,9 @@ export default function Media() {
 
           <div className="space-y-3">
             {awards.map((award, index) => (
-              <div key={index} className="card group hover:border-accent-gold/30 flex items-center gap-5">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">🏆</span>
-                </div>
+              <div key={index} className="card group flex items-center gap-5">
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-text group-hover:text-accent-gold transition-colors">
+                  <h3 className="font-serif text-xl text-text transition-colors">
                     {award.title}
                   </h3>
                   <p className="text-text-muted text-sm">{award.org}</p>

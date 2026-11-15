@@ -20,41 +20,30 @@ interface BlogPostData {
 
 // Generate a gradient from slug
 function getCoverGradient(slug: string): string {
-  const gradients = [
-    'linear-gradient(135deg, #1565C0 0%, #13AFF0 50%, #0D47A1 100%)',
-    'linear-gradient(135deg, #F07B2E 0%, #FF9800 50%, #E65100 100%)',
-    'linear-gradient(135deg, #1565C0 0%, #7C4DFF 50%, #13AFF0 100%)',
-    'linear-gradient(135deg, #00897B 0%, #13AFF0 50%, #1565C0 100%)',
-    'linear-gradient(135deg, #F07B2E 0%, #FF5722 50%, #D84315 100%)',
-    'linear-gradient(135deg, #6A1B9A 0%, #1565C0 50%, #13AFF0 100%)',
+  // Estas portadas son marcadores de posición, no ilustraciones: antes eran
+  // seis degradados de seis familias de color (azul, naranja, violeta, verde,
+  // rojo) y cada rejilla de escritos parecía una caja de lápices. Ahora son
+  // seis arenas del mismo papel, apenas distintas entre sí.
+  const fondos = [
+    'linear-gradient(135deg, #EDE7DD 0%, #E3DBCE 100%)',
+    'linear-gradient(135deg, #E8E1D6 0%, #DED5C7 100%)',
+    'linear-gradient(135deg, #EFE9E0 0%, #E0D8CB 100%)',
+    'linear-gradient(135deg, #E6DFD3 0%, #D9D0C1 100%)',
+    'linear-gradient(135deg, #EAE4D9 0%, #DCD3C4 100%)',
+    'linear-gradient(135deg, #F0EAE1 0%, #E2DACD 100%)',
   ];
   let hash = 0;
   for (let i = 0; i < slug.length; i++) {
     hash = slug.charCodeAt(i) + ((hash << 5) - hash);
   }
-  return gradients[Math.abs(hash) % gradients.length];
+  return fondos[Math.abs(hash) % fondos.length];
 }
 
 // Tag color mapping
 function getTagColor(tag: string): { bg: string; border: string; text: string } {
-  const colors: Record<string, { bg: string; border: string; text: string }> = {
-    'salud publica': { bg: 'rgba(21,101,192,0.15)', border: 'rgba(21,101,192,0.4)', text: '#4FC3F7' },
-    'datos': { bg: 'rgba(19,175,240,0.15)', border: 'rgba(19,175,240,0.4)', text: '#13AFF0' },
-    'innovacion': { bg: 'rgba(240,123,46,0.15)', border: 'rgba(240,123,46,0.4)', text: '#F07B2E' },
-    'Colombia': { bg: 'rgba(76,175,80,0.15)', border: 'rgba(76,175,80,0.4)', text: '#81C784' },
-    'economia': { bg: 'rgba(156,39,176,0.15)', border: 'rgba(156,39,176,0.4)', text: '#CE93D8' },
-    'propiedad intelectual': { bg: 'rgba(255,193,7,0.15)', border: 'rgba(255,193,7,0.4)', text: '#FFD54F' },
-    'NFTs': { bg: 'rgba(233,30,99,0.15)', border: 'rgba(233,30,99,0.4)', text: '#F48FB1' },
-    'post-escasez': { bg: 'rgba(0,150,136,0.15)', border: 'rgba(0,150,136,0.4)', text: '#80CBC4' },
-    'AlphaFold': { bg: 'rgba(63,81,181,0.15)', border: 'rgba(63,81,181,0.4)', text: '#9FA8DA' },
-    'estadistica': { bg: 'rgba(121,85,72,0.15)', border: 'rgba(121,85,72,0.4)', text: '#BCAAA4' },
-    'amesp': { bg: 'rgba(0,188,212,0.15)', border: 'rgba(0,188,212,0.4)', text: '#80DEEA' },
-  };
-  const key = tag.toLowerCase();
-  for (const [k, v] of Object.entries(colors)) {
-    if (key.includes(k) || k.includes(key)) return v;
-  }
-  return { bg: 'rgba(139,148,158,0.1)', border: 'rgba(139,148,158,0.3)', text: '#8B949E' };
+  // Once temas, once colores. El tema ya está escrito en la etiqueta: no
+  // necesita además un color propio. Uno solo, el del sitio.
+  return { bg: 'rgba(168,85,31,0.07)', border: 'rgba(168,85,31,0.25)', text: '#8A451A' };
 }
 
 type ViewMode = 'grid' | 'timeline' | 'stream';
@@ -187,10 +176,8 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
     <div className="section-container">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold mb-3">
-          <span className="bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(to right, #1565C0, #13AFF0, #F07B2E)'}}>
-            Escritos
-          </span>
+        <h1 className="font-serif font-normal text-4xl md:text-5xl text-text mb-3">
+          Escritos
         </h1>
         <p className="text-text-muted text-lg max-w-2xl">
           Aqu&iacute; conviven dos cosas distintas: an&aacute;lisis del sistema de salud y
@@ -201,7 +188,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
       {/* Track switch — la separación principal */}
       <div className="mb-8">
         <div
-          className="inline-flex flex-wrap gap-1 p-1 rounded-xl bg-bg-secondary border border-gray-700"
+          className="inline-flex flex-wrap gap-1 p-1 rounded-xl bg-bg-secondary border border-rule"
           role="tablist"
           aria-label="Tipo de escrito"
         >
@@ -219,12 +206,12 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
                 }}
                 className={`flex items-baseline gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
                   active
-                    ? 'bg-accent-blue text-white'
+                    ? 'bg-accent-green text-bg'
                     : 'text-text-muted hover:text-text'
                 }`}
               >
                 <span>{t.label}</span>
-                <span className={`text-xs font-normal ${active ? 'text-white/70' : 'text-text-muted/70'}`}>
+                <span className={`text-xs font-normal ${active ? 'text-bg/70' : 'text-text-muted'}`}>
                   {trackCounts[t.key]}
                 </span>
               </button>
@@ -247,10 +234,10 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
             placeholder="Buscar por t&iacute;tulo, tema o palabra clave..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 bg-bg-secondary border border-gray-700 rounded-xl text-text placeholder:text-text-muted/50 focus:outline-none focus:border-accent-blue transition-colors"
+            className="w-full pl-10 pr-4 py-3 bg-bg-secondary border border-rule rounded-xl text-text placeholder:text-text-muted/50 focus:outline-none focus:border-accent-blue transition-colors"
           />
         </div>
-        <div className="flex gap-1 bg-bg-secondary border border-gray-700 rounded-xl p-1">
+        <div className="flex gap-1 bg-bg-secondary border border-rule rounded-xl p-1">
           {[
             { mode: 'grid' as ViewMode, icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z', label: 'Bloques' },
             { mode: 'timeline' as ViewMode, icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Timeline' },
@@ -261,7 +248,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
               onClick={() => setViewMode(mode)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                 viewMode === mode
-                  ? 'bg-accent-green text-white'
+                  ? 'bg-accent-green text-bg'
                   : 'text-text-muted hover:text-text'
               }`}
             >
@@ -280,8 +267,8 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
           onClick={() => setYearFilter(null)}
           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
             !yearFilter
-              ? 'bg-accent-blue text-white'
-              : 'bg-bg-secondary border border-gray-700 text-text-muted hover:border-accent-blue/50'
+              ? 'bg-accent-green text-bg'
+              : 'bg-bg-secondary border border-rule text-text-muted hover:border-accent-blue/50'
           }`}
         >
           Todos los a&ntilde;os
@@ -292,8 +279,8 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
             onClick={() => setYearFilter(yearFilter === year ? null : year)}
             className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
               yearFilter === year
-                ? 'bg-accent-blue text-white'
-                : 'bg-bg-secondary border border-gray-700 text-text-muted hover:border-accent-blue/50'
+                ? 'bg-accent-green text-bg'
+                : 'bg-bg-secondary border border-rule text-text-muted hover:border-accent-blue/50'
             }`}
           >
             {year}
@@ -316,7 +303,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
                 borderWidth: '1px',
                 borderStyle: 'solid',
                 borderColor: isActive ? colors.border : 'rgba(139,148,158,0.2)',
-                color: isActive ? colors.text : '#8B949E',
+                color: isActive ? colors.text : '#65605A',
               }}
             >
               {tag} ({count})
@@ -331,7 +318,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
           <span>Mostrando {filtered.length} de {posts.length} art&iacute;culos</span>
           <button
             onClick={clearFilters}
-            className="ml-2 px-2 py-0.5 rounded bg-bg-secondary border border-gray-700 hover:border-red-500/50 text-text-muted hover:text-red-400 transition-all text-xs"
+            className="ml-2 px-2 py-0.5 rounded bg-bg-secondary border border-rule hover:border-red-700/40 text-text-muted hover:text-red-700 transition-all text-xs"
           >
             Limpiar filtros
           </button>
@@ -360,7 +347,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group bg-bg-secondary border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-gray-600 hover:shadow-lg hover:shadow-accent-blue/5 hover:translate-y-[-2px]"
+              className="group bg-bg-secondary border border-rule rounded-xl overflow-hidden transition-all duration-300 hover:border-rule-strong hover:shadow-lg hover:shadow-accent-blue/5 hover:translate-y-[-2px]"
             >
               {/* Card cover — doble capa: identidad del universo temático + cover personalizado */}
               {(() => {
@@ -375,7 +362,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
                       {theme.pattern}
                     </div>
                     {/* Badge del universo */}
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-[11px] font-semibold text-white">
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-[11px] font-semibold text-bg">
                       <span>{theme.icon}</span>
                       <span>{theme.label}</span>
                     </div>
@@ -388,7 +375,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
                             Actualizado
                           </span>
                         )}
-                        <span className="text-[10px] text-white/90">{post.readingTime} min</span>
+                        <span className="text-[10px] text-bg/90">{post.readingTime} min</span>
                       </div>
                     </div>
                   </div>
@@ -435,7 +422,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
                       );
                     })}
                     {post.tags.length > 4 && (
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-bg border border-gray-700 text-text-muted">
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-bg border border-rule text-text-muted">
                         +{post.tags.length - 4}
                       </span>
                     )}
@@ -483,7 +470,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
                     <div className={`ml-12 md:ml-0 ${isLeft ? 'md:w-[calc(50%-2rem)] md:pr-8' : 'md:w-[calc(50%-2rem)] md:pl-8 md:ml-auto'}`}>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="block bg-bg-secondary border border-gray-800 rounded-xl p-5 transition-all duration-300 hover:border-accent-blue/50 hover:shadow-lg hover:shadow-accent-blue/5 group"
+                        className="block bg-bg-secondary border border-rule rounded-xl p-5 transition-all duration-300 hover:border-accent-blue/50 hover:shadow-lg hover:shadow-accent-blue/5 group"
                       >
                         <div
                           className="h-2 rounded-full mb-4"
@@ -530,7 +517,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
           {groupedByTag.map(([tag, tagPosts]) => {
             const colors = getTagColor(tag);
             return (
-              <div key={tag} className="bg-bg-secondary border border-gray-800 rounded-xl overflow-hidden">
+              <div key={tag} className="bg-bg-secondary border border-rule rounded-xl overflow-hidden">
                 {/* Topic header */}
                 <div
                   className="px-6 py-4 flex items-center justify-between"
@@ -548,7 +535,7 @@ export default function BlogExplorer({ posts }: { posts: BlogPostData[] }) {
                 </div>
 
                 {/* Topic posts */}
-                <div className="divide-y divide-gray-800">
+                <div className="divide-y divide-rule">
                   {tagPosts.map((post) => (
                     <Link
                       key={post.slug}

@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Paleta "Papel". Los nombres de variable se conservan (los usa el CSS de
+   abajo); lo que cambió es el valor. Ver tailwind.config.js. */
 :root {
-  --bg: #0D1117;
-  --bg-secondary: #161B22;
-  --accent-green: #1565C0;
-  --accent-blue: #13AFF0;
-  --accent-gold: #F07B2E;
-  --text: #E6EDF3;
-  --text-muted: #8B949E;
+  --bg: #F6F3EE;
+  --bg-secondary: #FFFDF9;
+  --accent-green: #A8551F;   /* el acento, el único */
+  --accent-blue: #65605A;    /* tinta apagada */
+  --accent-gold: #A8551F;    /* el mismo acento */
+  --text: #1A1916;
+  --text-muted: #65605A;
+  --rule: #DFD9D0;
+  --rule-strong: #CFC8BD;
 }
 
 @layer base {
@@ -25,33 +29,32 @@
   }
 
   ::selection {
-    background-color: rgba(21, 101, 192, 0.3);
-    color: #E6EDF3;
+    background-color: rgba(168, 85, 31, 0.18);
+    color: var(--text);
   }
 
-  /* Scrollbar styling */
+  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #0D1117;
+    background: var(--bg);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #30363D;
+    background: var(--rule-strong);
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #484F58;
+    background: #B8AF9F;
   }
 
-  /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #30363D #0D1117;
+    scrollbar-color: var(--rule-strong) var(--bg);
   }
 }
 
@@ -60,97 +63,114 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
   }
 
+  /* El título de sección deja de gritar.
+     Antes: 36 px, peso 700, degradado — siete veces en la misma página.
+     Ahora: una etiqueta pequeña con un filete debajo. Lo grande pasa a ser
+     el contenido, que es lo que hay que leer. */
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-4;
+    @apply block text-[11px] font-sans font-semibold uppercase tracking-[0.22em]
+           text-text-muted mb-8 pb-3 border-b border-rule;
   }
 
+  /* El degradado murió. La clase sobrevive porque la usan muchos sitios:
+     ahora simplemente hereda el color de quien la contiene. */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-green via-accent-blue to-accent-gold;
+    color: inherit;
+  }
+
+  /* Un titular de contenido: lo que de verdad se lee. */
+  .lede {
+    @apply font-serif font-normal text-text;
   }
 
   .card {
-    @apply bg-bg-secondary border border-gray-800 rounded-xl p-6 transition-all duration-300 hover:border-gray-700 hover:shadow-lg;
+    @apply bg-bg-secondary border border-rule rounded-lg p-6
+           transition-colors duration-300 hover:border-rule-strong;
   }
 
   .btn-primary {
-    @apply inline-flex items-center px-6 py-3 bg-accent-green text-bg font-semibold rounded-lg
-           hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-accent-green/20;
+    @apply inline-flex items-center px-6 py-3 bg-accent-green text-bg font-semibold rounded-md
+           hover:bg-opacity-90 transition-colors duration-300;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center px-6 py-3 border border-accent-green text-accent-green font-semibold rounded-lg
-           hover:bg-accent-green/10 transition-all duration-300;
+    @apply inline-flex items-center px-6 py-3 border border-accent-green text-accent-green font-semibold rounded-md
+           hover:bg-accent-green/10 transition-colors duration-300;
   }
 }
 
 /* Blog article typography */
 .blog-article h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #E6EDF3;
+  font-family: var(--font-spectral), Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: #1A1916;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   line-height: 1.2;
-  border-bottom: 1px solid rgba(139, 148, 158, 0.2);
+  border-bottom: 1px solid var(--rule);
   padding-bottom: 0.5rem;
 }
 
 .blog-article h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #E6EDF3;
+  font-family: var(--font-spectral), Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #1A1916;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
 
 .blog-article h3 {
-  font-size: 1.25rem;
+  font-family: var(--font-spectral), Georgia, serif;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #E6EDF3;
+  color: #1A1916;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 
 .blog-article p {
-  color: #8B949E;
+  font-family: var(--font-spectral), Georgia, serif;
+  color: #65605A;
   line-height: 1.8;
   margin-bottom: 1.25rem;
   font-size: 1.05rem;
 }
 
 .blog-article strong {
-  color: #E6EDF3;
+  color: #1A1916;
   font-weight: 600;
 }
 
 .blog-article em {
-  color: #8B949E;
+  color: #65605A;
   font-style: italic;
 }
 
 .blog-article a {
-  color: #13AFF0;
+  color: #A8551F;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .blog-article a:hover {
-  color: #1565C0;
+  color: #A8551F;
 }
 
 .blog-article blockquote {
-  border-left: 3px solid #1565C0;
+  border-left: 2px solid var(--rule-strong);
   padding-left: 1.25rem;
   margin: 1.5rem 0;
-  color: #8B949E;
+  color: #65605A;
   font-style: italic;
 }
 
 .blog-article ul, .blog-article ol {
   margin: 1rem 0;
   padding-left: 1.75rem;
-  color: #8B949E;
+  color: #65605A;
 }
 
 .blog-article li {
@@ -168,21 +188,21 @@
 
 .blog-article hr {
   border: none;
-  border-top: 1px solid rgba(139, 148, 158, 0.2);
+  border-top: 1px solid var(--rule);
   margin: 2.5rem 0;
 }
 
 .blog-article code {
-  background: #161B22;
-  color: #13AFF0;
+  background: #FFFDF9;
+  color: #A8551F;
   padding: 0.15rem 0.4rem;
   border-radius: 0.25rem;
   font-size: 0.9em;
 }
 
 .blog-article pre {
-  background: #161B22;
-  border: 1px solid rgba(139, 148, 158, 0.2);
+  background: #FFFDF9;
+  border: 1px solid var(--rule);
   border-radius: 0.5rem;
   padding: 1.25rem;
   overflow-x: auto;
@@ -192,7 +212,7 @@
 .blog-article pre code {
   background: none;
   padding: 0;
-  color: #E6EDF3;
+  color: #1A1916;
 }
 
 .blog-article img {

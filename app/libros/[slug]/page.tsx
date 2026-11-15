@@ -71,7 +71,7 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
     <article className="section-container max-w-5xl mx-auto">
       {/* Header con portada + meta */}
       <div className="grid md:grid-cols-[280px_1fr] gap-8 mb-12">
-        <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+        <div className="rounded-xl overflow-hidden shadow-2xl border border-rule">
           <Image
             src={libro.cover}
             alt={`Portada — ${libro.title}`}
@@ -83,7 +83,7 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
         </div>
         <div className="space-y-5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-semibold uppercase tracking-wider">
-            📚 En escritura
+            En escritura
           </div>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">
             <span className="gradient-text">{libro.title}</span>
@@ -110,7 +110,7 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
             {libro.pillarThemes.map((t) => (
               <span
                 key={t}
-                className="text-xs px-2.5 py-1 rounded-full bg-bg-secondary border border-gray-800 text-text-muted"
+                className="text-xs px-2.5 py-1 rounded-full bg-bg-secondary border border-rule text-text-muted"
               >
                 {t}
               </span>
@@ -129,7 +129,7 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
               </a>
             ) : (
               <a href="#suscribirme" className="btn-primary">
-                📬 Notificarme cuando salga
+                Notificarme cuando salga
               </a>
             )}
             {libro.previewUrl && (
@@ -145,7 +145,7 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
           </div>
 
           <p className="text-xs text-text-muted">
-            📅 Lanzamiento previsto: <strong>{libro.expectedRelease}</strong>
+            Lanzamiento previsto: <strong>{libro.expectedRelease}</strong>
             {' · '}
             Cierre estimado de manuscrito: {libro.deadlineLabel}
           </p>
@@ -182,7 +182,7 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
               <h3 className="text-sm font-semibold text-accent-green uppercase tracking-wider mb-2">
                 Ecuación maestra
               </h3>
-              <p className="text-lg md:text-xl font-mono text-text bg-bg p-4 rounded-lg border border-gray-800">
+              <p className="text-lg md:text-xl font-mono text-text bg-bg p-4 rounded-lg border border-rule">
                 {libro.masterEquation}
               </p>
             </div>
@@ -202,7 +202,6 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
         className="mb-16 rounded-2xl overflow-hidden border border-accent-green/30 bg-gradient-to-br from-accent-green/5 via-bg-secondary to-accent-blue/5 p-8 md:p-12"
       >
         <div className="max-w-2xl mx-auto text-center">
-          <div className="text-4xl mb-4">📬</div>
           <h2 className="text-2xl md:text-3xl font-bold text-text mb-3">
             Recibe los avances de este libro
           </h2>
@@ -215,7 +214,7 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
             title=""
             subtitle=""
           />
-          <p className="text-[11px] text-text-muted/70 mt-4">
+          <p className="text-[11px] text-text-muted mt-4">
             Al suscribirte aceptas la{' '}
             <Link href="/libros/legal" className="underline hover:text-text">
               política de tratamiento de datos
@@ -226,7 +225,7 @@ export default function LibroDetalle({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Aviso institucional resumido */}
-      <section className="mb-8 rounded-xl border border-gray-800 bg-bg-secondary p-5 text-xs text-text-muted leading-relaxed">
+      <section className="mb-8 rounded-xl border border-rule bg-bg-secondary p-5 text-xs text-text-muted leading-relaxed">
         <p>
           <strong className="text-text">Aviso institucional —</strong> Las posiciones de
           este libro son personales y no representan a la ADRES, al Ministerio de Salud y

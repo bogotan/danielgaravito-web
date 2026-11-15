@@ -182,7 +182,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         </div>
 
         {/* Badge de universo */}
-        <div className="absolute top-6 left-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/30 text-sm font-semibold text-white">
+        <div className="absolute top-6 left-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/30 text-sm font-semibold text-bg">
           <span className="text-lg">{theme.icon}</span>
           <span>{theme.label}</span>
         </div>
@@ -193,7 +193,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <div className="relative max-w-3xl mx-auto w-full px-4 sm:px-6 pb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm mb-4"
+            className="inline-flex items-center gap-2 text-bg/90 hover:text-white transition-colors text-sm mb-4"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -243,7 +243,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-3 py-1 rounded-full bg-bg-secondary border border-gray-700 text-text-muted hover:border-accent-blue/50 transition-colors"
+                  className="text-xs px-3 py-1 rounded-full bg-bg-secondary border border-rule text-text-muted hover:border-accent-blue/50 transition-colors"
                 >
                   {tag}
                 </span>
@@ -256,7 +256,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <ReactMarkdown>{cleanBody}</ReactMarkdown>
         </article>
 
-        <div className="mt-16 pt-8 border-t border-gray-800 pb-16">
+        <div className="mt-16 pt-8 border-t border-rule pb-16">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-accent-green hover:underline text-sm font-medium"

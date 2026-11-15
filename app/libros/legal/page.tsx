@@ -10,9 +10,9 @@ export const metadata = {
 export default function LibrosLegalPage() {
   return (
     <article className="section-container max-w-3xl mx-auto">
-      <header className="mb-10 pb-8 border-b border-gray-800">
+      <header className="mb-10 pb-8 border-b border-rule">
         <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-semibold uppercase tracking-wider">
-          ⚖️ Disclaimers legales
+          Disclaimers legales
         </div>
         <h1 className="text-3xl md:text-5xl font-bold mb-4">
           <span className="gradient-text">Disclaimers — Libros</span>
@@ -239,7 +239,7 @@ export default function LibrosLegalPage() {
           </p>
         </section>
 
-        <div className="mt-8 p-5 rounded-xl bg-bg-secondary border border-gray-800 text-sm text-text-muted italic">
+        <div className="mt-8 p-5 rounded-xl bg-bg-secondary border border-rule text-sm text-text-muted italic">
           Estos disclaimers son una declaración de buenas prácticas y no
           reemplazan la asesoría jurídica profesional para casos concretos.
         </div>

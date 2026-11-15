@@ -41,7 +41,7 @@ export default function LibrosPage() {
       {/* Header */}
       <header className="mb-12 text-center">
         <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-semibold uppercase tracking-wider">
-          📚 Libros en escritura
+          Libros en escritura
         </div>
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           <span className="gradient-text">Libros</span>
@@ -60,7 +60,7 @@ export default function LibrosPage() {
           return (
             <article
               key={l.slug}
-              className="group relative rounded-2xl overflow-hidden bg-bg-secondary border border-gray-800 hover:border-accent-gold/40 transition-all"
+              className="group relative rounded-2xl overflow-hidden bg-bg-secondary border border-rule hover:border-accent-gold/40 transition-all"
             >
               <div
                 className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${l.color} opacity-70 group-hover:opacity-100 transition-opacity`}
@@ -108,7 +108,7 @@ export default function LibrosPage() {
                 </div>
 
                 <p className="text-xs text-text-muted">
-                  📅 Lanzamiento previsto: <strong>{l.expectedRelease}</strong>
+                  Lanzamiento previsto: <strong>{l.expectedRelease}</strong>
                 </p>
 
                 {/* CTAs */}
@@ -132,7 +132,7 @@ export default function LibrosPage() {
                       <span aria-hidden>↓</span>
                     </a>
                   ) : (
-                    <span className="text-xs text-text-muted/70 italic">
+                    <span className="text-xs text-text-muted italic">
                       Aún no disponible — suscríbete para enterarte primero
                     </span>
                   )}
@@ -146,7 +146,6 @@ export default function LibrosPage() {
       {/* Newsletter unificado */}
       <section className="mb-16 rounded-2xl overflow-hidden border border-accent-green/30 bg-gradient-to-br from-accent-green/5 via-bg-secondary to-accent-blue/5 p-8 md:p-12">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="text-4xl mb-4">📬</div>
           <h2 className="text-2xl md:text-3xl font-bold text-text mb-3">
             Avances, capítulos y campañas
           </h2>
@@ -160,7 +159,7 @@ export default function LibrosPage() {
             title=""
             subtitle=""
           />
-          <p className="text-[11px] text-text-muted/70 mt-4">
+          <p className="text-[11px] text-text-muted mt-4">
             Al suscribirte aceptas la{' '}
             <Link href="/libros/legal" className="underline hover:text-text">
               política de tratamiento de datos
@@ -172,7 +171,7 @@ export default function LibrosPage() {
       </section>
 
       {/* Aviso institucional */}
-      <section className="mb-12 rounded-xl border border-gray-800 bg-bg-secondary p-6 text-sm text-text-muted leading-relaxed">
+      <section className="mb-12 rounded-xl border border-rule bg-bg-secondary p-6 text-sm text-text-muted leading-relaxed">
         <h3 className="font-semibold text-text mb-3">Aviso institucional</h3>
         <p className="mb-3">
           Las opiniones, análisis y reflexiones que aparecen en estos libros son

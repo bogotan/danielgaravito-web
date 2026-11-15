@@ -32,7 +32,7 @@ export const metadata = {
 export default function EticaPage() {
   return (
     <article className="section-container max-w-3xl mx-auto">
-      <header className="mb-10 pb-8 border-b border-gray-800">
+      <header className="mb-10 pb-8 border-b border-rule">
         <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-semibold uppercase tracking-wider">
           Ética y transparencia
         </div>
@@ -90,7 +90,7 @@ export default function EticaPage() {
         </h2>
 
         <div className="space-y-5">
-          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-rule">
             <h3 className="font-bold text-text mb-2">
               No gestiono intereses privados ante ADRES
             </h3>
@@ -102,7 +102,7 @@ export default function EticaPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-rule">
             <h3 className="font-bold text-text mb-2">
               Solo trabajo con datos públicos
             </h3>
@@ -115,7 +115,7 @@ export default function EticaPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-rule">
             <h3 className="font-bold text-text mb-2">
               Cada cifra se puede rastrear hasta su fuente
             </h3>
@@ -127,7 +127,7 @@ export default function EticaPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-rule">
             <h3 className="font-bold text-text mb-2">Digo dónde estoy parado</h3>
             <p className="text-text-muted">
               Cuando escribo sobre una decisión en la que participé, lo
@@ -150,7 +150,7 @@ export default function EticaPage() {
         </p>
 
         <div className="space-y-5">
-          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-rule">
             <h3 className="font-bold text-text mb-2">
               La investigación es mía, no de la empresa
             </h3>
@@ -163,7 +163,7 @@ export default function EticaPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-rule">
             <h3 className="font-bold text-text mb-2">
               Publicar una medición no es ofrecer un servicio
             </h3>
@@ -175,7 +175,7 @@ export default function EticaPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-rule">
             <h3 className="font-bold text-text mb-2">
               Ningún cliente decide qué se mide ni qué se publica
             </h3>
@@ -187,7 +187,7 @@ export default function EticaPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-xl bg-bg-secondary border border-gray-800">
+          <div className="p-5 rounded-xl bg-bg-secondary border border-rule">
             <h3 className="font-bold text-text mb-2">
               Si hay relación comercial vigente, se declara antes de publicar
             </h3>
@@ -239,7 +239,7 @@ export default function EticaPage() {
           constancia de la modificación.
         </p>
 
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8 border-t border-rule">
           <p className="text-sm text-text-muted italic">
             Publicada el 23 de abril de 2026 como declaración de conflicto de
             interés durante mi vinculación con ADRES · Reescrita el 3 de

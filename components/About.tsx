@@ -1,4 +1,3 @@
-import Image from 'next/image';
 
 const stats = [
   { value: '4', label: 'Instrumentos de medición con datos abiertos' },
@@ -9,37 +8,12 @@ const stats = [
 export default function About() {
   return (
     <section id="sobre-mi" className="section-container">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div className="space-y-8">
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent-green/30 shadow-2xl shadow-accent-green/10">
-              <Image
-                src="/foto-daniel.jpg"
-                alt="Daniel Garavito"
-                fill
-                className="object-cover"
-                style={{ objectPosition: 'center 15%' }}
-                priority
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="text-center p-4 bg-bg-secondary rounded-xl border border-gray-800"
-              >
-                <div className="text-2xl md:text-3xl font-bold gradient-text">
-                  {stat.value}
-                </div>
-                <div className="text-text-muted text-xs mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
+      {/* La fotografía circular se fue de aquí. Ya está en el hero, en
+          rectángulo: mostrarla dos veces en la misma página no agrega nada,
+          y el círculo con borde de color era lo más "perfil de red social"
+          que tenía el sitio. */}
+      <div className="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-12 lg:gap-20 items-start">
+        <div className="order-2 lg:order-1">
           <h2 className="section-title">
             Sobre <span className="gradient-text">mí</span>
           </h2>
@@ -124,6 +98,22 @@ export default function About() {
               cerrar brechas — no para presumirlas.
             </p>
           </div>
+        </div>
+
+        {/* Las cifras, sin cajas de color: una columna con filetes. */}
+        <div className="order-1 lg:order-2 lg:pt-16">
+          <dl className="border-t border-rule">
+            {stats.map((stat) => (
+              <div key={stat.label} className="py-5 border-b border-rule">
+                <dt className="font-serif text-3xl text-text leading-none">
+                  {stat.value}
+                </dt>
+                <dd className="text-text-muted text-xs mt-2 leading-relaxed">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

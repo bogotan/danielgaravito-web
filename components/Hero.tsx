@@ -78,70 +78,107 @@ const socialLinks = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background gradients */}
-      <div className="absolute inset-0 bg-bg">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-green/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-blue/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-gold/3 rounded-full blur-3xl" />
-      </div>
+    <section className="relative">
+      {/* Se fueron las tres manchas de color desenfocadas del fondo. Sobre
+          papel no se leen como atmósfera: se leen como suciedad. */}
+      <div className="section-container pt-10 md:pt-14 pb-0">
+        {/* Dos columnas. Antes el texto flotaba en el centro y media página
+            quedaba vacía a la derecha; ahora la fotografía cierra la
+            composición. Rectangular, no en círculo: el círculo es de perfil
+            de red social, el rectángulo es de publicación. */}
+        <div className="grid lg:grid-cols-[320px_minmax(0,1fr)] gap-12 lg:gap-20 items-start">
+          {/* El texto va primero en el HTML —el h1 debe abrir la página para
+              los buscadores y para quien navega con lector de pantalla— y las
+              clases `order` lo mandan a la derecha en pantalla ancha. */}
+          <div className="max-w-2xl lg:order-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-muted mb-7 animate-fade-in">
+              Econom&iacute;a &middot; Ingenier&iacute;a &middot; Anal&iacute;tica avanzada
+            </p>
 
-      <div className="relative section-container">
-        <div className="max-w-3xl">
-          {/* Greeting */}
-          <p className="text-text-muted text-lg md:text-xl mb-2 animate-fade-in">
-            Econom&iacute;a &middot; Ingenier&iacute;a &middot; Anal&iacute;tica avanzada
-          </p>
+            {/* El nombre, sin degradado y en serif. Deja de ser lo más
+                ruidoso de la página para ser simplemente su título. */}
+            <h1 className="font-serif font-normal text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.05] tracking-tight mb-6 animate-slide-up">
+              Daniel Garavito
+            </h1>
 
-          {/* Name */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-slide-up">
-            <span className="gradient-text">Daniel Garavito</span>
-          </h1>
+            {/* La tesis. Va antes que el oficio a propósito: dice QUÉ es, y el
+                párrafo de abajo dice dónde lo aplica. Ahora es lo más grande
+                después del nombre, que es como debe ser: a la gente le queda
+                la idea, no el nombre. */}
+            <p className="font-serif text-2xl md:text-[1.75rem] leading-snug text-text-muted mb-7 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              Estudio ingenier&iacute;a de sistemas.{' '}
+              <span className="text-text">Mis sistemas son los humanos.</span>
+            </p>
 
-          {/* Tesis. Va antes que el oficio a propósito: dice QUÉ es, y el
-              párrafo de abajo dice dónde lo aplica. La antítesis sostiene lo
-              técnico en vez de ablandarlo — sin la primera mitad, "sistemas
-              humanos" sonaría a humanismo suelto. */}
-          <p className="text-xl md:text-2xl text-text-muted mb-4 max-w-2xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Estudio ingenier&iacute;a de sistemas.{' '}
-            {/* El giro de la frase se ve: apagado -> encendido. Sin degradado,
-                que es de la firma y no debe competir con el nombre. */}
-            <span className="text-text font-semibold">
-              Mis sistemas son los humanos.
-            </span>
-          </p>
+            <p className="text-[15px] leading-[1.75] text-text-muted mb-8 max-w-[52ch] animate-slide-up" style={{ animationDelay: '0.15s' }}>
+              Econom&iacute;a, ingenier&iacute;a y anal&iacute;tica avanzada aplicadas a
+              la salud inteligente. Dirig&iacute; Innovaci&oacute;n y Anal&iacute;tica en
+              ADRES; hoy investigo con datos abiertos, escribo y ense&ntilde;o.
+            </p>
 
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl text-text-muted mb-6 max-w-2xl animate-slide-up" style={{ animationDelay: '0.15s' }}>
-            Econom&iacute;a, ingenier&iacute;a y anal&iacute;tica avanzada aplicadas a
-            la salud inteligente. Dirig&iacute; Innovaci&oacute;n y Anal&iacute;tica en
-            ADRES; hoy investigo con datos abiertos, escribo y ense&ntilde;o.
-          </p>
+            {/* La cita deja de competir: filete a la izquierda, no color. */}
+            <div className="border-l border-rule-strong pl-5 mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <RotatingQuote />
+            </div>
 
-          {/* Rotating quote */}
-          <div className="mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <RotatingQuote />
+            {/* Una acción principal y un enlace. Dos botones del mismo tamaño
+                obligan a elegir sin dar razones para elegir. */}
+            <div className="flex flex-wrap items-center gap-8 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              <Link
+                href="#investigacion"
+                className="inline-flex items-center gap-2 min-h-[44px] text-sm font-medium text-accent-green border-b border-accent-green hover:text-text hover:border-text transition-colors"
+              >
+                Lo que investigo
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h13M12.5 6 19 12l-6.5 6" />
+                </svg>
+              </Link>
+              <Link
+                href="/blog"
+                className="inline-flex items-center min-h-[44px] text-sm text-text-muted hover:text-text transition-colors"
+              >
+                Escritos
+              </Link>
+            </div>
           </div>
 
-          {/* CTA */}
-          <div className="flex flex-wrap gap-4 mb-10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-            <Link href="#proyectos" className="btn-primary">
-              Lo que investigo
-            </Link>
-            <Link href="/blog" className="btn-secondary">
-              Escritos
-            </Link>
+          <div className="hidden lg:block lg:order-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/foto-daniel.jpg"
+              alt="Daniel Garavito"
+              width={320}
+              height={440}
+              className="w-[320px] h-[440px] object-cover"
+              style={{ objectPosition: '50% 18%' }}
+            />
+          </div>
+        </div>
+
+        {/* El sitio dice lo que ha construido antes de decir adjetivos. */}
+        <div className="mt-16 pt-6 border-t border-rule flex flex-wrap items-center gap-x-6 gap-y-4">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-text-muted">
+            Instrumentos abiertos
+          </span>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-text-muted">
+            <Link href="#investigacion" className="hover:text-accent-green transition-colors">Term&oacute;metro del acceso</Link>
+            <span className="text-text-muted" aria-hidden="true">&middot;</span>
+            <Link href="#investigacion" className="hover:text-accent-green transition-colors">Mortalidad 1998&ndash;2024</Link>
+            <span className="text-text-muted" aria-hidden="true">&middot;</span>
+            <Link href="#investigacion" className="hover:text-accent-green transition-colors">&iquest;Qui&eacute;n sostiene el sistema?</Link>
+            <span className="text-text-muted" aria-hidden="true">&middot;</span>
+            <Link href="#investigacion" className="hover:text-accent-green transition-colors">Radar de medicamentos</Link>
           </div>
 
-          {/* Social links */}
-          <div className="flex items-center gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          {/* Los ocho canales siguen ahí, pero pesan lo que deben pesar. */}
+          <div className="flex items-center gap-1 lg:ml-auto">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.href}
                 target={social.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
-                className="p-2 text-text-muted hover:text-accent-green transition-colors duration-200"
+                className="p-2 text-text-muted hover:text-accent-green transition-colors [&_svg]:w-4 [&_svg]:h-4"
                 aria-label={social.name}
               >
                 {social.icon}
@@ -149,13 +186,6 @@ export default function Hero() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
       </div>
     </section>
   );

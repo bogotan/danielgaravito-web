@@ -238,10 +238,10 @@ export default function MetricsPage() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 bg-bg border border-gray-700 rounded-lg text-text focus:outline-none focus:border-accent-green text-sm"
+            className="w-full px-4 py-3 bg-bg border border-rule rounded-lg text-text focus:outline-none focus:border-accent-green text-sm"
             placeholder="tu@email.com"
           />
-          {error && <p className="text-red-400 text-sm">{error}</p>}
+          {error && <p className="text-red-700 text-sm">{error}</p>}
           <button type="submit" className="w-full btn-primary justify-center">
             Ingresar
           </button>
@@ -284,7 +284,7 @@ export default function MetricsPage() {
             className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
               activeTab === t.id
                 ? 'bg-accent-green/20 text-accent-green border border-accent-green/30'
-                : 'bg-bg border border-gray-700 text-text-muted hover:text-text hover:border-gray-600'
+                : 'bg-bg border border-rule text-text-muted hover:text-text hover:border-rule-strong'
             }`}
           >
             {t.icon} {t.label}
@@ -330,9 +330,9 @@ export default function MetricsPage() {
                   <span className="text-text-muted text-sm">Horas invertidas</span>
                   <span className="text-text text-sm font-medium">{formatHours(totalCostHours)}</span>
                 </div>
-                <div className="flex justify-between border-t border-gray-800 pt-2">
+                <div className="flex justify-between border-t border-rule pt-2">
                   <span className="text-text-muted text-sm">Ganancia neta</span>
-                  <span className={`text-sm font-bold ${totalRevenueMoney - totalCostMoney >= 0 ? 'text-accent-green' : 'text-red-400'}`}>
+                  <span className={`text-sm font-bold ${totalRevenueMoney - totalCostMoney >= 0 ? 'text-accent-green' : 'text-red-700'}`}>
                     {formatMoney(totalRevenueMoney - totalCostMoney)}
                   </span>
                 </div>
@@ -376,7 +376,7 @@ export default function MetricsPage() {
                 const cost = pm.reduce((s, m) => s + Number(m.cost_money), 0);
                 const roi = cost > 0 ? ((rev - cost) / cost) * 100 : 0;
                 return (
-                  <div key={p.id} className="bg-bg rounded-lg p-3 border border-gray-800">
+                  <div key={p.id} className="bg-bg rounded-lg p-3 border border-rule">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-3 h-3 rounded-full" style={{ backgroundColor: p.color }} />
                       <span className="text-text text-sm font-medium">{p.name}</span>
@@ -392,7 +392,7 @@ export default function MetricsPage() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-text-muted">ROI</span>
-                        <span className={roi >= 0 ? 'text-accent-green' : 'text-red-400'}>
+                        <span className={roi >= 0 ? 'text-accent-green' : 'text-red-700'}>
                           {pm.length > 0 ? roi.toFixed(1) + '%' : '—'}
                         </span>
                       </div>
@@ -414,7 +414,7 @@ export default function MetricsPage() {
               type="month"
               value={selectedPeriod}
               onChange={(e) => setSelectedPeriod(e.target.value)}
-              className="px-3 py-1.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+              className="px-3 py-1.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
             />
           </div>
 
@@ -454,7 +454,7 @@ export default function MetricsPage() {
                   </div>
                   <div>
                     <div className="text-xs text-text-muted mb-1">ROI</div>
-                    <div className={`text-lg font-bold ${roi >= 0 ? 'text-accent-green' : 'text-red-400'}`}>
+                    <div className={`text-lg font-bold ${roi >= 0 ? 'text-accent-green' : 'text-red-700'}`}>
                       {allPm.length > 0 ? roi.toFixed(1) + '%' : '—'}
                     </div>
                   </div>
@@ -462,7 +462,7 @@ export default function MetricsPage() {
 
                 {/* Period detail */}
                 {periodPm.length > 0 && (
-                  <div className="bg-bg rounded-lg p-3 border border-gray-800">
+                  <div className="bg-bg rounded-lg p-3 border border-rule">
                     <div className="text-xs text-text-muted mb-2">Detalle {selectedPeriod}</div>
                     {periodPm.map((m) => (
                       <div key={m.id} className="grid grid-cols-4 gap-2 text-xs">
@@ -487,7 +487,7 @@ export default function MetricsPage() {
                     <div className="mt-2 overflow-x-auto">
                       <table className="w-full text-xs">
                         <thead>
-                          <tr className="border-b border-gray-800">
+                          <tr className="border-b border-rule">
                             <th className="text-left py-1 px-2 text-text-muted">Periodo</th>
                             <th className="text-right py-1 px-2 text-text-muted">Rev COP</th>
                             <th className="text-right py-1 px-2 text-text-muted">Rev Horas</th>
@@ -497,7 +497,7 @@ export default function MetricsPage() {
                         </thead>
                         <tbody>
                           {allPm.map((m) => (
-                            <tr key={m.id} className="border-b border-gray-800/50">
+                            <tr key={m.id} className="border-b border-rule/70">
                               <td className="py-1 px-2 text-text">{m.period}</td>
                               <td className="py-1 px-2 text-right text-accent-green">{formatMoney(Number(m.revenue_money))}</td>
                               <td className="py-1 px-2 text-right text-accent-blue">{formatHours(Number(m.revenue_hours))}</td>
@@ -583,7 +583,7 @@ export default function MetricsPage() {
                     <div className="mt-2 overflow-x-auto">
                       <table className="w-full text-xs">
                         <thead>
-                          <tr className="border-b border-gray-800">
+                          <tr className="border-b border-rule">
                             <th className="text-left py-1 px-2 text-text-muted">Periodo</th>
                             <th className="text-right py-1 px-2 text-text-muted">Seguidores</th>
                             <th className="text-right py-1 px-2 text-text-muted">Nuevos</th>
@@ -594,7 +594,7 @@ export default function MetricsPage() {
                         </thead>
                         <tbody>
                           {metrics.map((m) => (
-                            <tr key={m.id} className="border-b border-gray-800/50">
+                            <tr key={m.id} className="border-b border-rule/70">
                               <td className="py-1 px-2 text-text">{m.period}</td>
                               <td className="py-1 px-2 text-right">{m.followers.toLocaleString('es-CO')}</td>
                               <td className="py-1 px-2 text-right text-accent-green">+{m.new_followers}</td>
@@ -651,7 +651,7 @@ export default function MetricsPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-gray-800">
+                      <tr className="border-b border-rule">
                         <th className="text-left py-2 px-3 text-text-muted">Periodo</th>
                         <th className="text-right py-2 px-3 text-text-muted">Visitantes</th>
                         <th className="text-right py-2 px-3 text-text-muted">Page Views</th>
@@ -661,7 +661,7 @@ export default function MetricsPage() {
                     </thead>
                     <tbody>
                       {siteMetrics.map((m) => (
-                        <tr key={m.id} className="border-b border-gray-800/50">
+                        <tr key={m.id} className="border-b border-rule/70">
                           <td className="py-2 px-3 text-text">{m.period}</td>
                           <td className="py-2 px-3 text-right">{m.visitors.toLocaleString('es-CO')}</td>
                           <td className="py-2 px-3 text-right">{m.page_views.toLocaleString('es-CO')}</td>
@@ -699,7 +699,7 @@ export default function MetricsPage() {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   formType === t
                     ? 'bg-accent-green/20 text-accent-green border border-accent-green/30'
-                    : 'bg-bg border border-gray-700 text-text-muted hover:text-text'
+                    : 'bg-bg border border-rule text-text-muted hover:text-text'
                 }`}
               >
                 {t === 'project' ? '💰 Proyecto' : t === 'social' ? '📱 Red Social' : '🌐 Tráfico Web'}
@@ -715,7 +715,7 @@ export default function MetricsPage() {
                 type="month"
                 value={(formData.period as string) || selectedPeriod}
                 onChange={(e) => setFormData({ ...formData, period: e.target.value })}
-                className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+                className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
               />
             </div>
 
@@ -727,7 +727,7 @@ export default function MetricsPage() {
                   <select
                     value={(formData.project_id as string) || ''}
                     onChange={(e) => setFormData({ ...formData, project_id: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+                    className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
                   >
                     <option value="">Selecciona un proyecto</option>
                     {projects.map((p) => (
@@ -742,7 +742,7 @@ export default function MetricsPage() {
                       type="number"
                       value={formData.revenue_money || ''}
                       onChange={(e) => setFormData({ ...formData, revenue_money: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+                      className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
                       placeholder="0"
                     />
                   </div>
@@ -752,7 +752,7 @@ export default function MetricsPage() {
                       type="number"
                       value={formData.revenue_hours || ''}
                       onChange={(e) => setFormData({ ...formData, revenue_hours: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+                      className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
                       placeholder="0"
                     />
                   </div>
@@ -764,7 +764,7 @@ export default function MetricsPage() {
                       type="number"
                       value={formData.cost_money || ''}
                       onChange={(e) => setFormData({ ...formData, cost_money: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+                      className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
                       placeholder="0"
                     />
                   </div>
@@ -774,7 +774,7 @@ export default function MetricsPage() {
                       type="number"
                       value={formData.cost_hours || ''}
                       onChange={(e) => setFormData({ ...formData, cost_hours: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+                      className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
                       placeholder="0"
                     />
                   </div>
@@ -784,7 +784,7 @@ export default function MetricsPage() {
                   <textarea
                     value={(formData.notes as string) || ''}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+                    className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
                     rows={2}
                     placeholder="Notas opcionales sobre este periodo..."
                   />
@@ -800,7 +800,7 @@ export default function MetricsPage() {
                   <select
                     value={(formData.platform as string) || ''}
                     onChange={(e) => setFormData({ ...formData, platform: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
+                    className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green"
                   >
                     <option value="">Selecciona plataforma</option>
                     <option value="linkedin">💼 LinkedIn</option>
@@ -813,31 +813,31 @@ export default function MetricsPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Seguidores totales</label>
-                    <input type="number" value={formData.followers || ''} onChange={(e) => setFormData({ ...formData, followers: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
+                    <input type="number" value={formData.followers || ''} onChange={(e) => setFormData({ ...formData, followers: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
                   </div>
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Nuevos seguidores</label>
-                    <input type="number" value={formData.new_followers || ''} onChange={(e) => setFormData({ ...formData, new_followers: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
+                    <input type="number" value={formData.new_followers || ''} onChange={(e) => setFormData({ ...formData, new_followers: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Impresiones</label>
-                    <input type="number" value={formData.impressions || ''} onChange={(e) => setFormData({ ...formData, impressions: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
+                    <input type="number" value={formData.impressions || ''} onChange={(e) => setFormData({ ...formData, impressions: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
                   </div>
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Engagement Rate (%)</label>
-                    <input type="number" step="0.1" value={formData.engagement_rate || ''} onChange={(e) => setFormData({ ...formData, engagement_rate: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0.0" />
+                    <input type="number" step="0.1" value={formData.engagement_rate || ''} onChange={(e) => setFormData({ ...formData, engagement_rate: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0.0" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Posts publicados</label>
-                    <input type="number" value={formData.posts_count || ''} onChange={(e) => setFormData({ ...formData, posts_count: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
+                    <input type="number" value={formData.posts_count || ''} onChange={(e) => setFormData({ ...formData, posts_count: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
                   </div>
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Clicks</label>
-                    <input type="number" value={formData.clicks || ''} onChange={(e) => setFormData({ ...formData, clicks: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
+                    <input type="number" value={formData.clicks || ''} onChange={(e) => setFormData({ ...formData, clicks: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
                   </div>
                 </div>
               </>
@@ -849,21 +849,21 @@ export default function MetricsPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Visitantes únicos</label>
-                    <input type="number" value={formData.visitors || ''} onChange={(e) => setFormData({ ...formData, visitors: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
+                    <input type="number" value={formData.visitors || ''} onChange={(e) => setFormData({ ...formData, visitors: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
                   </div>
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Page Views</label>
-                    <input type="number" value={formData.page_views || ''} onChange={(e) => setFormData({ ...formData, page_views: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
+                    <input type="number" value={formData.page_views || ''} onChange={(e) => setFormData({ ...formData, page_views: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Nuevos leads</label>
-                    <input type="number" value={formData.new_leads || ''} onChange={(e) => setFormData({ ...formData, new_leads: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
+                    <input type="number" value={formData.new_leads || ''} onChange={(e) => setFormData({ ...formData, new_leads: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0" />
                   </div>
                   <div>
                     <label className="block text-xs text-text-muted mb-1">Bounce Rate (%)</label>
-                    <input type="number" step="0.1" value={formData.bounce_rate || ''} onChange={(e) => setFormData({ ...formData, bounce_rate: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-gray-700 rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0.0" />
+                    <input type="number" step="0.1" value={formData.bounce_rate || ''} onChange={(e) => setFormData({ ...formData, bounce_rate: e.target.value })} className="w-full px-4 py-2.5 bg-bg border border-rule rounded-lg text-text text-sm focus:outline-none focus:border-accent-green" placeholder="0.0" />
                   </div>
                 </div>
               </>
@@ -879,7 +879,7 @@ export default function MetricsPage() {
                 {saving ? 'Guardando...' : 'Guardar Métricas'}
               </button>
               {saveMsg && (
-                <span className={`text-sm ${saveMsg.includes('Error') ? 'text-red-400' : 'text-accent-green'}`}>
+                <span className={`text-sm ${saveMsg.includes('Error') ? 'text-red-700' : 'text-accent-green'}`}>
                   {saveMsg}
                 </span>
               )}

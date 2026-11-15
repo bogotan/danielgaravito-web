@@ -1,9 +1,25 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Spectral } from 'next/font/google';
 import '@/styles/globals.css';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
+// Inter para lo que se usa: navegación, botones, etiquetas, datos.
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+// Spectral para lo que se lee: el nombre, la tesis, los títulos de estudio,
+// las citas y el cuerpo de los escritos. Una serif con los pesos declarados,
+// porque Spectral no es variable.
+const spectral = Spectral({
+  subsets: ['latin'],
+  weight: ['300', '400', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-spectral',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.danielgaravito.co'),
@@ -67,28 +83,36 @@ export const metadata: Metadata = {
   },
 };
 
+// Cinco, no nueve. Una navegación de nueve ítems no se lee: se escanea y se
+// abandona. Proyectos, Trayectoria, Libros e Independencia siguen existiendo
+// —se llega a ellas bajando por la página y desde el pie—, pero dejan de
+// competir por la atención en la primera línea del sitio.
 const navLinks = [
+  { href: '/#investigacion', label: 'Investigaci\u00f3n' },
+  { href: '/blog', label: 'Escritos' },
   { href: '/#media', label: 'En Acci\u00f3n' },
   { href: '/#sobre-mi', label: 'Sobre m\u00ed' },
+  { href: '/#contacto', label: 'Contacto' },
+];
+
+// Las que salieron de la barra, recogidas en el pie.
+const footerLinks = [
   { href: '/#proyectos', label: 'Proyectos' },
-  { href: '/#investigacion', label: 'Investigaci\u00f3n' },
   { href: '/#trayectoria', label: 'Trayectoria' },
-  { href: '/blog', label: 'Escritos' },
   { href: '/libros', label: 'Libros' },
   { href: '/etica', label: 'Independencia' },
-  { href: '/#contacto', label: 'Contacto' },
 ];
 
 function Nav() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-gray-800/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-rule/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="text-lg font-bold gradient-text hover:opacity-80 transition-opacity"
+            className="font-serif text-lg text-text hover:text-accent-green transition-colors"
           >
-            DG
+            Daniel Garavito
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -130,7 +154,7 @@ function MobileMenuButton() {
           />
         </svg>
       </summary>
-      <div className="absolute right-0 mt-2 w-48 bg-bg-secondary border border-gray-800 rounded-lg shadow-xl py-2">
+      <div className="absolute right-0 mt-2 w-48 bg-bg-secondary border border-rule rounded-lg shadow-xl py-2">
         {navLinks.map((link) => (
           <Link
             key={link.href}
@@ -151,7 +175,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={inter.className}>
+    <html lang="es" className={`${inter.variable} ${spectral.variable} font-sans`}>
       <body className="bg-bg text-text">
         <script
           type="application/ld+json"
@@ -210,8 +234,21 @@ export default function RootLayout({
         />
         <Nav />
         <main className="pt-16">{children}</main>
-        <footer className="border-t border-gray-800 py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted text-sm">
+        <footer className="border-t border-rule mt-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            {/* Lo que salió de la barra de navegación aterriza aquí. */}
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 pb-8 mb-8 border-b border-rule">
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-text-muted hover:text-accent-green transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="text-center text-text-muted text-sm">
             <p>
               &copy; {new Date().getFullYear()} Daniel Garavito. Todos los
               derechos reservados.
@@ -219,18 +256,19 @@ export default function RootLayout({
             <p className="mt-1">
               Hecho con amor desde Colombia
             </p>
-            <p className="mt-4 text-xs text-text-muted/70">
+            <p className="mt-4 text-xs text-text-muted">
               Lo que se contrata vive en{' '}
               <a
                 href="https://sinergistica.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline underline-offset-4 decoration-gray-700 hover:text-text-muted hover:decoration-gray-500 transition-colors"
+                className="underline underline-offset-4 decoration-rule-strong hover:text-text-muted hover:decoration-accent-green transition-colors"
               >
                 Sinerg&iacute;stica
               </a>
               .
             </p>
+            </div>
           </div>
         </footer>
       </body>

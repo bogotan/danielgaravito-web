@@ -40,7 +40,7 @@ const statusColors: Record<string, string> = {
   writing: "bg-accent-gold/20 text-accent-gold",
   design: "bg-purple-500/20 text-purple-400",
   ideation: "bg-pink-500/20 text-pink-400",
-  paused: "bg-gray-500/20 text-gray-400",
+  paused: "bg-rule/60 text-text-muted",
 };
 
 const stepIcon: Record<RoadmapStep["status"], string> = {
@@ -70,7 +70,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <span
           className={`text-[10px] font-medium px-2 py-0.5 rounded-full whitespace-nowrap ${
-            statusColors[project.statusCategory] || "bg-gray-500/20 text-gray-400"
+            statusColors[project.statusCategory] || "bg-rule/60 text-text-muted"
           }`}
         >
           {project.status}
@@ -96,7 +96,7 @@ function ProjectCard({ project }: { project: Project }) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="text-[10px] px-2 py-0.5 rounded-full bg-bg border border-gray-700 text-text-muted"
+            className="text-[10px] px-2 py-0.5 rounded-full bg-bg border border-rule text-text-muted"
           >
             {tag}
           </span>
@@ -141,7 +141,7 @@ function ProjectCard({ project }: { project: Project }) {
       )}
 
       {open && (
-        <div className="mt-3 pt-3 border-t border-gray-700/60 space-y-3">
+        <div className="mt-3 pt-3 border-t border-rule/60 space-y-3">
           <ol className="space-y-1.5">
             {project.roadmap.map((s) => (
               <li
@@ -167,7 +167,7 @@ function ProjectCard({ project }: { project: Project }) {
 
           {project.blockers && project.blockers.length > 0 && (
             <div>
-              <h4 className="text-sm font-semibold text-red-400 mb-1.5">\u26d4 Bloqueos</h4>
+              <h4 className="text-sm font-semibold text-red-700 mb-1.5">\u26d4 Bloqueos</h4>
               <ul className="space-y-1 text-xs text-text-muted">
                 {project.blockers.map((b, i) => (
                   <li key={i}>\u2014 {b}</li>
@@ -233,7 +233,7 @@ export default function HubPage() {
           </Link>
           <button
             onClick={logout}
-            className="text-text-muted hover:text-red-400 text-sm transition-colors"
+            className="text-text-muted hover:text-red-700 text-sm transition-colors"
           >
             Cerrar sesión
           </button>
@@ -246,19 +246,19 @@ export default function HubPage() {
       )}
 
       <nav className="flex flex-wrap gap-2 mb-10">
-        <a href="#proyectos" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-gray-700 hover:border-accent-green text-text-muted hover:text-text transition-colors">
+        <a href="#proyectos" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-rule hover:border-accent-green text-text-muted hover:text-text transition-colors">
           \ud83d\udccb Proyectos
         </a>
-        <a href="#fuerzag" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-gray-700 hover:border-accent-green text-text-muted hover:text-text transition-colors">
+        <a href="#fuerzag" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-rule hover:border-accent-green text-text-muted hover:text-text transition-colors">
           \ud83c\udfbc FuerzaG v5.2.1
         </a>
-        <a href="#gracias" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-gray-700 hover:border-accent-green text-text-muted hover:text-text transition-colors">
+        <a href="#gracias" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-rule hover:border-accent-green text-text-muted hover:text-text transition-colors">
           \ud83d\ude4f Gracias
         </a>
-        <a href="/admin" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-gray-700 hover:border-accent-green text-text-muted hover:text-text transition-colors">
+        <a href="/admin" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-rule hover:border-accent-green text-text-muted hover:text-text transition-colors">
           \ud83d\udcc8 Leads / Admin
         </a>
-        <a href="/admin/metrics" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-gray-700 hover:border-accent-green text-text-muted hover:text-text transition-colors">
+        <a href="/admin/metrics" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-rule hover:border-accent-green text-text-muted hover:text-text transition-colors">
           \ud83d\udcca Métricas
         </a>
       </nav>
@@ -294,7 +294,7 @@ export default function HubPage() {
             </div>
           ))}
         </div>
-        <div className="mt-6 text-xs text-text-muted space-y-2 p-4 rounded-lg bg-bg-secondary border border-gray-800">
+        <div className="mt-6 text-xs text-text-muted space-y-2 p-4 rounded-lg bg-bg-secondary border border-rule">
           <p><strong className="text-text">Núcleo v5.2.1:</strong> 43 agentes. Reglas: Liam &gt; Salud del pas &gt; Carrera &gt; Dinero.</p>
           <p><strong className="text-text">Regla #18 (Anti-wrong-chat):</strong> G detecta saltos de tema y pregunta antes de ejecutar acciones irreversibles.</p>
           <p><strong className="text-text">Anti-fragmentación:</strong> Máximo 3 proyectos en Materializar simultneamente.</p>
