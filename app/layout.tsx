@@ -204,7 +204,17 @@ export default function RootLayout({
                     'Estad\u00edstica aplicada',
                   ],
                   worksFor: { '@id': 'https://sinergistica.com/#org' },
+                  // El ORCID es la pieza que le importa a quien indexa
+                  // investigación: ata los estudios de esta página al mismo
+                  // autor que firma en revistas y en DataCite.
+                  identifier: {
+                    '@type': 'PropertyValue',
+                    propertyID: 'https://registry.identifiers.org/registry/orcid',
+                    value: 'https://orcid.org/0009-0009-6871-5807',
+                    url: 'https://orcid.org/0009-0009-6871-5807',
+                  },
                   sameAs: [
+                    'https://orcid.org/0009-0009-6871-5807',
                     'https://www.linkedin.com/in/daniel-alfonso-garavito-jim%C3%A9nez/',
                     'https://x.com/danielgaravitoco',
                     'https://bsky.app/profile/danielgaravito.co',
@@ -257,6 +267,17 @@ export default function RootLayout({
               Hecho con amor desde Colombia
             </p>
             <p className="mt-4 text-xs text-text-muted">
+              ORCID{' '}
+              <a
+                href="https://orcid.org/0009-0009-6871-5807"
+                target="_blank"
+                rel="noopener noreferrer me"
+                className="underline underline-offset-4 decoration-rule-strong hover:text-accent-green hover:decoration-accent-green transition-colors"
+              >
+                0009-0009-6871-5807
+              </a>
+            </p>
+            <p className="mt-3 text-xs text-text-muted">
               Lo que se contrata vive en{' '}
               <a
                 href="https://sinergistica.com"

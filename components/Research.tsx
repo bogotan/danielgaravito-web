@@ -27,6 +27,18 @@ const estudios: Estudio[] = (
 
 const SITIO = 'https://www.danielgaravito.co';
 
+/** El periodo, solo si el subtítulo no lo dice ya. Varios lo traen dentro y
+ *  salía dos veces seguidas: "…desde los hogares, 2012–2025 · 2012–2025". */
+function periodoSiFalta(e: Estudio): string {
+  if (!e.periodo) return '';
+  return e.subtitulo.includes(e.periodo) ? '' : e.periodo;
+}
+
+// El identificador con el que firmo estos trabajos. Va en el JSON-LD de cada
+// estudio además de en la ficha de persona del layout: quien indexe solo este
+// bloque igual sabe de quién es el dataset.
+const ORCID = 'https://orcid.org/0009-0009-6871-5807';
+
 function jsonLd() {
   return {
     '@context': 'https://schema.org',
@@ -36,7 +48,12 @@ function jsonLd() {
       name: `${e.titulo} — ${e.subtitulo}`,
       description: e.pregunta,
       ...(e.periodo ? { temporalCoverage: e.periodo.replace('–', '/') } : {}),
-      creator: { '@id': `${SITIO}/#daniel` },
+      creator: {
+        '@id': `${SITIO}/#daniel`,
+        '@type': 'Person',
+        name: 'Daniel Garavito',
+        identifier: ORCID,
+      },
       inLanguage: 'es-CO',
       isAccessibleForFree: true,
       keywords: e.metodos,
@@ -165,12 +182,25 @@ export default function Research() {
       <h2 className="section-title">
         <span className="gradient-text">Investigaci&oacute;n</span>
       </h2>
-      <p className="text-text-muted text-lg mb-14 max-w-[68ch]">
+      <p className="text-text-muted text-lg mb-4 max-w-[68ch]">
         Estudios propios sobre el sistema de salud colombiano, construidos solo
         con fuentes p&uacute;blicas. Cada uno declara su corpus, su m&eacute;todo y su fecha de
         corte, y se puede reproducir contra su repositorio: si un resultado se
         reproduce desde fuentes p&uacute;blicas, no hay nada adentro que no pudiera
         estar.
+      </p>
+      <p className="text-sm text-text-muted mb-14">
+        Todos llevan la misma firma &mdash; ORCID{' '}
+        <a
+          href="https://orcid.org/0009-0009-6871-5807"
+          target="_blank"
+          rel="noopener noreferrer me"
+          className="text-accent-green hover:text-text underline underline-offset-4 transition-colors"
+        >
+          0009-0009-6871-5807
+        </a>
+        {' '}&mdash;, as&iacute; que lo que se publique aqu&iacute; y lo que se publique en una
+        revista quedan atados al mismo autor.
       </p>
 
       {/* El estudio que abre la sección */}
@@ -180,7 +210,7 @@ export default function Research() {
         </h3>
         <p className="text-sm text-text-muted mb-8">
           {principal.subtitulo}
-          {principal.periodo && <span> &middot; {principal.periodo}</span>}
+          {periodoSiFalta(principal) && <span> &middot; {periodoSiFalta(principal)}</span>}
           <span> &middot; </span>
           <span className="text-accent-green">{principal.estado}</span>
         </p>
@@ -234,7 +264,7 @@ export default function Research() {
               </h3>
               <p className="text-sm text-text-muted flex-1 min-w-[15rem]">
                 {e.subtitulo}
-                {e.periodo && <span> &middot; {e.periodo}</span>}
+                {periodoSiFalta(e) && <span> &middot; {periodoSiFalta(e)}</span>}
               </p>
               <span className="text-xs text-text-muted">{e.estado}</span>
               <svg
