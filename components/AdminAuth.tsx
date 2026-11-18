@@ -51,6 +51,7 @@ export default function AdminAuth({ children }: { children: ReactNode }) {
     setIsAuthenticated(false);
     setPassword('');
     sessionStorage.removeItem('admin_auth');
+    fetch('/api/auth', { method: 'DELETE' }).catch(() => {});
   };
 
   useEffect(() => {

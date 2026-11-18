@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import projectsData from "@/data/projects.json";
 import { useAdminAuth } from "@/components/AdminAuth";
+import Seguimiento from "@/components/Seguimiento";
 
 type RoadmapStep = {
   step: number;
@@ -246,6 +247,9 @@ export default function HubPage() {
       )}
 
       <nav className="flex flex-wrap gap-2 mb-10">
+        <a href="#seguimiento" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-rule hover:border-accent-green text-text-muted hover:text-text transition-colors">
+          Seguimiento
+        </a>
         <a href="#proyectos" className="text-xs px-3 py-1.5 rounded-full bg-bg-secondary border border-rule hover:border-accent-green text-text-muted hover:text-text transition-colors">
           \ud83d\udccb Proyectos
         </a>
@@ -264,6 +268,12 @@ export default function HubPage() {
       </nav>
 
       {/* Proyectos */}
+      <section id="seguimiento" className="mb-16">
+        <h2 className="text-2xl font-bold text-text mb-2">Seguimiento</h2>
+        <p className="text-text-muted text-sm mb-6">Estado de todos los proyectos desde el Second Brain: capa, siguiente paso, frescura y fechas.</p>
+        <Seguimiento />
+      </section>
+
       <section id="proyectos" className="mb-16">
         <h2 className="text-2xl font-bold text-text mb-2">Proyectos</h2>
         <p className="text-text-muted text-sm mb-6">
